@@ -1,6 +1,10 @@
 {
   "name": "foundation-libsass-template",
   "dependencies": {
-    "foundation": "zurb/bower-foundation"
+    "foundation": "zurb/bower-foundation",
+    "angular-charts": "~0.2.5",
+    "angular-sanitize": "~1.2.23",
+    "angular-route": "~1.2.24",
+    "angular-resource": "~1.2.24"
   }
 }

@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8" />
+	
+	<title>jQuery RS Carousel - Richard Scarrott</title>
+	
+	<link rel="stylesheet" type="text/css" href="demo/css/base.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="dist/css/jquery.rs.carousel.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="demo/css/demo.css" media="all" />
+	
+	<!-- lib -->
+	<script type="text/javascript" src="vendor/modernizr.3dtransforms.touch.js"></script>
+	<script type="text/javascript" src="vendor/jquery.js"></script>
+	<script type="text/javascript" src="vendor/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="vendor/jquery.event.drag.js"></script>
+	<script type="text/javascript" src="vendor/jquery.translate3d.js"></script>
+	
+	<!-- carousel -->
+	<script type="text/javascript" src="dist/js/jquery.rs.carousel.js"></script>
+	<script type="text/javascript" src="dist/js/jquery.rs.carousel-autoscroll.js"></script>
+	<script type="text/javascript" src="dist/js/jquery.rs.carousel-continuous.js"></script>
+	<script type="text/javascript" src="dist/js/jquery.rs.carousel-touch.js"></script>
+
+	<!-- demo -->
+	<script type="text/javascript" src="demo/js/demo.js"></script>
+
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+		
+			$('body').removeClass('no-js');
+			
+		   	demo.init($('#container'));
+		
+		});
+	</script>
+	
+</head>
+<body class="no-js">
+	<div id="container">
+		
+		<div class="copy">
+			<h1 class="h1">jQuery RS Carousel</h1>
+			<p>Download from <a href="https://github.com/richardscarrott/jquery-ui-carousel">Github</a></p>
+		</div>
+		
+		<form class="module">
+			
+			<div class="field">
+				<label for="orientation">orientation:</label>
+				<select id="orientation" name="orientation">
+					<option value="horizontal" selected="selected">horizontal</option>
+					<option value="vertical">vertical</option>
+				</select>
+			</div>
+			
+			<div class="field">
+				<label for="itemsPerTransition">itemsPerTransition:</label>
+				<select id="itemsPerTransition" name="itemsPerTransition">
+					<option value="auto" selected="selected">auto</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
+
+			<div class="field">
+				<label for="loop">loop:</label>
+				<input type="checkbox" id="loop" name="loop" />
+			</div>
+			
+			<div class="field">
+				<label for="speed">speed:</label>
+				<select id="speed" name="speed">
+					<option value="slow">slow</option>
+					<option value="normal" selected="selected">normal</option>
+					<option value="fast">fast</option>
+				</select>
+			</div>
+			
+			<div class="field">
+				<label for="easing">easing:</label>
+				<select id="easing" name="easing">
+					<option value="swing" selected="selected">swing</option>
+					<option value="linear">linear</option>
+				</select>
+			</div>
+			
+			<div class="field">
+				<label for="pagination">pagination:</label>
+				<input type="checkbox" id="pagination" name="pagination" checked="checked" />
+			</div>
+			
+			<div class="field">
+				<label for="nextPrevActions">nextPrevActions:</label>
+				<input type="checkbox" id="nextPrevActions" name="nextPrevActions" checked="checked" />
+			</div>
+
+			<div class="field">
+				<label for="whitespace">whitespace:</label>
+				<input type="checkbox" id="whitespace" name="whitespace" />
+			</div>
+			
+			<div class="field">
+				<label for="autoScroll">autoScroll:</label>
+				<input type="checkbox" id="autoScroll" name="autoScroll" />
+				<span>autoscroll is cancelled on hover</span>
+			</div>
+
+			<div class="field">
+				<label for="pause">pause:</label>
+				<select id="pause" name="pause">
+					<option value="1000">1</option>
+					<option value="2000">2</option>
+					<option value="3000">3</option>
+					<option value="4000">4</option>
+					<option value="5000">5</option>
+					<option value="6000">6</option>
+					<option value="7000">7</option>
+					<option value="8000" selected="selected">8</option>
+				</select>
+				<span>Seconds</span>
+			</div>
+
+			<div class="field">
+				<label for="continuous">continuous:</label>
+				<input type="checkbox" id="continuous" name="continuous" />
+			</div>
+
+			<div class="field">
+				<input type="button" value="Toggle Variable Width" id="toggleVariableWidth" />
+			</div>
+			
+			<div class="field">
+				<label for="addItems">
+					<button id="addItemsBtn">Add</button>
+					<input type="text" name="addItems" id="addItems" style="width: 30px;" value="4" />
+					item(s)
+				</label>
+			</div>
+
+			<div class="field">
+				<label for="removeItems">
+					<button id="removeItemsBtn">Remove</button>
+					<input type="text" name="removeItems" id="removeItems" style="width: 30px;" value="4" />
+					item(s)
+				</label>
+			</div>
+
+			<div id="itemCount" class="field item-count">
+				Total Items: <span class="count">0</span>
+			</div>
+			
+			<div class="actions">
+				<ul class="action-set base">
+					<li class="action">
+						<input type="button" id="init" name="init" value="init" />
+					</li>
+					<li class="action">
+						<input type="button" id="destroy" name="destroy" value="destroy" />
+					</li>
+				</ul>
+			</div>
+		</form>
+		
+		<div id="rs-carousel" class="module">
+			<ul>
+				<li class="color-5">0</li>
+				<li class="color-2">1</li>
+				<li class="color-3">2</li>
+				<li class="color-1">3</li>
+				<li class="color-2">4</li>
+				<li class="color-4">5</li>
+				<li class="color-7">6</li>
+				<li class="color-5">7</li>
+				<li class="color-6">8</li>
+				<li class="color-1">9</li>
+				<li class="color-2">10</li>
+				<li class="color-3">11</li>
+				<li class="color-4">12</li>
+				<li class="color-3">13</li>
+				<li class="color-2">14</li>
+				<li class="color-3">15</li>
+				<li class="color-4">16</li>
+				<li class="color-2">17</li>
+				<li class="color-3">18</li>
+				<li class="color-1">19</li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+@import "variables";
+@import "settings";
+@import "foundation";
+
+.hidden {
+  display: none;
+}
+
+#wrapper,
+.row {
+  max-width: 100%;
+}
+
+.row{
+  &#wrapper,
+  .row {
+    margin: 0;
+  }
+}
+
+#map {
+  height: 500px;
+}
+
+.left {
+  width: +grid-calc(3, 12);
+  min-width: 400px;
+  z-index: 99;
+  overflow-y: scroll;
+
+  h3 {
+    padding: 0 rem-calc(10);
+  }
+}
+
+.left-enabled #wrapper {
+  #map {
+    width: +grid-calc(9, 12);
+    margin-left: +grid-calc(3, 12);
+  }
+}
+
+.right {
+  width: +grid-calc(6, 12);
+  z-index: 99;
+  overflow-y: scroll;
+  position: absolute;
+  right: 0;
+  padding: 20px
+}
+
+.right-enabled #wrapper {
+  margin-left: +grid-calc(6, 12)*-1;
+}
+
+.tabs-content {
+  background: $white;
+}
+
+
+// Landlords
+.landlords-wrapper {
+  width: 100%;
+  overflow: hidden;
+
+  .landlords {
+    position: absolute;
+    z-index: 100;
+
+    .rs-carousel-mask {
+      height: 300px;
+    }
+
+    ul {
+      .landlord {
+        margin-right: 20px;
+        list-style: none;
+      }
+    }
+
+    
+  }
+}
+
+// Info box
+h4 {
+  font-weight: bold;
+}
+.num {
+  color: $orange;
+  font-size: rem-calc(26);
+  line-height: 1em;
+  font-weight: bold;
+}
+.button.tiny {
+  margin-left: .5em;
+  margin-right: .5em;
+}
+.info {
+  .columns.small-4 {
+    text-align: center;
+  }
+}
+.results .row:nth-child(odd) {
+  background-color: $off-white;
+}
+
+
+// Building details aside
+aside {
+  .row.building-header {
+    margin: 20px 0;
+  }
+
+  .chart {
+    width: 350px;
+    height: 300px;
+  }
+}
+
+
+
+// Scroll bars
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: $gray;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: $gray;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $blue-dark;
+}

@@ -1,0 +1,1054 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"u",
+				"undefined"
+			],
+			[
+				"revisi",
+				"revision_uid"
+			],
+			[
+				"is_nu",
+				"is_numeric"
+			],
+			[
+				"ar",
+				"arguments"
+			],
+			[
+				"defaul",
+				"default_domain"
+			],
+			[
+				"strto",
+				"strtoupper"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"isNu",
+				"is_numeric"
+			],
+			[
+				"static",
+				"staticRoutes"
+			],
+			[
+				"regis",
+				"registrants"
+			],
+			[
+				"thu",
+				"thumbnail"
+			],
+			[
+				"registra",
+				"registrations"
+			],
+			[
+				"Regist",
+				"register"
+			],
+			[
+				"carou",
+				"carousel"
+			],
+			[
+				"CURRY",
+				"currystone_front"
+			],
+			[
+				"visi",
+				"visible"
+			],
+			[
+				"visib",
+				"visibility"
+			],
+			[
+				"block",
+				"inline-block"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"backgrou",
+				"background"
+			],
+			[
+				"valu",
+				"values"
+			],
+			[
+				"catego",
+				"category_id"
+			],
+			[
+				"hook_",
+				"hook_menu_alter"
+			],
+			[
+				"defau",
+				"default_value"
+			],
+			[
+				"user",
+				"userref"
+			],
+			[
+				"unsubscr",
+				"unsubscribed"
+			],
+			[
+				"variable",
+				"variable_set"
+			],
+			[
+				"variab",
+				"variables"
+			],
+			[
+				"variabl",
+				"variable_get"
+			],
+			[
+				"doub",
+				"doubleclick"
+			],
+			[
+				"reco",
+				"recordings"
+			],
+			[
+				"mod",
+				"module_load_include"
+			],
+			[
+				"twilio-in",
+				"twilio-incoming-number"
+			],
+			[
+				"twilio-queue",
+				"twilio-queue-call"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"collap",
+				"collapsed"
+			],
+			[
+				"sett",
+				"settings"
+			],
+			[
+				"transc",
+				"transcribed"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"L",
+				"LANGUAGE_NONE"
+			],
+			[
+				"VIEW",
+				"RC_VIEWS_DATE_FORMAT"
+			],
+			[
+				"RC_REPORTS_",
+				"_RC_REPORTS_BASE_TICKETS_EARNED_SQL"
+			],
+			[
+				"call",
+				"calllist"
+			],
+			[
+				"rc_call_centre",
+				"rc_call_centre_log"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"RC_",
+				"RC_PROJECT_ROCKCORPS"
+			],
+			[
+				"hook_form",
+				"hook_form_alter	hook_form_alter"
+			],
+			[
+				"hook_entity_in",
+				"hook_entity_insert	hook_entity_insert"
+			],
+			[
+				"hook_men",
+				"hook_menu	hook_menu"
+			],
+			[
+				"hook_views_data",
+				"hook_field_views_data_alter"
+			],
+			[
+				"project",
+				"projectinvolvement"
+			],
+			[
+				"projet",
+				"projectinvolvement"
+			],
+			[
+				"strp",
+				"strpos"
+			],
+			[
+				"gre",
+				"grey_light"
+			],
+			[
+				"hook_admin_",
+				"hook_admin_paths_alter	hook_admin_paths_alter"
+			],
+			[
+				"hook_menu",
+				"hook_menu_alter	hook_menu_alter"
+			],
+			[
+				"hook_node_ins",
+				"hook_node_type_insert	hook_node_type_insert"
+			],
+			[
+				"hook_node_p",
+				"hook_node_update	hook_node_update"
+			],
+			[
+				"str_rep",
+				"str_replace"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"xde",
+				"Xdebug: Breakpoint - Step Over"
+			],
+			[
+				"xd",
+				"Xdebug: Breakpoint - Step Over"
+			],
+			[
+				"xdeb",
+				"Xdebug: Set Conditional Breakpoint"
+			],
+			[
+				"debug",
+				"Xdebug: Start Debugging (Launch Browser)"
+			],
+			[
+				"break",
+				"Xdebug: Add/Remove Breakpoint"
+			],
+			[
+				"XDE",
+				"Xdebug: Breakpoint - Run"
+			],
+			[
+				"XDEB",
+				"Xdebug: Breakpoint - Run"
+			],
+			[
+				"deb",
+				"Xdebug: Stop Debugging"
+			],
+			[
+				"xdebug",
+				"Xdebug: Breakpoint - Step Over"
+			],
+			[
+				"xdev",
+				"Xdebug: Add/Remove Breakpoint"
+			],
+			[
+				"xdee",
+				"Xdebug: Breakpoint - Step Over"
+			],
+			[
+				"xdebb",
+				"Xdebug: Breakpoint - Run To Line"
+			],
+			[
+				"brea",
+				"Xdebug: Add/Remove Breakpoint"
+			],
+			[
+				"xdde",
+				"Xdebug: Start Debugging (Launch Browser)"
+			],
+			[
+				"xe",
+				"Xdebug: Stop Debugging"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"git",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa	",
+				"Package Control: Install Package"
+			],
+			[
+				"pacak",
+				"Package Control: Enable Package"
+			],
+			[
+				"dru",
+				"Goto Drupal API"
+			],
+			[
+				"drupal",
+				"Goto Drupal API"
+			],
+			[
+				"package",
+				"Package Control: Disable Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/jeff/workspace/wander/WORKING/example.json",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_faq/js/flight-city-faq-view.js",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/templates/views/views-view-unformatted--faq-list--accordion.tpl.php",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_faq/flight_city_faq.module",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_311/js/flight-city-311-view.js",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_311/flight_city_311.module",
+		"/run/user/1000/gvfs/sftp:host=appserver.dev.bd689729-7b3e-45b4-93ad-1b90edbed253.drush.in,port=2222,user=dev.bd689729-7b3e-45b4-93ad-1b90edbed253/srv/bindings/67c50e9cac3f429291b739483dbc4728/code/sites/default/settings.php",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_migrate/baltimore_migrate.migrate.inc",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_migrate/baltimore_migrate.info",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_migrate/health.inc",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_migrate/base.inc",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_migrate/README.txt",
+		"/home/jeff/workspace/baltimore/sites/default/settings.php2",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_migrate/agencies.inc",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_workbench/flight_city_workbench.module",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_govdelivery/baltimore_govdelivery.module",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/social_stream/js/social-stream.js",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/social_stream/social_stream.module",
+		"/home/jeff/workspace/baltimore/sites/all/libraries/jquery-social-stream/js/jquery.social.stream.1.5.4.js",
+		"/home/jeff/workspace/baltimore/sites/default/settings.php",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_migrate/htmlfiles_migration.inc.php",
+		"/home/jeff/workspace/afh/WORKING/rest-api-sdk-php/README.md",
+		"/home/jeff/workspace/afh/WORKING/rest-api-sdk-php/sample/README.md",
+		"/home/jeff/workspace/afh/WORKING/rest-api-sdk-php/sample/sdk_config.ini",
+		"/home/jeff/workspace/afh/WORKING/rest-api-sdk-php/sample/bootstrap.php",
+		"/home/jeff/workspace/baltimore/sites/default/modules/focal_point/js/focal_point.js",
+		"/home/jeff/workspace/baltimore/sites/default/modules/focal_point/focal_point.module",
+		"/home/jeff/workspace/baltimore/profiles/flight/themes/custom/flight_admin/flight-admin.js",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_program/flight_city_program.module",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme/_311-services.sass",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_workbench/flight_city_workbench.rules.inc",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme/_front-pages.sass",
+		"/home/jeff/.drush/blackmesh.aliases.drushrc.php",
+		"/home/jeff/workspace/baltimore/sites/all/modules/contrib/redirect_404/redirect_404.module",
+		"/home/jeff/workspace/baltimore/sites/all/modules/contrib/redirect_404/README.txt",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_config/baltimore_config.module",
+		"/home/jeff/workspace/baltimore/.git/config",
+		"/home/jeff/workspace/port-of-tacoma/sites/all/modules/contrib/focal_point/focal_point.info",
+		"/home/jeff/Downloads/photos.html",
+		"/home/jeff/workspace/baltimore/WORKING/gh-pages/smugmug/assets/css/all.css",
+		"/home/jeff/workspace/baltimore/WORKING/gh-pages/smugmug/index.html",
+		"/home/jeff/workspace/baltimore/WORKING/gh-pages/smugmug/assets/css/smugmug.css",
+		"/home/jeff/workspace/baltimore/sites/all/modules/contrib/gtranslate/gtranslate.module",
+		"/home/jeff/workspace/baltimore/sites/all/modules/contrib/gtranslate/granslate-no-alt-508.patch",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/modules/_social-media-buttons.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/components/_icons-social.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/components/_icons-fontawesome.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/_variables.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme/_social-stream.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/components/_forms.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/template.php",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_config/flight_city_config.module",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_domain/flight_city_domain.module",
+		"/home/jeff/Downloads/Untitled Folder 2/water1/Default.aspx",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/js/foundation/foundation.orbit.js",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/modules/_orbit-core.sass",
+		"/home/jeff/Downloads/Untitled Folder 2/InterNet.master",
+		"/home/jeff/workspace/vufind/scripts/ab/automated.sh",
+		"/home/jeff/workspace/baltimore/WORKING/ab_testing/ab.sh",
+		"/home/jeff/workspace/baltimore/WORKING/ab_testing/urls.txt",
+		"/home/jeff/workspace/baltimore/WORKING/311/index.html",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/css/custom-foundation.css",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/vendor/foundation/components/_orbit.scss",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/css/ckeditor.css",
+		"/home/jeff/workspace/vufind/scripts/ab/urls/item.txt",
+		"/home/jeff/workspace/vufind/scripts/ab/ab.sh",
+		"/home/jeff/workspace/baltimore/WORKING/311/311.html",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme/_hero.sass",
+		"/home/jeff/workspace/baltimore/WORKING/ab_testing/results/pantheon.txt",
+		"/home/jeff/workspace/baltimore/WORKING/ab_testing/results/post-varnish-memcache.txt",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/base/_common.sass",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/balt_apachesolr/balt_apachesolr.module",
+		"/home/jeff/workspace/baltimore/sites/all/modules/contrib/domain_taxonomy/domain_taxonomy.module",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_address_helper/js/flight-address-helper-autocomplete.js",
+		"/home/jeff/Downloads/Untitled Folder/InterNet.master",
+		"/home/jeff/workspace/baltimore/WORKING/services/RemoteMasterV3/DnnPortalLayout.master.vb",
+		"/home/jeff/workspace/baltimore/WORKING/services/Onedrive-COBWEB/RemoteMasterV3/DnnPortalLayout.master.vb",
+		"/home/jeff/Downloads/Untitled Folder/a.patch",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/templates/page.tpl.php",
+		"/home/jeff/Downloads/311.html",
+		"/home/jeff/workspace/baltimore/sites/all/modules/contrib/apachesolr/apachesolr.index.inc",
+		"/home/jeff/Downloads/apachesolr_nan/apachesolr_nan.module",
+		"/home/jeff/Downloads/unicorn.txt",
+		"/home/jeff/Downloads/Untitled Folder/311.html",
+		"/home/jeff/workspace/baltimore/sites/default/settings.php1",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_config/baltimore_config.info",
+		"/home/jeff/workspace/baltimore/sites/default/settings.php\nsetting.php1",
+		"/home/jeff/Downloads/dnn structure.html",
+		"/home/jeff/Downloads/OLD/arc.js-gh-pages/example/csv2arc.js",
+		"/home/jeff/Downloads/worldcup/world-cup/2014--brazil/squads/it-italy.txt",
+		"/home/jeff/Downloads/worldcup/world-cup/2014--brazil/cup.txt",
+		"/home/jeff/Downloads/basic.ics",
+		"/home/jeff/Downloads/dnn structure",
+		"/home/jeff/workspace/baltimore/WORKING/services/RemoteMasterV3/InterNet.master.html",
+		"/home/jeff/Downloads/blackmesh.aliases.drushrc.php",
+		"/home/jeff/.drush/jeff90_1.aliases.drushrc.php",
+		"/home/jeff/Downloads/Citywide Event Content_sm.csv",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme/_payments.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme/_programs.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme/_faq.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/modules/_views.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/base/_mixins.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/layout/_upper.sass",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/flight_city.info",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/custom.sass",
+		"/home/jeff/workspace/albatross/contact.php",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_faq/flight_city_faq.ds.inc",
+		"/home/jeff/workspace/albatross/themes/albatross/app/views/main.html",
+		"/home/jeff/Downloads/How Do I content.csv",
+		"/home/jeff/workspace/baltimore/WORKING/services/RemoteMasterV3/DnnPortalLayout.master",
+		"/home/jeff/workspace/baltimore/sites/all/modules/contrib/domain_path/domain_path.info",
+		"/home/jeff/Downloads/social_stream/social_stream.module",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme/_people.sass",
+		"/home/jeff/Downloads/social_stream (2)/social_stream.info",
+		"/home/jeff/Downloads/social_stream/social_stream.info",
+		"/home/jeff/Downloads/social_stream (2)/social_stream.module",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/vendor/_foundation.scss",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/tree.txt",
+		"/home/jeff/workspace/baltimore/sites/all/modules/custom/social_stream/includes/social_stream_twitter_rest.inc",
+		"/home/jeff/Downloads/water-payments-sidebar-html.html",
+		"/home/jeff/workspace/stemzone-map/data.json",
+		"/home/jeff/workspace/commute/normalize.html",
+		"/home/jeff/workspace/commute/leaflet-omnivore.js",
+		"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/templates/views-foundation-orbit.tpl.php",
+		"/home/jeff/workspace/baltimore/profiles/flight/modules/contrib/views_foundation/theme/views_foundation.theme.inc",
+		"/home/jeff/workspace/baltimore/profiles/flight/modules/contrib/views_foundation/theme/views-foundation-orbit.tpl.php",
+		"/home/jeff/workspace/commute/data.json",
+		"/home/jeff/workspace/baltimore/sites/all/libraries/jquery-social-stream/twitter.php"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 94.0,
+		"where_history":
+		[
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore",
+			"/home/jeff/workspace/baltimore/profiles/flight/modules/contrib/pathauto",
+			"/home/jeff/workspace/baltimore/sites/all/themes",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom",
+			"/home/jeff/workspace/baltimore/sites/all/themes",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme",
+			"/home/jeff/workspace/baltimore",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/css",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom/flight_city_workbench",
+			"/home/jeff/workspace/baltimore/WORKING/services",
+			"/home/jeff/workspace/baltimore/WORKING/services/RemoteMasterV3",
+			"/home/jeff/workspace/baltimore/sites/all/modules/contrib/apachesolr",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/templates",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/base",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/theme",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass/components",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city/sass",
+			"/home/jeff/workspace/baltimore/sites/all/themes/custom/flight_city",
+			"/home/jeff/workspace/baltimore/profiles/flight/modules/contrib/views_foundation",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore/profiles/flight/themes/contrib/zurb-foundation",
+			"/home/jeff/workspace/baltimore/sites/all/themes",
+			"/home/jeff/workspace/baltimore/sites",
+			"/home/jeff/workspace/baltimore",
+			"/home/jeff/workspace/baltimore/sites/all/libraries/jquery-social-stream",
+			"/home/jeff/workspace/baltimore/profiles/flight/modules",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore/sites/all/modules/contrib",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore/profiles/flight/modules/contrib/navbar",
+			"/home/jeff/workspace/baltimore/profiles/flight/modules/custom",
+			"/home/jeff/workspace/baltimore/profiles/flight/modules/contrib/feeds",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom/baltimore_migrate",
+			"/home/jeff/workspace/baltimore/sites/all/modules",
+			"/home/jeff/workspace/baltimore/sites/all/modules/contrib/workbench_access",
+			"/home/jeff/workspace/baltimore/sites/all/modules/contrib/domain",
+			"/home/jeff/workspace/baltimore/sites/all/modules/contrib/workbench_access",
+			"/home/jeff/workspace/baltimore/profiles/flight/modules/contrib/workbench_access",
+			"/home/jeff/workspace/baltimore/sites/all/modules/contrib",
+			"/home/jeff/workspace/baltimore/sites/all/modules/custom",
+			"/home/jeff/workspace/baltimore/sites/all/modules/contrib/flag",
+			"/home/jeff/workspace/baltimore/profiles/flight/modules/contrib/pathauto",
+			"/home/jeff/workspace/baltimore/sites/all/modules/contrib/google_analytics_counter",
+			"/media/sda4/shared/workspace/baltimore/sites/all/modules/contrib/draggableviews_taxonomy_term",
+			"/media/sda4/shared/workspace/baltimore/profiles/flight/modules/contrib/workbench_moderation",
+			"/media/sda4/shared/workspace/baltimore/sites/all/modules/custom/flight_city_person",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind",
+			"/media/sda4/shared/workspace/vufind/module/schlow",
+			"/media/sda4/shared/workspace/vufind",
+			"/media/sda4/shared/workspace/vufind/config",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates",
+			"/media/sda4/shared/workspace/vufind/config",
+			"/media/sda4/shared/workspace/vufind/local/config/vufind",
+			"/media/sda4/shared/workspace/schlow-library/sites/all/modules/contrib/registration",
+			"/media/sda4/shared/workspace/vufind",
+			"/media/sda4/shared/workspace/vufind/module",
+			"/media/sda4/shared/workspace/vufind/themes",
+			"/media/sda4/shared/workspace/vufind/module",
+			"/media/sda4/shared/workspace/vufind/themes",
+			"/media/sda4/shared/workspace/vufind/themes/foundation",
+			"/media/sda4/shared/workspace/vufind/themes/schlow",
+			"/media/sda4/shared/workspace/vufind",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates/record",
+			"/media/sda4/shared/workspace/vufind/local/config/vufind",
+			"/media/sda4/shared/workspace/vufind",
+			"/media/sda4/shared/workspace/vufind/module/VuFind",
+			"/media/sda4/shared/workspace/vufind",
+			"/media/sda4/shared/workspace/vufind/themes/foundation",
+			"/media/sda4/shared/workspace/vufind/themes/schlow",
+			"/media/sda4/shared/workspace/vufind/themes/blueprint",
+			"/media/sda4/shared/workspace/vufind/themes",
+			"/media/sda4/shared/workspace/vufind/themes/foundation",
+			"/media/sda4/shared/workspace/vufind/themes/schlow",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates",
+			"/media/sda4/shared/workspace/vufind/module/VuFind",
+			"/media/sda4/shared/workspace/vufind/themes/foundation",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates/myresearch",
+			"/media/sda4/shared/workspace/vufind",
+			"/media/sda4/shared/workspace/vufind/themes",
+			"/media/sda4/shared/workspace/vufind/module",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates",
+			"/media/sda4/shared/workspace/vufind/import",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind/RecordDriver",
+			"/media/sda4/shared/workspace/vufind/module/VuFind",
+			"/media/sda4/shared/workspace/vufind",
+			"/media/sda4/shared/workspace/vufind/module",
+			"/media/sda4/shared/workspace/vufind/module/schlow",
+			"/media/sda4/shared/workspace/vufind/module",
+			"/media/sda4/shared/workspace/vufind/themes",
+			"/media/sda4/shared/workspace/vufind/module",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind/Controller",
+			"/media/sda4/shared/workspace/vufind",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind/Controller",
+			"/media/sda4/shared/workspace/vufind/module/VuFind",
+			"/media/sda4/shared/workspace/vufind/config",
+			"/media/sda4/shared/workspace/vufind/module",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates",
+			"/media/sda4/shared/workspace/vufind/themes/schlow",
+			"/media/sda4/shared/workspace/vufind/module/VuFind",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates",
+			"/media/sda4/shared/workspace/vufind/module",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind/Controller",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates/RecordDriver/SolrDefault",
+			"/media/sda4/shared/workspace/vufind/themes/foundation",
+			"/media/sda4/shared/workspace/vufind/module/VuFind/src/VuFind",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates",
+			"/media/sda4/shared/workspace/vufind/themes/schlow",
+			"/media/sda4/shared/workspace/vufind/themes/foundation/templates",
+			"/media/sda4/shared/workspace/vufind/module/VuFind",
+			"/media/sda4/shared/workspace/vufind/themes/schlow/templates",
+			"/media/sda4/shared/workspace/vufind/themes/foundation",
+			"/media/sda4/shared/workspace/vufind/themes/schlow",
+			"/media/sda4/shared/workspace/vufind/themes/foundation"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"text",
+			"#",
+			"#attached",
+			".js",
+			"console.",
+			"console.lo",
+			"section",
+			"The alias is already in use.",
+			"_baltimore_migrate_save_file",
+			"_baltimore_migrate_strip_tags",
+			"form",
+			"h2",
+			"BaltimoreContentMigration",
+			"grippie",
+			"$field.change",
+			"fontawesome-webfont.eot",
+			"views",
+			"\n+",
+			"flight_city_program",
+			"_ds",
+			"dpm",
+			"'#type' => 'value',\n    '#value' => $node,\n  );",
+			"$form_state['values']['node']",
+			"\n  ",
+			"flag",
+			"flight_city_workbench_node_promote_lookup",
+			"console",
+			"alt=\"'.$lang_name.'\"",
+			"\" \"",
+			"\" \" ",
+			"\" \"",
+			"wordpress",
+			"flickr",
+			"alt=\"'.$lang_name.'",
+			"blank.",
+			"blank",
+			"theme_",
+			"cookie",
+			"ifsight.com",
+			"logo",
+			"presave",
+			"Address_StreetAddress",
+			"textfield",
+			"health.baltimorecity.gov",
+			"Terms & Condition",
+			"assets/files",
+			"http://www.baltimorecity.gov/sites/all/modules/contrib/gtranslate/",
+			"gtranslat",
+			"sites/all",
+			"http://www.baltimorecity.gov/sites/default/files/",
+			"baltimore.ifsight.com",
+			"how do i",
+			"/files/",
+			"/external-service",
+			"baltimore.ifsight.com",
+			"800px",
+			"placeholder",
+			"place",
+			"placeholder",
+			"slideshow",
+			"medium-up",
+			"scp\nscp",
+			"$orbit-slide-number-padding",
+			"_orbit.scss",
+			"orbit-prev",
+			"dev.baltimore.ifsight",
+			"h2",
+			"domain",
+			"assets/css",
+			"http://health.baltimore.ifsight.com/sites/default/files/advagg_css/",
+			"http://health.baltimore.ifsight.com",
+			"CallWebService",
+			"contentURL",
+			"litAppName",
+			"telerik",
+			"<form",
+			"form",
+			"alert",
+			"Drupal.jsAC.prototype.select",
+			"autocompleteSelect",
+			"bug",
+			"_flight_city_workbench_pare_taxonomy_options",
+			"form_alt",
+			"_domain_taxonomy_store_grants",
+			"taxonomy",
+			"http://www.baltimore.ifsight.com/sites/default/files/",
+			"http://www.baltimore.ifsight.com/sites/default/files/advagg_css/",
+			"phone",
+			"http://www.baltimore.ifsight.com/sites/default/files/",
+			"domain_taxonomy_save_term",
+			"_domain_taxonomy_store_grants",
+			"_cron",
+			"limit",
+			"getFeed",
+			"youtube",
+			"toutube",
+			"youtube",
+			"max_feeds",
+			"myAccordionGroup",
+			"accordion",
+			"accorgion",
+			"section_title",
+			"}*/\n",
+			"_flight_city_active_menu_parent",
+			"fieldquery",
+			"domain",
+			"_flight_city_active_menu_parent",
+			"entity-title",
+			"external-service",
+			"<img src=\"http://www.baltimorecity.gov/DesktopModules/Admin/Tabs/images/Icon_UserSecure.png\" alt=\"\" class=\"rtImg\">",
+			"img",
+			"<img alt=\"\" src=\"/DesktopModules/Admin/Tabs/images/Icon_View.png\" class=\"rmLeftImage\">",
+			"<img src=\"http://www.baltimorecity.gov/DesktopModules/Admin/Tabs/images/Icon_Everyone.png\" alt=\"\" class=\"rtImg\">",
+			"<img src=\"/DesktopModules/Admin/Tabs/images/Icon_UserSecure.png\" alt=\"\" class=\"rtImg\">",
+			"<img src=\"/DesktopModules/Admin/Tabs/images/Icon_Everyone.png\" alt=\"\" class=\"rtImg\">",
+			"<img src=\"/DesktopModules/Admin/Tabs/images/Icon_Hidden.png\" class=\"statusicon\">",
+			"none",
+			"display:none;",
+			"display: none;",
+			"<img src=\"/DesktopModules/Admin/Tabs/images/Icon_UserAdmin.png\" alt=\"\" class=\"rtImg\">",
+			"source",
+			"]');",
+			"_ds",
+			".dcsns-toolbar\n  display: none\n  li\n    &.f-facebook a\n      display: none\n      +icon-only(facebook)",
+			"        +",
+			"variables",
+			"grid",
+			"breadcrum"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"h3",
+			"\n",
+			"flight_city_311",
+			"$node",
+			"alt=\"\"",
+			"\" alt=\"\"",
+			"\" ",
+			"\"",
+			"wordpress",
+			"",
+			"www.baltimorecity.gov",
+			"assets/images",
+			"assets/",
+			"assets/files/",
+			"baltimorecity.gov",
+			"/311-services",
+			"baltimorecity.gov",
+			"baltimore.ifsight",
+			"h3",
+			"assets/css/",
+			"assets/css",
+			"wget http://health.baltimore.ifsight.com",
+			"assets/",
+			"assets/css/",
+			"assets/",
+			"",
+			"flight_city_311",
+			"social_stream",
+			"",
+			" badge from @dcpl @youth202",
+			"Download It",
+			"Digital DIY",
+			"Express Yourself",
+			"$text",
+			"  ",
+			"    ",
+			"baltimore_migrate",
+			"drush",
+			"baltimore_migrate",
+			"~/drush/drush @pantheon.baltimorecity.dev ",
+			"flight_city_workbench",
+			"flight_config",
+			"  ",
+			",http:",
+			"    ",
+			"flight_city_workbench",
+			"  ",
+			"    ",
+			"baltimore_migrate",
+			"",
+			",",
+			"field_date",
+			"$this->transEsc('My Account')",
+			"%20",
+			" = ",
+			"' => '",
+			"this->drupalBase",
+			"$drupalBase",
+			"'. drupalBase .'",
+			"www.optusrockcorps.com.au",
+			"$this->DrupalSettings()->result_type_link",
+			"",
+			"\"\\r",
+			" = \"",
+			" ",
+			"flight_library_events",
+			"4.3",
+			"$_REQUEST['lookfor']",
+			"flight_library_events",
+			"sites/default",
+			"flight_library_research",
+			"holds",
+			"checkedOut",
+			"flight_library_events",
+			"$entity",
+			"$display['type']",
+			"foundation_formatters",
+			"flight_library_carousels",
+			"flight_library_events_field",
+			"flight_library_events",
+			"inkfilepicker",
+			"media_inkfilepicker",
+			"media-inkfilepicker",
+			"media_inkfilepicker",
+			");",
+			"[$key]->",
+			"updateTerms",
+			"20140817",
+			".safe_value",
+			".und",
+			"children",
+			"child",
+			"parent",
+			"Children",
+			"Child",
+			"Parent",
+			"Child",
+			"Parents",
+			"Parent",
+			"Child",
+			"Parent",
+			"group2",
+			"</a></td>",
+			"<tr class=\"even\"",
+			"th",
+			" ",
+			"",
+			"rc_ambassador",
+			"ambassador",
+			"rc_ambassadors",
+			"",
+			"toolbox_fr",
+			"G43z5dgC",
+			"dedijxkki_4",
+			"jeff90",
+			"",
+			"class=\"colorbox\" rel=\"grp1\" ",
+			"feedback30",
+			"  ",
+			"_rc_migrate",
+			"rc_migrate",
+			"_",
+			"rc_call_centre",
+			"rc_twilio",
+			"rc_blog",
+			"",
+			"\\r\\nmsgid",
+			"msgid"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "directives.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"schlow",
+				"~/workspace/sublime/schlow.sublime-project"
+			],
+			[
+				"",
+				"~/workspace/sublime/charities.sublime-project"
+			],
+			[
+				"afh",
+				"~/workspace/sublime/afh.sublime-project"
+			],
+			[
+				"chE",
+				"~/workspace/sublime/charities.sublime-project"
+			],
+			[
+				"charit",
+				"~/workspace/sublime/charities.sublime-project"
+			],
+			[
+				"rc",
+				"~/workspace/sublime/rc.sublime-project"
+			],
+			[
+				"dcpl",
+				"~/workspace/sublime/dcpl.sublime-project"
+			],
+			[
+				"hope",
+				"~/workspace/sublime/hopelink"
+			],
+			[
+				"taca",
+				"~/workspace/sublime/port-of-tacoma.sublime-project"
+			],
+			[
+				"dc",
+				"~/workspace/sublime/dcpl.sublime-project"
+			],
+			[
+				"tac",
+				"~/workspace/sublime/port-of-tacoma.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 213.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

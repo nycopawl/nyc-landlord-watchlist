@@ -1,0 +1,102 @@
+<div class="left">
+  <div class="row"><h3>Worst buildings in {{borough.label}}</h3></div>
+  <ol left-sidebar class="results">
+    <li ng-repeat="building in buildings" ng-mouseover="mouseoverBuilding(building.id)" ng-mouseout="mouseoutBuilding(building.id)">{{building.id}}
+      <div class="row info">
+        <div class="columns small-8">
+          <h4><a ng-click="selectBuilding(building.id)">{{building.address_num}} {{building.address_street}}</a></h4>
+          <h5>{{building.org}}</h5>
+          <h6 ng-if="building.officer">{{building.officer}}, Head Officer</h6>
+        </div>
+        <div class="columns small-4">
+          <div class="num">{{building.num}}</div>
+          <div><em>violations</em>
+          <div><a href="#/buildings/{{borough.id}}/{{building.id}}" class="button tiny">See Details</a>
+        </div>
+      </div>
+      
+    </li>
+  </ol>
+</div>
+
+
+
+
+<aside class="right-off-canvas-menu" ng-if="building">
+  <ul class="off-canvas-list">
+      <li><a href="#/buildings/{{borough.id}}">In depth</a></li>
+  </ul>
+
+  <div class="row building-header">
+    <div class="columns small-3">
+      <img src="http://maps.googleapis.com/maps/api/streetview?size=150x122&amp;location={{building.address_num}} {{building.address_street}}, {{building.boro}} NY {{building.address_zip}}&amp;sensor=false" height="150" width="250" alt="Google StreetView Image, copyright Google">
+    </div>
+    <div class="columns small-5">
+      <h4><a ng-click="selectBuilding(building.id)">{{building.address_num}} {{building.address_street}}</a></h4>
+      <h5>{{building.org}}</h5>
+      <h6 ng-if="building.officer">{{building.officer}}, Head Officer</h6>
+    </div>
+    <div class="columns small-3">
+      <div class="num">{{building.num}}</div>
+      <div><em>violations</em></div>
+      <div class="change">@todo change</div>
+      <div><em>since Aug. 2013</em></div>
+    </div>
+
+
+  </div>
+
+
+  <div class="tabs-wrapper">
+    <dl class="tabs">
+      <dd ng-class="{active: activeTab == 'charts'}">
+        <a ng-click="selectTab('charts')">Charts</a>
+      </dd>
+      <dd ng-class="{active: activeTab == 'list'}">
+        <a ng-click="selectTab('list')">Violation List</a>
+      </dd>
+    </dl>
+
+    <div class="tabs-content charts">
+      <div class="row">
+        <div class="columns medium-6">
+          <div
+            data-ac-chart="'pie'" 
+            data-ac-data="charts.typeData" 
+            data-ac-config="charts.typeConfig" 
+            class="chart">
+          </div>
+        </div>
+        <div class="columns medium-6">
+          <div
+            data-ac-chart="'line'" 
+            data-ac-data="charts.yearData" 
+            data-ac-config="charts.yearConfig" 
+            class="chart">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content violations hidden">
+      <h3></h3>
+      <div chart-class>Loading...</div>
+    </div>
+  </dl>
+</aside>
+
+
+<div id="popup-building-teaser" class="hidden">
+  <h4><a ng-click="selectBuilding(building.id)">{{hoverBuilding.address_num}} {{hoverBuilding.address_street}}</a></h4>
+  <h5>{{hoverBuilding.org}}</h5>
+  <h6 ng-if="building.officer">{{hoverBuilding.officer}}, Head Officer</h6>
+  <div class="row">
+    <div class="columns small-4">
+      <div class="num">{{hoverBuilding.num}}</div>
+      <div><em>violations</em>
+    <div class="columns small-4">
+      <div class="change">@todo change</div>
+      <div><em>since Aug. 2013</em>
+    </div>
+  </div>
+</div>

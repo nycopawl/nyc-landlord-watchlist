@@ -1,0 +1,25 @@
+mysql> SELECT CurrentStatus, count(*) FROM  `2014_FOILVIOL`  GROUP BY  `CurrentStatus`;
++------------------------------------------+----------+
+| CurrentStatus                            | count(*) |
++------------------------------------------+----------+
+| 11/29/2013                               |        2 |
+| CERTIFICATION POSTPONMENT DENIED         |     2076 |
+| CERTIFICATION POSTPONMENT GRANTED        |     3811 |
+| COMPLIED IN ACCESS AREA                  |       21 |
+| CurrentStatus                            |        5 |
+| DEFECT LETTER ISSUED                     |    41401 |
+| FALSE CERTIFICATION                      |     4470 |
+| FIRST NO ACCESS TO RE- INSPECT VIOLATION |   347052 |
+| INVALID CERTIFICATION                    |    13356 |
+| Lot                                      |        2 |
+| NOT COMPLIED WITH                        |   176628 |
+| NOV CERTIFIED LATE                       |    71850 |
+| NOV CERTIFIED ON TIME                    |     6607 |
+| NOV SENT OUT                             |  1226563 |
+| SECOND NO ACCESS TO RE-INSPECT VIOLATION |    39971 |
+| VIOLATION CLOSED                         |   158111 |
+| VIOLATION DISMISSED                      |     1248 |
+| VIOLATION OPEN                           |    12403 |
+| VIOLATION REOPEN                         |      238 |
+| VIOLATION WILL BE REINSPECTED            |    52804 |
++------------------------------------------+----------+

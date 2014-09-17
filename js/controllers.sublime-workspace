@@ -1,0 +1,587 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pagerS",
+				"pagerSize"
+			],
+			[
+				"list-sty",
+				"list-style"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"b",
+				"background-color"
+			],
+			[
+				"draw",
+				"drawMarkers"
+			],
+			[
+				"hook_field_dis",
+				"hook_field_display_ENTITY_TYPE_alter	hook_field_display_ENTITY_TYPE_alter"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"str_rep",
+				"str_replace"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"paca",
+				"Preferences: Browse Packages"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa	",
+				"Package Control: Install Package"
+			],
+			[
+				"pacak",
+				"Package Control: Enable Package"
+			],
+			[
+				"dru",
+				"Goto Drupal API"
+			],
+			[
+				"drupal",
+				"Goto Drupal API"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/media/shared/shared/workspace/justice/node_modules/google-spreadsheet/index.js",
+		"/media/shared/shared/workspace/worldcup/build.js",
+		"/media/shared/shared/workspace/justice/values",
+		"/home/jeff/workspace/blue-guide-es/index.html",
+		"/home/jeff/workspace/blue-guide/index.html",
+		"/home/jeff/workspace/blue-guide-es/sass/_mixins.sass",
+		"/home/jeff/workspace/blue-guide-es/coffeescript/filters.coffee",
+		"/home/jeff/workspace/blue-guide-es/coffeescript/main.coffee",
+		"/home/jeff/workspace/blue-guide-es/coffeescript/GoogleSpreadsheetsQuery.coffee",
+		"/home/jeff/workspace/blue-guide-es/CNAME",
+		"/home/jeff/workspace/blue-guide-es/json/data.json",
+		"/home/jeff/workspace/blue-guide-es/coffeescript/map.coffee",
+		"/home/jeff/workspace/blue-guide/coffeescript/map.coffee",
+		"/home/jeff/workspace/blue-guide-es/coffeescript/jsonQuery.coffee",
+		"/home/jeff/workspace/blue-guide-es/js/filters.js",
+		"/home/jeff/workspace/blue-guide-es/coffeescript/map.js",
+		"/home/jeff/workspace/blue-guide/.grunt/node_modules/grunt/node_modules/js-yaml/node_modules/esprima/README.md",
+		"/home/jeff/workspace/blue-guide/.grunt/node_modules/grunt-coffee-redux/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/reduce-multiple-if-statements.js",
+		"/home/jeff/workspace/blue-guide/.grunt/node_modules/grunt/test/fixtures/Gruntfile-print-text.js",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/.git1/packed-refs",
+		"/home/jeff/workspace/blue-guide-es/js/main.js",
+		"/home/jeff/workspace/blue-guide-es/coffeescript/filters.js",
+		"/home/jeff/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/jeff/Downloads/watchlist-data/CANT_OPEN.txt",
+		"/home/jeff/workspace/blue-guide/coffeescript/main.coffee",
+		"/home/jeff/workspace/blue-guide/config.xml",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/advocate/sites/advocate.nyc.gov/modules/customized/landlord_watchlist/landlord_watchlist.module",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/advocate/sites/advocate.nyc.gov/modules/location/location.module",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/advocate/sites/advocate.nyc.gov/modules/customized/landlord_watchlist/TO_FIX_GEOCODING.txt",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/rmwff/sites/rmwfilmfest.org/themes/rmwfilmfestival/templates/calendar-day--calendar.tpl.php",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/advocate/sites/advocate.nyc.gov/modules/location/INSTALL.txt",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/advocate/sites/advocate.nyc.gov/modules/location/geocoding/google.inc",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/advocate/sites/advocate.nyc.gov/modules/location/location.inc",
+		"/home/jeff/workspace/blue-guide/coffeescript/jsonQuery.coffee",
+		"/home/jeff/workspace/blue-guide/coffeescript/filters.coffee",
+		"/home/jeff/workspace/blue-guide/.git/config",
+		"/home/jeff/workspace/blue-guide/json/commands.js",
+		"/home/jeff/workspace/blue-guide/json/data.json",
+		"/home/jeff/workspace/blue-guide/sass/components/_responsive-desktop.sass",
+		"/home/jeff/workspace/blue-guide/sass/components/_overlay.sass",
+		"/home/jeff/workspace/blue-guide/sass/components/_responsive-mobile.sass",
+		"/home/jeff/workspace/blue-guide/sass/components/_map.sass",
+		"/home/jeff/workspace/blue-guide/sass/components/_style.sass",
+		"/home/jeff/workspace/blue-guide/assets/icomoon/style.css",
+		"/home/jeff/workspace/blue-guide/sass/_variables.sass",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/src/coffee/leaflet.control.geosearch.coffee",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/.grunt/.gitignore",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/example/kitchen-sink.html",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/src/css/leaflet-control-geosearch.css",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch1/src/js/l.control.geosearch.js",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/.grunt/Gruntfile.js",
+		"/home/jeff/Downloads/tabs.txt",
+		"/home/jeff/Downloads/fields.txt",
+		"/home/jeff/Downloads/droid-serif-fontfacekit/web fonts/droidserif_bolditalic_macroman/stylesheet.css",
+		"/home/jeff/workspace/blue-guide/coffeescript/main.js",
+		"/home/jeff/Downloads/blue-guide-app/.git/config",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/flight-7.x-1.x-dev/sites/all/modules/custom/social_block/social_block.module",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/flight-7.x-1.x-dev/sites/edfundersresearch.com/modules/custom/sharrre/sharrre.module",
+		"/home/jeff/Downloads/HTML Message.html",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/flight-7.x-1.x-dev/sites/edfundersresearch.com/modules/custom/sharrre/sharrre.admin.inc",
+		"/home/jeff/Desktop/edfunders dns.txt",
+		"/home/jeff/workspace/flight-7.x-1.x-dev/profiles/flight/drupal-org.make",
+		"/home/jeff/workspace/open_government/patches/PATCHES.txt",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/example/esri.html",
+		"/home/jeff/workspace/blue-guide/.grunt/Gruntfile.js",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/example/bing.html",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/example/openstreetmap.html",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/example/nokia.html",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/example/google.html",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/src/js/leaflet.control.geosearch.js",
+		"/home/jeff/workspace/blue-guide/assets/leaflet.geocoding/README.md",
+		"/home/jeff/workspace/open_government/sites/all/modules/features/ogp_news/ogp_news.info",
+		"/home/jeff/.ssh/id_rsa.pub",
+		"/home/jeff/Downloads/allegany-county-transit_20130220_0422/stop_times.txt",
+		"/home/jeff/Downloads/allegany-county-transit_20130220_0422/routes.txt",
+		"/home/jeff/Downloads/blue-guide-app2/www/config.xml",
+		"/home/jeff/Downloads/blue-guide-app2/www/coffeescript/main.coffee",
+		"/home/jeff/.cache/.fr-DxkGKp/calendar.txt",
+		"/home/jeff/.bashrc",
+		"/home/jeff/Downloads/hello1/www/js/index.js",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/src/js/l.control.geosearch.js",
+		"/run/user/jeff/gvfs/sftp:host=o1.albatrossdigital.com,user=v4709507421.ftp/static/platforms/flight-7.x-1.x-dev/sites/tacoma.albatrossdemos.com/modules/print/INSTALL.txt",
+		"/home/jeff/Downloads/ogp/.git/config",
+		"/home/jeff/workspace/blue-guide/sass/components/_filters.sass",
+		"/home/jeff/workspace/blue-guide/coffeescript/generateJson.coffee",
+		"/home/jeff/workspace/dcgov-www/test.php",
+		"/home/jeff/Downloads/a.csv",
+		"/home/jeff/Downloads/watchlist/WORKING.txt",
+		"/home/jeff/Downloads/watchlist/working/b3.csv",
+		"/home/jeff/Downloads/watchlist/working/b2.csv",
+		"/home/jeff/Downloads/blue-guide/package.json",
+		"/home/jeff/workspace/blue-guide/assets/cdn/underscore-min.js",
+		"/home/jeff/workspace/blue-guide/sass/components/_header.sass",
+		"/home/jeff/Downloads/watchlist/buildings.csv",
+		"/home/jeff/Downloads/blue-guide/app/index.html",
+		"/home/jeff/workspace/blue-guide/coffeescript/GoogleSpreadsheetsQuery.coffee",
+		"/home/jeff/Downloads/domain/domain.module",
+		"/home/jeff/workspace/blue-guide/sass/components/_results.sass",
+		"/home/jeff/workspace/blue-guide/sass/_mixins.sass",
+		"/home/jeff/workspace/blue-guide/coffeescript/map1.coffee",
+		"/home/jeff/workspace/nyc-landlord-watchlist/.git/config",
+		"/home/jeff/workspace/nycha-watchlist/assets/L.GeoSearch/src/js/l.geosearch.provider.google.js",
+		"/home/jeff/workspace/nyc-work-orders/.git/config",
+		"/home/jeff/workspace/nyc-work-orders/assets/L.GeoSearch/src/js/l.geosearch.provider.google.js",
+		"/home/jeff/Downloads/blue-guide/app/coffeescript/map.coffee",
+		"/home/jeff/Downloads/blue-guide/Gruntfile.js",
+		"/home/jeff/Downloads/blue-guide/app/styles/h5bp.css",
+		"/home/jeff/Downloads/blue-guide/app/app/coffeescript/main.coffee",
+		"/home/jeff/Downloads/blue-guide/app/app/coffeescript/map.coffee",
+		"/home/jeff/Downloads/Untitled 1.csv",
+		"/home/jeff/Dropbox/Albatross Digital/Tutorials/ad-dev/ad-dev.sh",
+		"/home/jeff/Downloads/demo-gh-pages/running/site.js",
+		"/home/jeff/Downloads/watchlist/sm_buildings.csv",
+		"/home/jeff/.ssh/ad_aws/jeff-oregon.pem",
+		"/home/jeff/workspace/nyc-work-orders/WORKING.txt",
+		"/home/jeff/Downloads/watchlist/working/row_names.csv",
+		"/home/jeff/Downloads/rmw.csr",
+		"/home/jeff/Downloads/rmw ssl/rmw.csr",
+		"/home/jeff/workspace/node/maps/.grunt/Gruntfile.js",
+		"/home/jeff/workspace/blue-guide/sass/main.sass",
+		"/home/jeff/workspace/blue-guide/js/map.js",
+		"/home/jeff/workspace/blue-guide/js/main.js",
+		"/home/jeff/workspace/blue-guide/sass/components/_layout.sass",
+		"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/src/css/l.geosearch.css",
+		"/home/jeff/workspace/nyc-work-orders/js/map.js",
+		"/home/jeff/workspace/blue-guide/.gitignore",
+		"/home/jeff/Downloads/ericadams2013.com.csr",
+		"/home/jeff/Downloads/squadronfornewyork.com.csr"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/jeff/workspace/justice/WORKING/angular-phonecat-step-12/app/js",
+			"/home/jeff/workspace/justice/WORKING/angular-phonecat-step-12/app/partials",
+			"/home/jeff/workspace/blue-guide/sass/components",
+			"/home/jeff/workspace/blue-guide-es/sass",
+			"/home/jeff/workspace/blue-guide-es/sass/components",
+			"/home/jeff/workspace/blue-guide/coffeescript",
+			"/home/jeff/workspace/blue-guide-es",
+			"/home/jeff/workspace/blue-guide-es/coffeescript",
+			"/home/jeff/workspace/blue-guide-es",
+			"/home/jeff/workspace/blue-guide-es/coffeescript",
+			"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/src",
+			"/home/jeff/workspace/blue-guide/assets/L.GeoSearch",
+			"/home/jeff/workspace/blue-guide/assets/L.GeoSearch1",
+			"/home/jeff/workspace/blue-guide/coffeescript",
+			"/home/jeff/workspace/blue-guide",
+			"/home/jeff/workspace/blue-guide/coffeescript",
+			"/home/jeff/workspace/blue-guide",
+			"/home/jeff/workspace/blue-guide/coffeescript",
+			"/home/jeff/workspace/blue-guide/assets",
+			"/home/jeff/workspace/blue-guide/assets/L.GeoSearch/src/js",
+			"/home/jeff/workspace/blue-guide/assets",
+			"/home/jeff/workspace/blue-guide/coffeescript",
+			"/home/jeff/workspace/blue-guide",
+			"/home/jeff/workspace/blue-guide/sass"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"phonecat",
+			"phonecat\nphonecat",
+			"PhoneDetailCtrl",
+			"PhoneListCtrl",
+			"phonecatControllers",
+			"http",
+			"at",
+			"animate",
+			"Salud mental/conductual",
+			"Lo siento",
+			"atendidos",
+			"Poblaciónes atendidos",
+			"dental",
+			"connect",
+			"Keyword Search",
+			"en ",
+			"Viendo el las {{num}} clínicas más cercanas a {{location}} coincide con tu filtro.",
+			"Atendidos",
+			"Poblaciones Atendidos",
+			"Mi Localidad",
+			"populations served",
+			"scroll",
+			"this.scroll",
+			"scroll",
+			"Departamento de Salud Pública y Servicios de Enfermería Pública Locales",
+			"Clínica de Último Recurso Financiada por la Comunidad (CSNC)",
+			"ultimo",
+			"comunitaria",
+			"Local de Clínica WIC",
+			"WIC",
+			"Atención médica para veteranos de las fuerzas armadas",
+			"veteran",
+			"Salud de la mujer",
+			"cogn",
+			"Atención para los ojos",
+			"Atención Dental",
+			"Atención Primaria",
+			"ultima",
+			"clínicas más cercanas a ",
+			"all types",
+			"services pro",
+			"miles",
+			"search for add",
+			"get my location",
+			"search for add",
+			"view website",
+			"website",
+			"view website",
+			"Primary Health Care",
+			"Community Health Center (CHC) / Federally Qualified Health Center (FQHC)",
+			"hours",
+			"geocode",
+			"field",
+			"pres",
+			"node_",
+			"presave",
+			"icomo",
+			"console.lo",
+			"\"Medicaid Enrollment\"",
+			"console",
+			"_newSuggestion",
+			"_onKeyPress",
+			"_startSearch",
+			"console",
+			"\"\"",
+			"console.lo	",
+			"_searchInput.value",
+			"open",
+			"_onInput",
+			"click",
+			"displayNone",
+			"open",
+			"media",
+			"alert",
+			"displayNone",
+			"message",
+			"_changeIcon",
+			"glass",
+			"message",
+			"alert",
+			":hover",
+			"    .leaflet-control-geosearch,\n    #geocode\n      display: block\n",
+			"responsive",
+			"center",
+			"leaflet",
+			"keypress",
+			"console.",
+			"locationUpdated",
+			"show",
+			"autocomplete",
+			"->\n",
+			"geosearch_showlocation",
+			"l.",
+			">\n",
+			"title",
+			"console",
+			"\nconsole.log",
+			"console.log",
+			"google",
+			"console.log",
+			"markerLayer",
+			"\">\n",
+			"selector",
+			"});\n",
+			"trans",
+			"maxMarkers",
+			"'",
+			"3em",
+			"_onKeyUp",
+			"alert",
+			"undefined",
+			"_onKeyUp",
+			"mousedown",
+			"map",
+			"pager",
+			"bounds",
+			"website",
+			"that.scroll $results, $(\"#map\")",
+			"$(#map",
+			"leaflet",
+			"scroll",
+			"    \n",
+			".scroll",
+			"console.log",
+			"console",
+			"drawPager",
+			"console.log",
+			".scroll"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"justice",
+			"CountyDetailCtrl",
+			"HomeCtrl",
+			"justiceControllers",
+			"Departamento de Salud Pública o Enfermería Pública",
+			"Clínica de Último Recurso Comunitaria",
+			"Clínica WIC",
+			"Atención médica para veteranos",
+			"Salud de la mujer",
+			"Salud ocular",
+			"Atención Dental",
+			"Atención primaria",
+			"\"Medicaid Enrollment Assistance\"",
+			"leaflet.",
+			"\"",
+			"that.scroll $results, 0",
+			"$element",
+			"$parent",
+			"$($results).animate",
+			"",
+			"$scale",
+			"submitButton",
+			"|",
+			"\",\"",
+			"data.length",
+			"INT",
+			"",
+			"btn-normal",
+			"",
+			"$blue-light",
+			"$blue-dark",
+			"{",
+			"https://www.orangerockcorps.fr",
+			"\\r",
+			"$",
+			"Ink Filepicker",
+			"#pieChart1, #pieChart2",
+			"  ",
+			"advocate",
+			"Winner",
+			"redhen_fields"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "controllers.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"primera",
+				"blue-guide/.grunt/node_modules/grunt/node_modules/js-yaml/node_modules/esprima/README.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"wan",
+				"~/workspace/sublime/wander.sublime-workspace"
+			],
+			[
+				"",
+				"~/workspace/sublime/rc.sublime-project"
+			],
+			[
+				"balt",
+				"~/workspace/sublime/baltimore.sublime-workspace"
+			],
+			[
+				"advo",
+				"~/workspace/sublime/advocate.sublime-project"
+			],
+			[
+				"adv",
+				"~/workspace/sublime/advocate.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 348.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
