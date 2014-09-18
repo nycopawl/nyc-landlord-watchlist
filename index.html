@@ -11,15 +11,11 @@
 
 
   <script data-require="angular.js@1.2.2" src="bower_components/angular/angular.js" data-semver="1.2.2"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
   <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
 
   <script type='text/javascript' src='./bower_components/d3/d3.min.js'></script> 
-  <script type="text/javascript" src="https://rawgit.com/chinmaymk/angular-charts/bower/dist/angular-charts.min.js"></script>
-
-
-    <script src="//pineconellc.github.io/angular-foundation/mm-foundation-tpls-0.3.1.js"></script>
     <script tyspe='text/javascript' src='./bower_components/angular-charts/dist/angular-charts.min.js'></script>
 
 
@@ -50,7 +46,8 @@
     <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js"></script>-->
     <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.js"></script>
 
-    <script type="text/javascript" src="js/app.js"></script>
+
+    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/app.css">
 
 
@@ -88,7 +85,7 @@
   <section class="main-section">
     <div class="row">
       <div class="row" id="wrapper">
-        <div ng-view></div>
+        <div ui-view></div>
         <div map-div class="map"></div>
       </div>
     </div>
@@ -102,5 +99,30 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+
+
+  <!-- typekit -->
+  <script type="text/javascript">
+      /* <![CDATA[ */ 
+      TypekitConfig = {
+          kitId: 'vdp7pju'
+      };
+      (function() {
+          var tk = document.createElement('script');
+          tk.src = '//use.typekit.com/' + TypekitConfig.kitId + '.js';
+          tk.type = 'text/javascript';
+          tk.async = 'true';
+          tk.onload = tk.onreadystatechange = function() {
+              var rs = this.readyState;
+              if (rs && rs != 'complete' && rs != 'loaded') return;
+              try { Typekit.load(TypekitConfig); } catch (e) {}
+          };
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(tk, s);
+      })(); 
+      /* ]]> */
+  </script>
+  <!--/.typekit -->
+
 </div></body>
 </html>

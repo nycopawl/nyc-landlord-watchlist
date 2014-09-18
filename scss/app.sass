@@ -2,6 +2,16 @@
 @import "settings";
 @import "foundation";
 
+// Settings is too early in the boot order for this
+$left-bar-width: grid-calc(3, 12);
+$margin-left: 70px;
+
+h1,
+h2,
+h3 {
+  font-family: $stencil;
+}
+
 .hidden {
   display: none;
 }
@@ -22,6 +32,8 @@
   height: 500px;
 }
 
+
+// Left bar
 .left {
   width: +grid-calc(3, 12);
   min-width: 400px;
@@ -31,15 +43,188 @@
   h3 {
     padding: 0 rem-calc(10);
   }
+
+  .header {
+    margin: 1rem 0;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      list-style:none;
+      padding: rem-calc(5) 0;
+
+      &:nth-child(even) {
+        background-color: $off-white;
+      }
+    }
+  }
 }
 
 .left-enabled #wrapper {
   #map {
-    width: +grid-calc(9, 12);
-    margin-left: +grid-calc(3, 12);
+    width: +grid-calc(12, 12) - $left-bar-width;
+    margin-left: $left-bar-width;
   }
 }
 
+
+// Landlords
+.landlords-wrapper {
+  width: 100%;
+  overflow: hidden;
+
+  .hero {
+    position: absolute;
+    $margin-top: 1em;
+    margin-left: $margin-left;
+    width: rem-calc(800);
+    z-index: 1000;
+
+    h1, h2, h3 {
+      color: $white;
+    }
+
+    .right {
+      overflow: visible;
+    }
+  }
+
+  .landlords {
+    position: absolute;
+    z-index: 100;
+    margin-top: rem-calc(200);
+    margin-left: $margin-left;
+
+    &,
+    .rs-carousel-mask {
+      height: 330px;
+      overflow: hidden;
+    }
+
+    ul {
+      .landlord {
+        margin-right: 20px;
+        list-style: none;
+        width: 250px;
+        height: 320px;
+        float: left;
+
+        &:hover{
+          background-color: $white;
+          cursor: pointer;
+          cursor: hand;
+        }
+
+        .boxes {
+          //position: absolute;
+          //bottom: rem-calc(25);
+        }
+      }
+    }
+  }
+}
+
+.page-landlords {
+  .max-hide {
+    display: none;
+  }
+}
+
+.page-landlord {
+  .min-hide {
+    display: none;
+  }
+
+  .landlords {
+    margin-left: $left-bar-width;
+
+    &,
+    .rs-carousel-mask {
+      height: 130px;
+      overflow: hidden;
+    }
+    
+    ul .landlord {
+      width: 110px;
+      height: 130px;
+      padding: rem-calc(5);
+
+      img {
+        max-width: 100%;
+        height: autp;
+      }
+    }
+  }
+}
+
+.page-building {
+  .landlord-wrapper {
+    display: none;
+  }
+}
+
+
+// Info box
+h4 {
+  font-weight: bold;
+}
+
+.num {
+  color: $orange;
+  font-size: rem-calc(26);
+  line-height: 1em;
+  font-weight: bold;
+
+  &.red {
+    color: $red;
+
+    &.arrow.before{
+      content: "\f063";
+    }
+  }
+
+  &.green {
+    color: $green;
+
+    &.arrow.before{
+      content: "\f063";
+    }
+  }
+}
+.boxes {
+  text-align: center;
+
+  .columns{
+    padding: rem-calc(2);
+
+    .panel {
+      padding: rem-calc(5) 0;
+      margin-bottom: 0;
+    }
+  }
+
+  em {
+    font-size: rem-calc(11);
+  }
+}
+.button.tiny {
+  margin-left: .5em;
+  margin-right: .5em;
+}
+.info {
+  .columns.small-4 {
+    text-align: center;
+  }
+}
+
+
+// Building details right aside
 .right {
   width: +grid-calc(6, 12);
   z-index: 99;
@@ -53,63 +238,13 @@
   margin-left: +grid-calc(6, 12)*-1;
 }
 
-.tabs-content {
-  background: $white;
-}
-
-
-// Landlords
-.landlords-wrapper {
-  width: 100%;
-  overflow: hidden;
-
-  .landlords {
-    position: absolute;
-    z-index: 100;
-
-    .rs-carousel-mask {
-      height: 300px;
-    }
-
-    ul {
-      .landlord {
-        margin-right: 20px;
-        list-style: none;
-      }
-    }
-
-    
-  }
-}
-
-// Info box
-h4 {
-  font-weight: bold;
-}
-.num {
-  color: $orange;
-  font-size: rem-calc(26);
-  line-height: 1em;
-  font-weight: bold;
-}
-.button.tiny {
-  margin-left: .5em;
-  margin-right: .5em;
-}
-.info {
-  .columns.small-4 {
-    text-align: center;
-  }
-}
-.results .row:nth-child(odd) {
-  background-color: $off-white;
-}
-
-
-// Building details aside
 aside {
   .row.building-header {
     margin: 20px 0;
+  }
+
+  .tabs-content {
+    background: $white;
   }
 
   .chart {

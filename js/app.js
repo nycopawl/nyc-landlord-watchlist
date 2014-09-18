@@ -20,41 +20,113 @@ angular.module('map', [
   'map.directives',
   'map.controllers',
   'ngSanitize',
-  'ngRoute',
-  'mm.foundation',
+  'ui.router',
   'angularCharts'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider
-    .when('/landlords', {
-      templateUrl: 'partials/landlords.html', 
+config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  
+
+  // For any unmatched url, send to /route1
+  $urlRouterProvider.otherwise("/landlords")
+  
+  $stateProvider
+    .state('landlords', {
+        //abstract: true,
+        url: "/landlords",
+        templateUrl: "partials/landlords.html",
+        controller: 'landlords'
+    })
+      .state('landlords.landlord', {
+          url: "/:landlordId",
+          templateUrl: "partials/landlord.html",
+          controller: 'landlord'
+      })
+        .state('landlords.landlord.building', {
+          url: "/:buildingId",
+          templateUrl: "partials/building.html",
+          controller: 'building'
+        })
+
+    .state('buildings', {
+        url: "/buildings/:boroughId",
+        templateUrl: "partials/buildings.html",
+        controller: 'buildings'
+    })
+      .state('buildings.building', {
+          url: "/:buildingId",
+          templateUrl: "partials/building.html",
+          controller: 'building'
+      })
+
+  /*
+  $routeSegmentProvider.options.autoLoadTemplates = true;
+
+  $routeSegmentProvider
+    
+    .when('/landlords', 'landlords')
+    .when('/landlords/:landlord', 'landlords.landlord')
+    .when('/landlords/:landlord/:building', 'landlords.landlord.building')
+
+    .when('/buildings', 'buildings')
+    .when('/buildings/:borough', 'buildings.borough')
+    .when('/buildings/:borough/:building', 'buildings.borough.building')
+
+
+    .segment('landlords', {
+      default: true,
+      templateUrl: 'partials/landlords.html',
       controller: 'landlords'
     })
-    .when('/buildings', {
-      redirectTo: '/buildings/all'
+
+    .within()
+          
+      .segment('landlord', {
+        default: true,
+        templateUrl: 'partials/landlord.html',
+        controller: 'landlord'
+      })
+
+      .within()
+          
+        .segment('building', {
+          default: true,
+          templateUrl: 'partials/building.html',
+          controller: 'building'
+        })
+
+      .up()
+
+    .up()
+
+
+    .segment('buildings', {
+      templateUrl: 'partials/buildings.html',
+      controller: 'buildings'
     })
-    .when('/buildings/:borough', {
-      controller: 'buildings',
-      templateUrl: 'partials/buildings.html'
-      /*,
-      resolve: {
-        borough: 'all'
-      }*/
-    })
-    .when('/buildings/:borough/:building', {
-      controller: 'buildings',
-      templateUrl: 'partials/buildings.html'
-      /*,
-      resolve: {
-        borough: 'all'
-      }*/
-    })
-    .otherwise({
-      redirectTo: '/landlords'
-    });
+
+    .within()
+          
+      .segment('borough', {
+        default: true,
+        templateUrl: 'partials/buildings.html',
+        controller: 'buildings'
+      })
+
+      .within()
+          
+        .segment('building', {
+          default: true,
+          templateUrl: 'partials/building.html',
+          controller: 'building'
+        })
+
+      .up()
+
+    .up();
+
+
+  $routeProvider.otherwise({redirectTo: '/landlords'}); 
+
+  */
 }]);
 
-
-var OffCanvasDemoCtrl = function ($scope) {
-
-};

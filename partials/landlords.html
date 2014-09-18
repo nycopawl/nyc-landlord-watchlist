@@ -1,13 +1,38 @@
 <div class="landlords-wrapper">
+  <div class="hero min-hide">
+    <h1>The 100 Worst Landlords</h1>
+    <div class="buttons right">
+      <a href="#" ng-click="locate()" class="button tiny"><i class="fa fa-location-arrow"></i> Buildings Near you</a>
+      <a href="#" ng-click="search()" class="button tiny"><i class="fa fa-search"></i> Search an Address</a>
+    </div>
+    <h3>In New York City</h3>
+  </div>
   <div class="rs-carousel landlords">
-      <ul landlord-carousel>
-        <li ng-repeat="landlord in landlords" class="landlord panel">
-          <img src="http://placehold.it/225x170&amp;text=Image">
-          <div>
-            {{landlord.officer}}
-            <p>{{landlord.num}}</p>
+    <ul landlord-carousel>
+      <li ng-repeat="landlord in landlords" class="landlord panel" ng-click="goLandlord(landlord.LandlordId)">
+        <img src="img/landlords/landlord-{{landlord.LandlordId}}.jpg" alt="Google StreetView Image @copy Google" width="225" height="170">
+        <div>
+          <h4 class="min-hide">{{landlord.org}}</h4>
+          <h5 class="max-hide">{{landlord.org}}</h5>
+          <h5 class="min-hide">{{landlord.officer}}, <small>HEAD OFFICER</small></h5>
+          <div class="row min-hide boxes">
+            <div class="columns small-6">
+              <div class="panel">
+                <div class="num">{{landlord.num}}</div>
+                <div><em>violations</em></div>
+              </div>
+            </div>
+            <div class="columns small-6">
+              <div class="panel">
+                <div class="num red">{{landlord.A_UNITS + landlord.B_UNITS}}</div>
+                <div><em>units in {{landlord.buildings}} buildings</em></div>
+              </div>
+            </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
+
+<div ui-view></div>

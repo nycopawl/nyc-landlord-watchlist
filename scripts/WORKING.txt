@@ -28,6 +28,23 @@ mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --l
 
 
 
+
+# Pull in lat lng data from Google spreadsheets
+drop table if exists 2014_buildings_addresses;
+create table 2014_buildings_addresses (
+  BuildingID INT(10) ,
+  full_address VARCHAR(156) , 
+  lng FLOAT(8),
+  lat FLOAT(8),
+  PRIMARY KEY `BuildingID` (`BuildingID`)
+);
+
+# CLI
+cd /var/lib/mysql/working/2014/
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2014 "/var/lib/mysql/working/2014/2014_buildings_addresses.csv"
+
+
+
 # mysql steps for data aggregation
 create database watchlist2014;
 use watchlist2014;
@@ -300,6 +317,8 @@ create table 2014_buildings_all (
   officer varchar(256), 
   org varchar(128),
   exclude INT(2),
+  lat FLOAT(8),
+  lng FLOAT(8),
   PRIMARY KEY `BuildingID` (`BuildingID`)
 );
 
@@ -319,10 +338,12 @@ insert into 2014_buildings_all (
   b,
   c,
   i,
-  exclude
+  exclude,
+  lat,
+  lng
 )
 select
-  BuildingID, 
+  b.BuildingID, 
   Boro,
   HouseNumber,
   LowHouseNumber,
@@ -337,8 +358,11 @@ select
   b,
   c,
   i,
-  0
-FROM 2014_buildings;
+  0,
+  a.lat,
+  a.lng
+FROM 2014_buildings b
+LEFT JOIN 2014_buildings_addresses a on a.BuildingID = b.BuildingID;
 
 
 
@@ -406,6 +430,8 @@ create table 2014_buildings_watchlist (
   officer varchar(256), 
   org varchar(128),
   exclude INT(2),
+  lat FLOAT(8),
+  lng FLOAT(8),
   PRIMARY KEY `BuildingID` (`BuildingID`)
 );
 insert into 2014_buildings_watchlist
@@ -414,22 +440,16 @@ FROM 2014_buildings_all
 where ((A_UNITS+B_UNITS >= 35 and score >= 2) or (A_UNITS+B_UNITS < 35 and score >= 3)) AND A_UNITS+B_UNITS >2;
 
 
-
+# Exclude buildings
 update 2014_buildings_watchlist b set b.exclude=(select count(*) from 2014_buildings_exclude e where e.HouseNumber  = b.HouseNumber AND e.StreetName = b.StreetName );
 
-#mv 2014_FOILVIOL.txt 2014_FOILVIOL4.txt 
 
-
-
-
-
+# Do the previous years
 update 2014_buildings_watchlist b set num2012=(select count(*) from 2012_violations v where b.BuildingId  = v.BLDG_ID );
 
 update 2014_buildings_watchlist b set num2013=(select (count(*) * 1.33) from 2013_violations v where b.BuildingId  = v.BLDG_ID );
 
 update 2014_buildings_watchlist b set num2014=(select count(*) from 2014_violations v where b.BuildingId  = v.BuildingId );
-
-
 
 
 
@@ -495,7 +515,6 @@ select
   officer, 
   org
 FROM 2014_buildings_watchlist
-where exclude = 0
 group by officer;
 
 update 2014_landlords_watchlist set score=(b+c)/(A_UNITS+B_UNITS);

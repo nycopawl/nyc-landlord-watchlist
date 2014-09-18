@@ -1,0 +1,63 @@
+
+<aside class="right-off-canvas-menu">
+  <ul class="off-canvas-list">
+      <li><a href="#/buildings/{{borough.id}}">In depth</a></li>
+  </ul>
+
+  <div class="row building-header">
+    <div class="columns small-3">
+      <img src="http://maps.googleapis.com/maps/api/streetview?size=150x122&amp;location={{building.astr}}, {{building.boro}} NY {{building.azip}}&amp;sensor=false" height="150" width="250" alt="Google StreetView Image, copyright Google">
+    </div>
+    <div class="columns small-5">
+      <h4><a ng-click="selectBuilding(building.id)">{{building.astr}}</a></h4>
+      <h5>{{building.org}}</h5>
+      <h6 ng-if="building.officer">{{building.officer}}, Head Officer</h6>
+    </div>
+    <div class="columns small-3">
+      <div class="num">{{building.num}}</div>
+      <div><em>violations</em></div>
+      <div class="change">@todo change</div>
+      <div><em>since Aug. 2013</em></div>
+    </div>
+
+
+  </div>
+
+
+  <div class="tabs-wrapper">
+    <dl class="tabs">
+      <dd ng-class="{active: activeTab == 'charts'}">
+        <a ng-click="selectTab('charts')">Charts</a>
+      </dd>
+      <dd ng-class="{active: activeTab == 'list'}">
+        <a ng-click="selectTab('list')">Violation List</a>
+      </dd>
+    </dl>
+
+    <div class="tabs-content charts">
+      <div class="row">
+        <div class="columns medium-6">
+          <div
+            data-ac-chart="'pie'" 
+            data-ac-data="charts.typeData" 
+            data-ac-config="charts.typeConfig" 
+            class="chart">
+          </div>
+        </div>
+        <div class="columns medium-6">
+          <div
+            data-ac-chart="'line'" 
+            data-ac-data="charts.yearData" 
+            data-ac-config="charts.yearConfig" 
+            class="chart">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content violations hidden">
+      <h3></h3>
+      <div chart-class>Loading...</div>
+    </div>
+  </dl>
+</aside>
