@@ -8,18 +8,26 @@ $left-bar-width-margin: grid-calc(4, 12);
 $margin-left-width: rem-calc(70);
 
 h1,
-h2 {
-  font-family: $stencil;
-  text-transform: uppercase;
+body {
+  //font-family: $stencil;
+  text-transform: uppercase !important;
+  //font-weight: 400;
 }
-.hero h1,
-h2 {
-  line-height: 1em !important;
+h4 {
+  margin-bottom: 0;
 }
 
 
 .hidden {
   display: none;
+}
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
 }
 
 #wrapper,
@@ -40,6 +48,10 @@ h2 {
 
 // top nav
 .top-bar {
+  ul li>a {
+    text-transform: uppercase !important;
+  }
+
   &.top-bar-1 {
     &,
     a{
@@ -57,12 +69,11 @@ h2 {
 
   &.top-bar-2 {
     a {
-      font-size: rem-calc(16) !important;
-      font-weight: bold;
+      font-size: rem-calc(28) !important;
     }
 
     .name h1 a {
-      font-size: rem-calc(24) !important;
+      font-size: rem-calc(32) !important;
     }
   }
 }
@@ -135,7 +146,7 @@ h2 {
     }
 
     .right {
-      overflow: visible;
+      overflow-y: hidden;
       padding: 5px;
 
       .button {
@@ -234,15 +245,12 @@ h2 {
 
 
 // Info box
-h4 {
-  font-weight: bold;
-}
-
 .num {
   color: $orange;
   font-size: rem-calc(26);
   line-height: 1em;
-  font-weight: bold;
+  font-family: $stencil;
+  font-size: $h3-font-size;
 
   &.red {
     color: $red;
@@ -259,6 +267,10 @@ h4 {
       content: "\f063";
     }
   }
+
+  &.blue {
+    color: $blue-dark;
+  }
 }
 .boxes {
   text-align: center;
@@ -273,7 +285,7 @@ h4 {
   }
 
   em {
-    font-size: rem-calc(11);
+    font-size: rem-calc(10);
   }
 }
 .button.tiny {

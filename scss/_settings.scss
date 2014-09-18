@@ -123,22 +123,22 @@ $alert-color: $orange;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: $stencil;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
-// $header-line-height: 1.4;
+$header-line-height: .8em;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(54);
+$h1-font-size: rem-calc(100);
 $h2-font-size: rem-calc(37);
 // $h3-font-size: rem-calc(27);
-$h4-font-size: rem-calc(16);
-$h5-font-size: rem-calc(14);
-$h6-font-size: rem-calc(13);
+$h4-font-size: rem-calc(24);
+$h5-font-size: rem-calc(22);
+$h6-font-size: rem-calc(18);
 
 // We use these to control header size reduction on small screens
 // $h1-font-reduction: rem-calc(10) !default;
@@ -357,12 +357,12 @@ $h6-font-size: rem-calc(13);
 // $button-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
-// $button-font-family: $body-font-family;
+$button-font-family: $stencil;
 // $button-font-color: #fff;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
+$button-font-med: $h4-font-size;
 // $button-font-lrg: rem-calc(20);
 // $button-font-weight: $font-weight-normal;
 // $button-font-align: center;
@@ -1219,7 +1219,7 @@ $topbar-height: 60px;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
-$topbar-title-font-size: rem-calc(24);
+$topbar-title-font-size: rem-calc(32);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
@@ -1236,14 +1236,14 @@ $topbar-title-font-size: rem-calc(24);
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(20);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: #555555;
 // $topbar-link-bg-hover: #272727;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-font-family: $stencil;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: $topbar-height / 3;
 

@@ -16,16 +16,22 @@
           <h5 class="max-hide">{{landlord.org}}</h5>
           <h5 class="min-hide">{{landlord.officer}}, <small>HEAD OFFICER</small></h5>
           <div class="row min-hide boxes">
-            <div class="columns small-6">
+            <div class="columns small-4">
               <div class="panel">
                 <div class="num">{{landlord.num}}</div>
                 <div><em>violations</em></div>
               </div>
             </div>
-            <div class="columns small-6">
+            <div class="columns small-4">
+              <div class="panel">
+                <div class="num blue">{{landlord.buildings}}</div>
+                <div><em>buildings</em></div>
+              </div>
+            </div>
+            <div class="columns small-4">
               <div class="panel">
                 <div class="num red">{{landlord.A_UNITS + landlord.B_UNITS}}</div>
-                <div><em>units in {{landlord.buildings}} buildings</em></div>
+                <div><em>units</em></div>
               </div>
             </div>
           </div>
