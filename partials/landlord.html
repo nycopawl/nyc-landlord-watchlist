@@ -1,9 +1,9 @@
 <div class="left">
   <div class="row header">
     <div>
-      <h3>{{landlord.org}}</h3>
-      <h5>{{landlord.officer}}, <small>HEAD OFFICER</small></h5>
-       <div class="row">
+      <h2>{{landlord.org}}</h2>
+      <h4>{{landlord.officer}}, <small>HEAD OFFICER</small></h4>
+       <div class="row boxes">
         <div class="columns small-6">
           <div class="panel">
             <div class="num">{{landlord.num}}</div>
@@ -21,7 +21,7 @@
   </div>
 
   <h3>BUILDINGS</h3>
-  <ol left-sidebar class="results">
+  <ul left-sidebar class="results">
     <li ng-repeat="building in buildings" ng-mouseover="mouseoverBuilding(building.id)" ng-mouseout="mouseoutBuilding(building.id)">
       <div class="row info">
         <div class="columns small-8">
@@ -36,7 +36,7 @@
       </div>
       
     </li>
-  </ol>
+  </ul>
 </div>
 
 <div ui-view></div>

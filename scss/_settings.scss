@@ -59,7 +59,7 @@ $body-font-weight: $font-weight-normal;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #008CBA;
+$primary-color: $blue-dark;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -133,8 +133,8 @@ $primary-color: #008CBA;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
-// $h2-font-size: rem-calc(37);
+$h1-font-size: rem-calc(54);
+$h2-font-size: rem-calc(37);
 // $h3-font-size: rem-calc(27);
 $h4-font-size: rem-calc(16);
 $h5-font-size: rem-calc(14);
