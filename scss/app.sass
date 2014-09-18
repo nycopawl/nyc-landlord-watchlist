@@ -7,14 +7,24 @@ $left-bar-width: grid-calc(3, 12);
 $left-bar-width-margin: grid-calc(4, 12);
 $margin-left-width: rem-calc(70);
 
-h1,
 body {
-  //font-family: $stencil;
   text-transform: uppercase !important;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  //font-family: $stencil;
+  letter-spacing: 1px;
   //font-weight: 400;
 }
-h4 {
+.panel h4 {
   margin-bottom: 0;
+}
+.top-bar,
+.button {
+  letter-spacing: 1px;
 }
 
 
@@ -100,6 +110,10 @@ h4 {
     img {
       margin: 0 auto;
     }
+
+    .boxes {
+      margin: 1em 0;
+    }
   }
 
   ul {
@@ -176,7 +190,7 @@ h4 {
       .landlord {
         margin-right: 20px;
         list-style: none;
-        width: 250px;
+        width: 275px;
         height: 320px;
         float: left;
 
@@ -286,6 +300,7 @@ h4 {
 
   em {
     font-size: rem-calc(10);
+    font-style: normal;
   }
 }
 .button.tiny {
