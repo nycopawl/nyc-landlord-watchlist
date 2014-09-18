@@ -61,7 +61,7 @@ $body-font-weight: $font-weight-normal;
 // We use these as default colors throughout
 $primary-color: $blue-dark;
 // $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
+$alert-color: $orange;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
@@ -1210,16 +1210,16 @@ $sub-nav-active-cursor: default;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: $blue-topnav2;
+//$topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 60px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-font-size: rem-calc(24);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
