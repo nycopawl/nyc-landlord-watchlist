@@ -91,10 +91,7 @@ h6 {
 
 // Left bar
 .left {
-  width: +grid-calc(3, 12);
-  min-width: 400px;
   z-index: 99;
-  overflow-y: scroll;
 
   h3 {
     padding: 0 rem-calc(10);
@@ -190,7 +187,7 @@ h6 {
       .landlord {
         margin-right: 20px;
         list-style: none;
-        width: 275px;
+        width: 285px;
         height: 320px;
         float: left;
 
@@ -359,4 +356,27 @@ aside {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: $blue-dark;
+}
+
+
+
+
+// Media queries
+
+@media #{$small-only} {
+  .left {
+    height: 582px;
+    position: relative;
+    width: 100%;
+    margin-top: 80%;
+    overflow-y: visible;
+  }
+}
+
+@media #{$medium-up} {
+  .left {
+    width: +grid-calc(3, 12);
+    min-width: 400px;
+    overflow-y: scroll;
+  }
 }
