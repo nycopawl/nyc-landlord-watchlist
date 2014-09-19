@@ -34,10 +34,12 @@ h6 {
 
 .fleft {
   float: left;
+  margin-right: 10px;
 }
 
 .fright {
   float: right;
+  margin-left: 10px;
 }
 
 #wrapper,
@@ -118,10 +120,19 @@ h6 {
 
     li {
       list-style:none;
-      padding: rem-calc(5) 0;
+      padding: rem-calc(10) 0;
 
-      &:nth-child(even) {
+      &:nth-child(odd) {
         background-color: $off-white;
+      }
+
+      &:hover {
+        cursor: pointer;
+        cursor: hand;
+      }
+
+      h4 {
+        margin-top: rem-calc(10)
       }
 
       .small-4 {
@@ -148,7 +159,7 @@ h6 {
     position: absolute;
     margin-top: 2em;
     margin-left: $margin-left-width;
-    width: rem-calc(1000);
+    width: rem-calc(1100);
     max-width: 100%;
     z-index: 1000;
 
@@ -259,28 +270,28 @@ h6 {
 .num {
   color: $orange;
   font-size: rem-calc(26);
-  line-height: 1em;
+  line-height: .5em;
+  padding-top: .3em;
   font-family: $stencil;
   font-size: $h3-font-size;
 
-  &.red {
+  &.red,
+  &.up {
     color: $red;
-
-    &.arrow.before{
-      content: "\f063";
-    }
   }
 
-  &.green {
+  &.green,
+  &.down {
     color: $green;
-
-    &.arrow.before{
-      content: "\f063";
-    }
   }
 
   &.blue {
     color: $blue-dark;
+  }
+
+  .fa {
+    font-size: rem-calc(20);
+    line-height: .5em;
   }
 }
 .boxes {
@@ -294,15 +305,15 @@ h6 {
       margin-bottom: 0;
     }
   }
-
-  em {
-    font-size: rem-calc(10);
-    font-style: normal;
-  }
 }
 .button.tiny {
   margin-left: .5em;
   margin-right: .5em;
+  margin-bottom: 0;
+}
+em {
+  font-size: rem-calc(10);
+  font-style: normal;
 }
 .info {
   .columns.small-4 {
@@ -310,6 +321,11 @@ h6 {
   }
 }
 
+
+// Popups 
+.popup-full {
+  width: 280px;
+}
 
 // Building details right aside
 .right {
@@ -328,6 +344,9 @@ h6 {
 aside {
   .row.building-header {
     margin: 20px 0;
+    .boxes {
+      max-width: rem-calc(400)
+    }
   }
 
   .tabs-content {
@@ -335,8 +354,8 @@ aside {
   }
 
   .chart {
-    width: 350px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
   }
 }
 

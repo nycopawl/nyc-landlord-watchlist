@@ -1,33 +1,53 @@
 
 <aside class="right-off-canvas-menu">
-  <ul class="off-canvas-list">
-      <li><a href="#/buildings/{{borough.id}}">In depth</a></li>
-  </ul>
+  <a href="#/buildings/{{borough.id}}" class="right"><i class="fa fa-close"></i> Close</a>
 
   <div class="row building-header">
     <div class="columns small-3">
-      <img src="http://maps.googleapis.com/maps/api/streetview?size=150x122&amp;location={{building.astr}}, {{building.boro}} NY {{building.azip}}&amp;sensor=false" height="150" width="250" alt="Google StreetView Image, copyright Google">
+      <a href="http://maps.google.com/maps?q={{building.astr}}, {{building.boro}} NY {{building.azip}}&layer=c&cbll={{building.lat}},{{building.lng}}" target="_blank" title="View in Google StreetView">
+        <img src="http://maps.googleapis.com/maps/api/streetview?size=250x150&amp;location={{building.astr}}, {{building.boro}} NY {{building.azip}}&amp;sensor=false" height="150" width="250" alt="Google StreetView Image, copyright Google" title="View in Google StreetView">
+      </a>
     </div>
-    <div class="columns small-5">
-      <h4><a ng-click="selectBuilding(building.id)">{{building.astr}}</a></h4>
-      <h5>{{building.org}}</h5>
-      <h6 ng-if="building.officer">{{building.officer}}, Head Officer</h6>
-    </div>
-    <div class="columns small-3">
-      <div class="num">{{building.num}}</div>
-      <div><em>violations</em></div>
-      <div class="change">@todo change</div>
-      <div><em>since Aug. 2013</em></div>
-    </div>
+    <div class="columns small-9">
+      <h2><a ng-click="selectbuilding(building.id)">{{building.astr}}</a></h2>
+      <h4>{{building.org}}</h4>
+      <h5 ng-if="building.officer">{{building.officer}}, Head Officer</h5>
 
+      <div class="row boxes">
+        <!--<div class="columns small-4">
+          <div class="panel">
+            <div class="num blue">{{building.units}}</div>
+            <div><em>units</em></div>
+          </div>
+        </div>-->
+        <div class="columns small-6">
+          <div class="panel">
+            <div class="num">{{building.num}}</div>
+            <div><em>violations</em></div>
+          </div>
+        </div>
+        <div class="columns small-6">
+          <div class="panel">
+            <div ng-class="building.delta > 0 ? 'num red' : 'num green'">
+              <i class="fa fa-arrow-{{building.delta > 0 ? 'up' : 'down'}}"></i>
+              {{building.delta > 0 ? building.delta : -building.delta}}
+            </div>
+            <div><em>since 8/2013</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
 
   <div class="tabs-wrapper">
     <dl class="tabs">
-      <dd ng-class="{active: activeTab == 'charts'}">
-        <a ng-click="selectTab('charts')">Charts</a>
+      <dd ng-class="{active: activeTab == 'history'}">
+        <a ng-click="selectTab('charts')">Watchlist History</a>
+      </dd>
+      <dd ng-class="{active: activeTab == 'type'}">
+        <a ng-click="selectTab('charts')">Violation Breakdown</a>
       </dd>
       <dd ng-class="{active: activeTab == 'list'}">
         <a ng-click="selectTab('list')">Violation List</a>
@@ -36,28 +56,9 @@
 
     <div class="tabs-content charts">
       <div class="row">
-        <div class="columns medium-6">
-          <div
-            data-ac-chart="'pie'" 
-            data-ac-data="charts.typeData" 
-            data-ac-config="charts.typeConfig" 
-            class="chart">
-          </div>
-        </div>
-        <div class="columns medium-6">
-          <div
-            data-ac-chart="'line'" 
-            data-ac-data="charts.yearData" 
-            data-ac-config="charts.yearConfig" 
-            class="chart">
-          </div>
-        </div>
+        <div ui-view></div>
       </div>
     </div>
 
-    <div class="tabs-content violations hidden">
-      <h3></h3>
-      <div chart-class>Loading...</div>
-    </div>
   </dl>
 </aside>

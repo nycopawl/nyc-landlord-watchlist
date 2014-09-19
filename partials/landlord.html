@@ -2,29 +2,37 @@
   <div class="row header">
     <div>
       <h2>{{landlord.org}}</h2>
-      <h4>{{landlord.officer}}, <small>HEAD OFFICER</small></h4>
+      <h4>{{landlord.officer}}, HEAD OFFICER</h4>
        <div class="row boxes">
-        <div class="columns small-6">
+        <div class="columns small-4">
           <div class="panel">
             <div class="num">{{landlord.num}}</div>
             <div><em>violations</em></div>
           </div>
         </div>
-        <div class="columns small-6">
+        <div class="columns small-4">
+          <div class="panel">
+            <div class="num blue">{{landlord.buildings}}</div>
+            <div><em>buildings</em></div>
+          </div>
+        </div>
+        <div class="columns small-4">
           <div class="panel">
             <div class="num red">{{landlord.A_UNITS + landlord.B_UNITS}}</div>
-            <div><em>units in {{landlord.buildings}} buildings</em></div>
+            <div><em>units</em></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <h3>BUILDINGS</h3>
+  <div class="row header"><h2>BUILDINGS</h2></div>
+
   <ul left-sidebar class="results">
     <li ng-repeat="building in buildings" ng-mouseover="mouseoverBuilding(building.id)" ng-mouseout="mouseoutBuilding(building.id)">
       <div class="row info">
         <div class="columns small-8">
+          <img class="fleft" src="http://maps.googleapis.com/maps/api/streetview?size=100x100&amp;location={{building.astr}}, {{building.boro}} NY {{building.azip}}&amp;sensor=false" height="100" width="100" alt="Google StreetView Image, copyright Google" title="Google StreetView Image, copyright Google">      
           <h4><a ng-click="selectBuilding(building.id)">{{building.astr}}</a></h4>
           <h5>{{building.boro}}</h5>
         </div>

@@ -10,10 +10,10 @@
   <div class="rs-carousel landlords">
     <ul landlord-carousel>
       <li ng-repeat="landlord in landlords" class="landlord panel" ng-click="goLandlord(landlord.LandlordId)">
-        <img src="img/landlords/landlord-{{landlord.LandlordId}}.jpg" alt="Google StreetView Image @copy Google" width="225" height="170">
+        <img src="img/landlords/landlord-{{landlord.LandlordId}}.jpg" alt="Google StreetView Image @copy Google" title="Google StreetView Image @copy Google" width="225" height="170">
         <div>
           <h4 class="min-hide">{{landlord.org}}</h4>
-          <h5 class="max-hide">{{landlord.org}}</h5>
+          <h6 class="max-hide">{{landlord.org}}</h6>
           <h5 class="min-hide">{{landlord.officer}}, HEAD OFFICER</h5>
           <div class="row min-hide boxes">
             <div class="columns small-4">

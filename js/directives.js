@@ -17,11 +17,16 @@ angular.module('map.directives', [])
         var map = L.mapbox.map('map', 'albatrossdigital.map-yaq188c8')
           .setView(config.boroughs.all, 10);
         //L.control.fullscreen().addTo(map);
-        L.control.locate().addTo(map);
-        var geocoder = L.mapbox.geocoderControl('mapbox.places-address-v1');
+        window.locate = L.control.locate().addTo(map);
+        window.geocoder = L.mapbox.geocoderControl('mapbox.places-address-v1');
         //http://maps.googleapis.com/maps/api/geocode/json?address={query}
         //geocoder.setID('map');
         map.addControl(geocoder);
+        var geocoded = function(e) {
+          document.location.hash = '/buildings';
+        }
+        geocoder.on('select', geocoded);
+        geocoder.on('autoselect', geocoded);
 
         // The visible tile layer
         L.mapbox.tileLayer('http://maps.albatrossdigital.com:8888/v2/watchlist2014.json').addTo(map);
@@ -29,7 +34,6 @@ angular.module('map.directives', [])
         // Load interactivity data into the map with a gridLayer
         var gridLayer = L.mapbox.gridLayer('http://maps2.albatrossdigital.com:8888/v2/watchlist2014_7179e9.json');
         gridLayer.addTo(map);
-
 
         // And use that interactivity to drive a control the user can see.
         var gridControl = L.mapbox.gridControl(gridLayer, {
@@ -39,7 +43,7 @@ angular.module('map.directives', [])
         gridLayer.on('click', function(e) {
           console.log(e);
             if (e.data != undefined && e.data) {
-              if (window.map.getZoom() < 14 && window.map.getZoom() > 11) {
+              if (window.map.getZoom() < 14 && window.map.getZoom() > 1) {
                 window.map.setView(e.latLng, 14, {animate: true});
               }
               else {
@@ -48,8 +52,7 @@ angular.module('map.directives', [])
             }
         });
 
-        console.log(window.gridLayer);
-
+        window.markerGroup = L.layerGroup().addTo(map);
 
         window.map = map;
         window.gridLayer = gridLayer;
@@ -84,6 +87,38 @@ angular.module('map.directives', [])
       }
     };
   }])
+  
+  // @todo: doesnt work
+  /*.directive('change', [function() {
+    return {
+      restrict: 'C',
+      template: '<div class="change arrow {{color}}">{{num}}</div>',
+      link: function(scope, elm, attrs) { 
+        console.log(scope);
+        scope.color = 'red';
+      }
+    };
+  }])
+  // @todo: doesnt work
+  /*
+  .directive("streetview", function() {
+    var linkFunction = function(scope, element, attributes) {
+      scope.src = scope.filename != undefined && scope.filename != '' ? scope.filename : 'http://maps.googleapis.com/maps/api/streetview?size='+ scope.width +'x'+ scope.height +'&location='+ scope.address +'&sensor=false';
+      scope.title = "Google StreetView Image @copy Google";
+      console.log(scope);
+    };
+    return {
+      restrict: "C",
+      template: '<div>jhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkj<img src="{{src}}" width="{{width}}" width="{{width}}" alt="{{title}}" title="{{title}}" /></div>',
+      link: linkFunction,
+      scope: {
+        width: "@width",
+        height: "@height",
+        street:'=street'
+      }
+    };
+  });
+  */
   /*.directive('chartClass', [function() {
     return {
       restrict: 'A',

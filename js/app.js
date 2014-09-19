@@ -48,85 +48,26 @@ config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRou
         })
 
     .state('buildings', {
-        url: "/buildings/:boroughId",
-        templateUrl: "partials/buildings.html",
-        controller: 'buildings'
+        url: "/buildings",
+        templateUrl: "partials/buildings-empty.html",
+        //controller: 'buildings'
     })
-      .state('buildings.building', {
-          url: "/:buildingId",
-          templateUrl: "partials/building.html",
-          controller: 'building'
+      .state('buildings.borough', {
+          url: "/:boroughId",
+          templateUrl: "partials/buildings.html",
+          controller: 'buildings'
       })
-
-  /*
-  $routeSegmentProvider.options.autoLoadTemplates = true;
-
-  $routeSegmentProvider
-    
-    .when('/landlords', 'landlords')
-    .when('/landlords/:landlord', 'landlords.landlord')
-    .when('/landlords/:landlord/:building', 'landlords.landlord.building')
-
-    .when('/buildings', 'buildings')
-    .when('/buildings/:borough', 'buildings.borough')
-    .when('/buildings/:borough/:building', 'buildings.borough.building')
-
-
-    .segment('landlords', {
-      default: true,
-      templateUrl: 'partials/landlords.html',
-      controller: 'landlords'
-    })
-
-    .within()
-          
-      .segment('landlord', {
-        default: true,
-        templateUrl: 'partials/landlord.html',
-        controller: 'landlord'
-      })
-
-      .within()
-          
-        .segment('building', {
-          default: true,
-          templateUrl: 'partials/building.html',
-          controller: 'building'
+        .state('buildings.borough.building', {
+            abstract: true,
+            url: "/:buildingId",
+            templateUrl: "partials/building.html",
+            controller: 'building'
         })
+          .state('buildings.borough.building.history', {
+              url: "/history",
+              templateUrl: "partials/building-history.html",
+              controller: 'buildingHistory'
+          })
 
-      .up()
-
-    .up()
-
-
-    .segment('buildings', {
-      templateUrl: 'partials/buildings.html',
-      controller: 'buildings'
-    })
-
-    .within()
-          
-      .segment('borough', {
-        default: true,
-        templateUrl: 'partials/buildings.html',
-        controller: 'buildings'
-      })
-
-      .within()
-          
-        .segment('building', {
-          default: true,
-          templateUrl: 'partials/building.html',
-          controller: 'building'
-        })
-
-      .up()
-
-    .up();
-
-
-  $routeProvider.otherwise({redirectTo: '/landlords'}); 
-
-  */
 }]);
 
