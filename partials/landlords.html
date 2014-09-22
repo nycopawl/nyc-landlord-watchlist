@@ -9,7 +9,7 @@
   </div>
   <div class="rs-carousel landlords">
     <ul landlord-carousel>
-      <li ng-repeat="landlord in landlords" class="landlord panel" ng-click="goLandlord(landlord.LandlordId)">
+      <li ng-repeat="landlord in landlords" ui-sref="landlords.landlord({landlordId: landlord.LandlordId})" ui-sref-active="active" class="landlord panel">
         <img src="img/landlords/landlord-{{landlord.LandlordId}}.jpg" alt="Google StreetView Image @copy Google" title="Google StreetView Image @copy Google" width="225" height="170">
         <div>
           <h4 class="min-hide">{{landlord.org}}</h4>

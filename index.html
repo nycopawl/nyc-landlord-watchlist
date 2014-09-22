@@ -18,7 +18,7 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
 
   <script type='text/javascript' src='./bower_components/d3/d3.min.js'></script> 
-    <script tyspe='text/javascript' src='./bower_components/angular-charts/dist/angular-charts.min.js'></script>
+    <script type='text/javascript' src='./bower_components/angular-google-chart/ng-google-chart.js'></script>
 
 
 
@@ -54,7 +54,7 @@
 
 
   </head>
-<body class="off-canvas-wrap {{class}}"><div class="inner-wrap">
+<body class="off-canvas-wrap {{class}}"  state="{{$state.current.name}}"><div class="inner-wrap">
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -89,12 +89,12 @@
 
     <section class="top-bar-section">
       <ul class="fright">
-        <li><a href="#/landlords">Landlords</a></li>
-        <li><a href="#/buildings/bronx">Bronx</a></li>
-        <li><a href="#/buildings/brooklyn">Brooklyn</a></li>
-        <li><a href="#/buildings/manhattan">Manhattan</a></li>
-        <li><a href="#/buildings/queens">Queens</a></li>
-        <li><a href="#/buildings/staten_island">Staten Island</a></li>
+        <li ui-sref-active="active"><a ui-sref="landlords">Landlords</a></li>
+        <li ui-sref-active="active"><a ui-sref="buildings.borough({boroughId: 'bronx'})">Bronx</a></li>
+        <li ui-sref-active="active"><a ui-sref="buildings.borough({boroughId: 'brooklyn'})">Brooklyn</a></li>
+        <li ui-sref-active="active"><a ui-sref="buildings.borough({boroughId: 'manhattan'})">Manhattan</a></li>
+        <li ui-sref-active="active"><a ui-sref="buildings.borough({boroughId: 'queens'})">Queens</a></li>
+        <li ui-sref-active="active"><a ui-sref="buildings.borough({boroughId: 'staten-island'})">Staten Island</a></li>
       </ul>
     </section>
   </nav>

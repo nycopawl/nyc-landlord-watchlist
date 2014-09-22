@@ -1,17 +1,17 @@
 <div class="left">
   <div class="row header"><h2 class="center">Worst buildings in {{borough.label}}</h2></div>
   <ul left-sidebar class="results">
-    <li ng-repeat="building in buildings" ng-click="clickBuilding(building.id)">
+    <li ng-repeat="building in buildings">
       <div class="row info">
         <div class="columns small-8">
-          <h4 ng-mouseover="mouseoverBuilding(building.id)" ng-mouseout="mouseoutBuilding(building.id)"><a ng-click="selectBuilding(building.id)">{{building.astr}}</a></h4>
+          <h4><a ng-mouseover="mouseoverBuilding(building.id)" ng-mouseout="mouseoutBuilding(building.id)" ng-click="selectBuilding(building.id)">{{building.astr}}</a></h4>
           <h5>{{building.org}}</h5>
           <h6 ng-if="building.officer">{{building.officer}}, HEAD OFFICER</h6>
         </div>
         <div class="columns small-4">
           <div class="num">{{building.num}}</div>
-          <div><em>violations</em>
-          <div><a href="#/buildings/{{borough.id}}/{{building.id}}/history" class="button tiny">See Details</a>
+          <div><em>violations</em></div>
+          <div><a href="#/buildings/{{borough.id}}/{{building.id}}/history" class="button tiny">See Details</a></div>
         </div>
       </div>
       

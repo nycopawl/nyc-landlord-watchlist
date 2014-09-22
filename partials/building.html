@@ -1,6 +1,6 @@
 
 <aside class="right-off-canvas-menu">
-  <a href="#/buildings/{{borough.id}}" class="right"><i class="fa fa-close"></i> Close</a>
+  <a ui-sref="^"  class="right"><i class="fa fa-close"></i> Close</a>
 
   <div class="row building-header">
     <div class="columns small-3">
@@ -43,14 +43,14 @@
 
   <div class="tabs-wrapper">
     <dl class="tabs">
-      <dd ng-class="{active: activeTab == 'history'}">
-        <a ng-click="selectTab('charts')">Watchlist History</a>
+      <dd ui-sref-active="active">
+        <a ui-sref=".history">Watchlist History</a>
       </dd>
-      <dd ng-class="{active: activeTab == 'type'}">
-        <a ng-click="selectTab('charts')">Violation Breakdown</a>
+      <dd ui-sref-active="active">
+        <a ui-sref=".breakdown">Violation Breakdown</a>
       </dd>
-      <dd ng-class="{active: activeTab == 'list'}">
-        <a ng-click="selectTab('list')">Violation List</a>
+      <dd ui-sref-active="active">
+        <a ui-sref=".list">Violation List</a>
       </dd>
     </dl>
 

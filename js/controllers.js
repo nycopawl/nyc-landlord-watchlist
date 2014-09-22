@@ -10,9 +10,9 @@ angular.module('map.controllers', [])
       $scope.$broadcast("landlordsLoaded", {});
     });
 
-    $scope.goLandlord = function(landlordId) {
-      $state.go('landlords.landlord', {landlordId: landlordId});
-    }
+    //$scope.goLandlord = function(landlordId) {
+    //  $state.go('landlords.landlord', {landlordId: landlordId});
+    //}
 
     $scope.search = function() {
       $('.leaflet-control-mapbox-geocoder').addClass('active');
@@ -24,7 +24,7 @@ angular.module('map.controllers', [])
       //document.location.hash = '/buildings';
     }
 
-    $rootScope.class = 'page-landlords';
+    //$rootScope.class = 'page-landlords';
   }])
 
 
@@ -63,7 +63,7 @@ angular.module('map.controllers', [])
 
     });
 
-    $rootScope.class = 'page-landlord';
+    //$rootScope.class = 'page-landlord';
   }])
   
 
@@ -122,7 +122,7 @@ angular.module('map.controllers', [])
       return filterFilter($scope.buildings, {id: id})[0];
     }
 
-    $rootScope.class = 'page-buildings';
+    //$rootScope.class = 'page-buildings';
   }])
 
 
@@ -137,57 +137,66 @@ angular.module('map.controllers', [])
       //$state.go('landlords.landlord', {landlordId: landlordId});
     }
 
-    $rootScope.class = 'page-building move-left';
-  }])
-
-
-  .controller('buildingHistory', ['$scope', '$http', '$stateParams', '$timeout', 'filterFilter', function($scope, $http, $stateParams, $timeout, filterFilter) {
-    console.log($scope);
-    
-    $timeout(function (){
-      var building = $scope.$parent.building;
-
-      $scope.config = {
-        title: 'Violations',
-        tooltips: true,
-        labels: false,
-        colors: ['red'],
-      };
-
-      /*$scope.data = {
-        data: [{
-          x: "2012",
-          y: [parseInt(building.num2012)]
-        }, {
-          x: "2013",
-          y: [building.num2013]
-        }, {
-          x: "2014",
-          y: [building.num2014]
-        }]
-      };*/
-
-      console.log($scope.data)
-    });
-
-     $scope.data = {
-    data: [{
-      x: "Laptops",
-      y: [100, 500, 0],
-      tooltip: "this is tooltip"
-    }, {
-      x: "Desktops",
-      y: [300, 100, 100]
-    }, {
-      x: "Mobiles",
-      y: [351]
-    }, {
-      x: "Tablets",
-      y: [54, 0, 879]
-    }]
-  };
+    $scope.close = function() {
+      $state.go('^');
+    }
 
     //$rootScope.class = 'page-building move-left';
   }])
 
 
+  .controller('buildingHistory', ['$scope', '$http', '$stateParams', '$timeout', 'filterFilter', function($scope, $http, $stateParams, $timeout, filterFilter) {
+    $timeout(function (){
+      var building = $scope.$parent.building;
+      $scope.chartObject = {};
+        $scope.chartObject.data = {"cols": [
+          {id: "t", label: "Year", type: "string"},
+          {id: "s", label: "Violations", type: "number"}
+        ], "rows": [
+          {c: [
+              {v: "2012"},
+              {v: building.num2012},
+          ]},
+          {c: [
+              {v: "2013"},
+              {v: building.num2013}
+          ]},
+          {c: [
+              {v: "2014"},
+              {v: building.num2014},
+          ]}
+      ]};
+      $scope.chartObject.type = 'BarChart';
+    });
+  }])
+
+
+  .controller('buildingBreakdown', ['$scope', '$http', '$stateParams', '$timeout', 'filterFilter', function($scope, $http, $stateParams, $timeout, filterFilter) {
+    $timeout(function (){
+      var building = $scope.$parent.building;
+      $scope.chartObject = {};
+        $scope.chartObject.data = {"cols": [
+          {id: "t", label: "Class", type: "string"},
+          {id: "s", label: "Violationz", type: "number"}
+      ], "rows": [
+        {c: [
+            {v: "Class A"},
+            {v: parseInt(building.a)},
+        ]},
+        {c: [
+            {v: "Class B"},
+            {v: parseInt(building.b)}
+        ]},
+        {c: [
+            {v: "Class C"},
+            {v: parseInt(building.c)},
+        ]},
+        {c: [
+            {v: "Class I"},
+            {v: parseInt(building.i)}
+        ]}
+      ]};
+      $scope.chartObject.type = 'PieChart';
+      console.log($scope.chartObject);
+    });
+  }])

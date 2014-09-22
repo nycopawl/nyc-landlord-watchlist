@@ -142,13 +142,35 @@ h6 {
   }
 }
 
+[state^="buildings.borough.building.history"],
+[state^="buildings.borough.building.breakdown"],
+[state^="buildings.borough.building.violations"],
+[state^="landlords.landlord.building.history"],
+[state^="landlords.landlord.building.breakdown"],
+[state^="landlords.landlord.building.violations"] {
+  & >.inner-wrap {
+    -ms-transform: translate(-70%, 0);
+    -webkit-transform: translate3d(-70%, 0, 0);
+    -moz-transform: translate3d(-70%, 0, 0);
+    -ms-transform: translate3d(-70%, 0, 0);
+    -o-transform: translate3d(-70%, 0, 0);
+    transform: translate3d(-70%, 0, 0);
+  }
+
+  .landlord-wrapper,
+  .hero {
+    display: none;
+  }
+}
+
+/*
 .left-enabled #wrapper {
   #map {
     width: +grid-calc(12, 12) - $left-bar-width;
     margin-left: $left-bar-width;
   }
 }
-
+*/
 
 // Landlords
 .landlords-wrapper {
@@ -221,13 +243,13 @@ h6 {
   }
 }
 
-.page-landlords {
+[state^="landlords"] {
   .max-hide {
     display: none;
   }
 }
 
-.page-landlord {
+[state^="landlords.landlord"] {
   .min-hide {
     display: none;
   }
@@ -257,14 +279,6 @@ h6 {
     }
   }
 }
-
-.page-building {
-  .landlord-wrapper,
-  .hero {
-    display: none;
-  }
-}
-
 
 // Info box
 .num {

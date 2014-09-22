@@ -21,11 +21,13 @@ angular.module('map', [
   'map.controllers',
   'ngSanitize',
   'ui.router',
-  'angularCharts'
-]).
+  'googlechart'
+])
+.run(function($rootScope, $state) {
+  $rootScope.$state = $state;
+}).
 config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   
-
   // For any unmatched url, send to /route1
   $urlRouterProvider.otherwise("/landlords")
   
@@ -42,10 +44,26 @@ config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRou
           controller: 'landlord'
       })
         .state('landlords.landlord.building', {
+          abstract: true,
           url: "/:buildingId",
           templateUrl: "partials/building.html",
           controller: 'building'
         })
+          .state('landlords.landlord.building.history', {
+              url: "/history",
+              templateUrl: "partials/building-history.html",
+              controller: 'buildingHistory'
+          })
+          .state('landlords.landlord.building.breakdown', {
+              url: "/breakdown",
+              templateUrl: "partials/building-breakdown.html",
+              controller: 'buildingBreakdown'
+          })
+          .state('landlords.landlord.building.list', {
+              url: "/list",
+              templateUrl: "partials/building-list.html",
+              controller: 'buildingList'
+          })
 
     .state('buildings', {
         url: "/buildings",
@@ -67,6 +85,16 @@ config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRou
               url: "/history",
               templateUrl: "partials/building-history.html",
               controller: 'buildingHistory'
+          })
+          .state('buildings.borough.building.breakdown', {
+              url: "/breakdown",
+              templateUrl: "partials/building-breakdown.html",
+              controller: 'buildingBreakdown'
+          })
+          .state('buildings.borough.building.list', {
+              url: "/list",
+              templateUrl: "partials/building-list.html",
+              controller: 'buildingList'
           })
 
 }]);
