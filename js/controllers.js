@@ -15,8 +15,8 @@ angular.module('map.controllers', [])
     //}
 
     $scope.search = function() {
-      $('.leaflet-control-mapbox-geocoder').addClass('active');
-      $('.leaflet-control-mapbox-geocoder input').focus();
+      $('.leaflet-control-geosearch form').removeClass('displayNone');
+      $('.leaflet-control-geosearch form input').focus();
     }
 
     $scope.locate = function() {

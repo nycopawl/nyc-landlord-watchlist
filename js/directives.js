@@ -18,21 +18,40 @@ angular.module('map.directives', [])
           .setView(config.boroughs.all, 10);
         //L.control.fullscreen().addTo(map);
         window.locate = L.control.locate().addTo(map);
-        window.geocoder = L.mapbox.geocoderControl('mapbox.places-address-v1');
+        //window.geocoder = L.mapbox.geocoderControl('mapbox.places-address-v1');
+        
+        window.geocoder = new L.Control.GeoSearch({
+            provider: new L.GeoSearch.Provider.Google()
+        }).addTo(map);
+
         //http://maps.googleapis.com/maps/api/geocode/json?address={query}
         //geocoder.setID('map');
-        map.addControl(geocoder);
         var geocoded = function(e) {
           document.location.hash = '/buildings';
         }
-        geocoder.on('select', geocoded);
-        geocoder.on('autoselect', geocoded);
+        //window.geocoder.on('select', geocoded);
+        //window.geocoder.on('autoselect', geocoded);
+
+        var locationUpdated = function(latlng) {
+          //map.addMarker(latlng);
+          //map.updateLocation(latlng);
+          //map.forceZoom = 1;
+          document.location.hash = '/buildings';
+        };
+        map.on("geosearch_showlocation", function(e) {
+          return locationUpdated(new L.LatLng(e.Location.Y, e.Location.X));
+        });
+        map.on("locationfound", function(e) {
+          return locationUpdated(e.latlng);
+        });
+        
+        
 
         // The visible tile layer
-        L.mapbox.tileLayer('http://maps.albatrossdigital.com:8888/v2/watchlist2014.json').addTo(map);
+        L.mapbox.tileLayer('http://maps2.albatrossdigital.com:8888/v2/watchlist2014_5dd60b.json').addTo(map);
 
         // Load interactivity data into the map with a gridLayer
-        var gridLayer = L.mapbox.gridLayer('http://maps2.albatrossdigital.com:8888/v2/watchlist2014_7179e9.json');
+        var gridLayer = L.mapbox.gridLayer('http://maps2.albatrossdigital.com:8888/v2/watchlist2014_5dd60b.json');
         gridLayer.addTo(map);
 
         // And use that interactivity to drive a control the user can see.

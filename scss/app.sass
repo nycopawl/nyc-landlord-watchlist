@@ -216,6 +216,31 @@ h6 {
       margin-left: 0 !important;
     }
 
+    .rs-carousel-action {
+      &.carousel-action-prev,
+      &.carousel-action-next {
+        &:before {
+          background-color: $white;
+          color: black;
+          font-size: 40px;
+          line-height: 40px;
+          border-radius: 20px;
+        }
+      }
+
+      &.carousel-action-prev {
+        &:before {
+          content: "<";
+        }
+      }
+
+      &.carousel-action-next {
+        &:before {
+          content: ">";
+        }
+      }
+    }
+
     ul {
       .landlord {
         margin-right: 20px;

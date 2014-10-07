@@ -6,7 +6,7 @@
         <div class="columns small-8">
           <h4><a ng-mouseover="mouseoverBuilding(building.id)" ng-mouseout="mouseoutBuilding(building.id)" ng-click="selectBuilding(building.id)">{{building.astr}}</a></h4>
           <h5>{{building.org}}</h5>
-          <h6 ng-if="building.officer">{{building.officer}}, HEAD OFFICER</h6>
+          <h6 ng-if="building.officer">{{building.officer}}, Head Officer</h6>
         </div>
         <div class="columns small-4">
           <div class="num">{{building.num}}</div>
@@ -25,7 +25,7 @@
 <div id="popup-building-teaser" class="hidden">
   <h4><a ng-click="selectBuilding(building.id)">{{hoverBuilding.astr}}</a></h4>
   <h5>{{hoverBuilding.org}}</h5>
-  <h6 ng-if="building.officer">{{hoverBuilding.officer}}, HEAD OFFICER</h6>
+  <h6 ng-if="building.officer">{{hoverBuilding.officer}}, Head Officer</h6>
 </div>
 
 
@@ -34,7 +34,7 @@
     <img class="fleft" src="http://maps.googleapis.com/maps/api/streetview?size=100x100&amp;location={{hoverBuilding.astr}}, {{hoverBuilding.boro}} NY {{hoverBuilding.azip}}&amp;sensor=false" height="110" width="100" alt="Google StreetView Image, copyright Google" title="Google StreetView Image, copyright Google">
     <h4><a ng-click="selectBuilding(building.id)">{{hoverBuilding.astr}}</a></h4>
     <h5>{{hoverBuilding.org}}</h5>
-    <h6 ng-if="building.officer">{{hoverBuilding.officer}}, HEAD OFFICER</h6>
+    <h6 ng-if="building.officer">{{hoverBuilding.officer}}, Head Officer</h6>
     <div class="row boxes">
       <div class="columns small-6">
         <div class="panel">
