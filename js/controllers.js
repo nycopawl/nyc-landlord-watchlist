@@ -35,6 +35,7 @@ angular.module('map.controllers', [])
       $scope.buildings = data;
       $scope.landlord = filterFilter($scope.landlords, {LandlordId: $stateParams.landlordId})[0];
       $scope.landlord.change = 0;
+      $scope.building = undefined;
 
       for (var i=0; i<$scope.buildings.length; i++){
         var building = $scope.buildings[i];
@@ -54,6 +55,45 @@ angular.module('map.controllers', [])
               'marker-color': '#2D3645', // $blue-topnav1
           }
         }).addTo(window.markerGroup);
+      }
+
+
+      $scope.mouseoverBuilding = function(id) {
+        $scope.hoverBuilding = $scope.getBuilding(id);
+        $timeout(function (){
+          if ($scope.hoverBuilding!= undefined && $scope.building == undefined) {
+            var template = angular.element('#popup-building-teaser').html();
+            var popup = L.popup()
+              .setLatLng(new L.LatLng($scope.hoverBuilding.lat, $scope.hoverBuilding.lng))
+              .setContent(template)
+              .openOn(window.map);
+          }
+          
+        });
+      }
+
+      $scope.mouseoutBuilding = function(id) {
+        if ($scope.hoverBuilding!= undefined) {
+          if ($scope.building == undefined) {
+            window.map.closePopup();
+          }
+          $scope.hoverBuilding = undefined;
+        }
+      }
+
+      $scope.clickBuilding = function(id) {
+        $scope.building = $scope.getBuilding(id);
+        $timeout(function (){
+          var template = angular.element('#popup-building-full').html();
+          var popup = L.popup()
+            .setLatLng(new L.LatLng($scope.building.lat, $scope.building.lng))
+            .setContent(template)
+            .openOn(window.map);
+        });
+      }
+      
+      $scope.getBuilding = function(id) {
+        return filterFilter($scope.buildings, {id: id})[0];
       }
 
       // @todo: fitbounds snt working?

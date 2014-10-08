@@ -3,12 +3,12 @@
   <a ui-sref="^"  class="right"><i class="fa fa-close"></i> Close</a>
 
   <div class="row building-header">
-    <div class="columns small-3">
+    <!--<div class="columns small-3">
       <a href="http://maps.google.com/maps?q={{building.astr}}, {{building.boro}} NY {{building.azip}}&layer=c&cbll={{building.lat}},{{building.lng}}" target="_blank" title="View in Google StreetView">
         <img src="http://maps.googleapis.com/maps/api/streetview?size=250x150&amp;location={{building.astr}}, {{building.boro}} NY {{building.azip}}&amp;sensor=false" height="150" width="250" alt="Google StreetView Image, copyright Google" title="View in Google StreetView">
       </a>
-    </div>
-    <div class="columns small-9">
+    </div>-->
+    <div class="columns small-12">
       <h2><a ng-click="selectbuilding(building.id)">{{building.astr}}</a></h2>
       <h4>{{building.org}}</h4>
       <h5 ng-if="building.officer">{{building.officer}}, Head Officer</h5>

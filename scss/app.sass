@@ -27,6 +27,9 @@ h6 {
   letter-spacing: 1px;
 }
 
+a.advocate-title {
+  font-size: rem-calc(38) !important;
+}
 
 .hidden {
   display: none;
@@ -64,11 +67,13 @@ h6 {
     text-transform: uppercase !important;
   }
 
+  overflow: hidden;
+
   &.top-bar-1 {
     &,
     a{
-      height: 35px !important;
-      line-height: 35px !important;
+      height: 50px !important;
+      line-height: 50px !important;
     }
 
     &,
@@ -86,6 +91,7 @@ h6 {
 
     .name h1 a {
       font-size: rem-calc(32) !important;
+      color: $orange;
     }
   }
 }
@@ -208,35 +214,51 @@ h6 {
 
     &,
     .rs-carousel-mask {
-      height: 330px;
+      height: 450px;
       overflow: hidden;
     }
 
     .rs-carousel-mask {
       margin-left: 0 !important;
+
+      ul {
+        height: 360px;
+      }
     }
 
     .rs-carousel-action {
-      &.carousel-action-prev,
-      &.carousel-action-next {
+      z-index: 100;
+      position: absolute;
+      top: 370px;
+      display: block;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      overflow: hidden;
+
+      &:before {
+        color: $orange;
+        font-size: 60px;
+        line-height: 60px;
+        width: 60px;
+        padding-right: 20px;
+        padding-left: 5px;
+        font-family: FontAwesome;
+      }
+
+      &.rs-carousel-action-prev {
+        margin-left: 46%;
+
         &:before {
-          background-color: $white;
-          color: black;
-          font-size: 40px;
-          line-height: 40px;
-          border-radius: 20px;
+          content: "\f137";
         }
       }
 
-      &.carousel-action-prev {
-        &:before {
-          content: "<";
-        }
-      }
+      &.rs-carousel-action-next {
+        margin-left: 54%;
 
-      &.carousel-action-next {
         &:before {
-          content: ">";
+          content: "\f138";
         }
       }
     }
@@ -246,7 +268,7 @@ h6 {
         margin-right: 20px;
         list-style: none;
         width: 285px;
-        height: 320px;
+        height: 350px;
         float: left;
 
         &:hover{
@@ -277,6 +299,10 @@ h6 {
 [state^="landlords.landlord"] {
   .min-hide {
     display: none;
+  }
+
+  .max-hide {
+    display: block;
   }
 
   .landlords {
