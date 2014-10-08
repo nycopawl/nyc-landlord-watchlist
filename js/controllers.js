@@ -31,7 +31,9 @@ angular.module('map.controllers', [])
 
   .controller('landlord', ['$scope', '$http', '$stateParams', '$rootScope', 'filterFilter', '$timeout', function($scope, $http, $stateParams, $rootScope, filterFilter, $timeout) {
     $http.get('json/landlords/landlord-'+ $stateParams.landlordId +'.json').success(function(data) {
-      window.markerGroup.clearLayers();
+      if (window.markerGroup != undefined) {
+        window.markerGroup.clearLayers();
+      }
       $scope.buildings = data;
       $scope.landlord = filterFilter($scope.landlords, {LandlordId: $stateParams.landlordId})[0];
       $scope.landlord.change = 0;
