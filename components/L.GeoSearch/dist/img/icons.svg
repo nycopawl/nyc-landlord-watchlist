@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="icons.svg"
+   inkscape:export-filename="/home/helmuth/Github/leaflet.geosearch/src/img/marker.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="-398.99623"
+     inkscape:cy="-122.85715"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1440"
+     inkscape:window-height="880"
+     inkscape:window-x="1438"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-108.57143,-406.64789)">
+    <g
+       id="g3009"
+       transform="matrix(0.03255208,0,0,-0.03255208,141.90477,477.48122)"
+       inkscape:export-filename="/home/helmuth/Downloads/leaflet.geosearch/src/img/marker.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       style="fill:#ffffff;fill-opacity:1">
+      <path
+         id="path3011"
+         d="m 768,896 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0 181,75 75,75 75,181 z m 256,0 q 0,-109 -33,-179 L 627,-57 q -16,-33 -47.5,-52 -31.5,-19 -67.5,-19 -36,0 -67.5,19 Q 413,-90 398,-57 L 33,717 Q 0,787 0,896 q 0,212 150,362 150,150 362,150 212,0 362,-150 150,-150 150,-362 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;fill-opacity:1" />
+    </g>
+    <g
+       id="g3023"
+       transform="matrix(0.03255208,0,0,-0.03255208,-97.42857,689.48122)"
+       inkscape:export-filename="/home/helmuth/Downloads/leaflet.geosearch/src/img/alert.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         id="path3025"
+         d="m 768,1408 q 209,0 385.5,-103 Q 1330,1202 1433,1025.5 1536,849 1536,640 1536,431 1433,254.5 1330,78 1153.5,-25 977,-128 768,-128 559,-128 382.5,-25 206,78 103,254.5 0,431 0,640 0,849 103,1025.5 206,1202 382.5,1305 559,1408 768,1408 z M 896,161 v 190 q 0,14 -9,23.5 -9,9.5 -22,9.5 H 673 q -13,0 -23,-10 -10,-10 -10,-23 V 161 q 0,-13 10,-23 10,-10 23,-10 h 192 q 13,0 22,9.5 9,9.5 9,23.5 z m -2,344 18,621 q 0,12 -10,18 -10,8 -24,8 H 658 q -14,0 -24,-8 -10,-6 -10,-18 l 17,-621 q 0,-10 10,-17.5 10,-7.5 24,-7.5 h 185 q 14,0 23.5,7.5 9.5,7.5 10.5,17.5 z"
+         inkscape:connector-curvature="0"
+         style="fill:currentColor" />
+    </g>
+    <g
+       id="g3037"
+       transform="matrix(0.0300559,0,0,-0.03004808,-132.43508,510.95558)"
+       inkscape:export-filename="/home/helmuth/Downloads/leaflet.geosearch/src/img/geosearch.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         id="path3039"
+         d="m 1152,704 q 0,185 -131.5,316.5 Q 889,1152 704,1152 519,1152 387.5,1020.5 256,889 256,704 256,519 387.5,387.5 519,256 704,256 889,256 1020.5,387.5 1152,519 1152,704 z m 512,-832 q 0,-52 -38,-90 -38,-38 -90,-38 -54,0 -90,38 L 1103,124 Q 924,0 704,0 561,0 430.5,55.5 300,111 205.5,205.5 111,300 55.5,430.5 0,561 0,704 q 0,143 55.5,273.5 55.5,130.5 150,225 94.5,94.5 225,150 130.5,55.5 273.5,55.5 143,0 273.5,-55.5 130.5,-55.5 225,-150 94.5,-94.5 150,-225 Q 1408,847 1408,704 1408,484 1284,305 l 343,-343 q 37,-37 37,-90 z"
+         inkscape:connector-curvature="0"
+         style="fill:currentColor" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+diff --git a/dist/js/leaflet.control.geosearch.js b/dist/js/leaflet.control.geosearch.js
+index 812d7d5..7e89c0a 100644
+--- a/dist/js/leaflet.control.geosearch.js
++++ b/dist/js/leaflet.control.geosearch.js
+@@ -91,7 +91,7 @@
+       if (this.options.enableAutocomplete) {
+         this._createSuggestionBox(this.container, "leaflet-geosearch-autocomplete");
+         this._recordLastUserInput("");
+-        $(this._container).append(this._suggestionBox);
++        jQuery(this._container).append(this._suggestionBox);
+       }
+       this._message = L.DomUtil.create("div", "leaflet-bar leaflet-geosearch-message displayNone", this._container);
+       L.DomEvent.on(this._map, "click", (function() {
+diff --git a/dist/js/leaflet.geosearch.provider.google.js b/dist/js/leaflet.geosearch.provider.google.js
+index f67cbeb..6cf0485 100755
+--- a/dist/js/leaflet.geosearch.provider.google.js
++++ b/dist/js/leaflet.geosearch.provider.google.js
+@@ -16,7 +16,7 @@ L.GeoSearch.Provider.Google = L.Class.extend({
+ 	initialize: function(options) {
+ 		options = L.Util.setOptions(this, options);
+ 
+-		$.ajax({
++		jQuery.ajax({
+ 			url: "https://maps.googleapis.com/maps/api/js?v=3&callback=onLoadGoogleApiCallback&sensor=false",
+ 			dataType: "script"
+ 		});
