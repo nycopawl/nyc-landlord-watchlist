@@ -172,8 +172,6 @@ angular.module('map.controllers', [])
   .controller('building', ['$scope', '$http', '$stateParams', '$rootScope', 'filterFilter', function($scope, $http, $stateParams, $rootScope, filterFilter) {
     $http.get('json/buildings/building-'+ $stateParams.buildingId +'.json').success(function(data) {
       $scope.building = data;
-      $scope.chartObject = {};
-      $scope.chartObject.type = 'BarChart';
     });
 
     $scope.goLandlord = function(landlordId) {
