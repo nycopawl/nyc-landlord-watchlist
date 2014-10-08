@@ -759,17 +759,23 @@ set
 
 
 # Alternatively:
-update 2014_buildings_watchlist a
-join 2014_buildings_addresses e on CONCAT(a.HouseNumber, " ", a.StreetName, " ", a.Boro, " NY ", a.Zip)  = e.full_address  
-set
-  a.lat=e.lat,
-  a.lng=e.lng;
+#update 2014_buildings_watchlist a
+#join 2014_buildings_addresses e on CONCAT(a.HouseNumber, " ", a.StreetName, " ", a.Boro, " NY ", a.Zip)  = e.full_address  
+#set
+#  a.lat=e.lat,
+#  a.lng=e.lng;
 
 
 
 # Delete
 delete b.* from 2014_buildings_watchlist b
 inner join 2014_landlords_exclude e on e.name = b.org;
+
+
+# Delete
+delete b.* from 2014_buildings_watchlist b
+inner join 2014_buildings_exclude_hpd e on e.BuildingId = b.BuildingId;
+
 
 delete b.* from 2014_buildings_watchlist b
 where aep=1;
@@ -837,7 +843,7 @@ group by officer;
 
 update 2014_landlords_watchlist set score=(b+c)/(A_UNITS+B_UNITS);
 
-delete FROM `2014_landlords_watchlist` where officer="" and org="";
+delete FROM `2014_landlords_watchlist` where (officer="" and org="") or isnull(org);
 
 
 
