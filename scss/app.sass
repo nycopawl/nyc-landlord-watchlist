@@ -11,6 +11,21 @@ body {
   text-transform: uppercase !important;
 }
 
+// Fade in
+h1, h2, h3, h4, h5, h6, p, .field-name-body, .field-name-field-date, a, .views-field-name, label, button, .top-bar a{
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in;
+  -moz-transition: opacity .2s ease-in;
+  -o-transition: opacity .2s ease-in;
+  -ms-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+  .wf-active & {
+    opacity: 1
+  }
+}
+
+
+
 h3,
 h4,
 h5,
