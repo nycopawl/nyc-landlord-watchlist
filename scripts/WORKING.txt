@@ -808,6 +808,7 @@ create table 2014_landlords_watchlist (
   OWNER1_ZIP varchar(16),
   ORGANIZATION_2 varchar(128),
   ORGANIZATION_3 varchar(128),
+  Boro varchar(128),
   officer varchar(256), 
   org varchar(128)
 );
@@ -836,6 +837,7 @@ select
   OWNER1_ZIP,
   ORGANIZATION_2,
   ORGANIZATION_3,
+  Boro,
   officer, 
   org
 FROM 2014_buildings_watchlist
