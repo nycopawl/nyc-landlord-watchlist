@@ -770,6 +770,8 @@ set
 # Delete
 delete b.* from 2014_buildings_watchlist b
 inner join 2014_landlords_exclude e on e.name = b.org;
+delete b.* from 2014_buildings_watchlist b
+inner join 2014_landlords_exclude e on e.name = CONCAT(b.OWNER1_FN, " ", b.OWNER1_LN);
 
 
 # Delete
@@ -781,6 +783,15 @@ delete b.* from 2014_buildings_watchlist b
 where aep=1;
 
 
+# Delete buildigns in receiver
+delete FROM  `2014_buildings_watchlist` WHERE OWNER1 LIKE  '%RECEIVER' OR OWNER1 LIKE  '%RECEIVER%';
+
+# Manually update specific building HEAD OFFICER
+update `2014_buildings_watchlist` set
+OWNER1_LN="ISRAEL",
+OWNER1_FN="JOEL",
+officer="JOEL ISRAEL"
+ where BuildingID=327787;
 
 
 drop table if exists 2014_landlords_watchlist;
