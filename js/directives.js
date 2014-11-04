@@ -48,7 +48,7 @@ angular.module('map.directives', [])
         
 
         // The visible tile layer
-        L.mapbox.tileLayer('http://maps2.albatrossdigital.com:8888/v2/watchlist3_4f3e81.json').addTo(map);
+        L.mapbox.tileLayer('http://maps.albatrossdigital.com:8888/v2/watchlist3_e0836e.json').addTo(map);
 
         // Load interactivity data into the map with a gridLayer
         var gridLayer = L.mapbox.gridLayer('http://maps2.albatrossdigital.com:8888/v2/watchlist3_4f3e81.json');
