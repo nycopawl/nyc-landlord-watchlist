@@ -51,7 +51,7 @@ angular.module('map.directives', [])
         L.mapbox.tileLayer('http://maps.albatrossdigital.com:8888/v2/watchlist3_e0836e.json').addTo(map);
 
         // Load interactivity data into the map with a gridLayer
-        var gridLayer = L.mapbox.gridLayer('http://maps2.albatrossdigital.com:8888/v2/watchlist3_4f3e81.json');
+        var gridLayer = L.mapbox.gridLayer('http://maps.albatrossdigital.com:8888/v2/watchlist3_e0836e.json');
         gridLayer.addTo(map);
 
         // And use that interactivity to drive a control the user can see.
