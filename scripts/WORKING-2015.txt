@@ -1,0 +1,906 @@
+# CLI
+# download data from http://www1.nyc.gov/site/hpd/about/violation-open-data.page:
+cd /var/lib/mysql/working/2015/data
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20150901.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20150801.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20150701.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20150601.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20150501.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20150401.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violation20150301.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20150201.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20150101.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20151201.zip
+wget http://www1.nyc.gov/assets/hpd/downloads/misc/Violations20151101.zip
+@todo: oct 2015
+unzip \*.zip
+
+
+# mysql steps for data aggregation
+create database watchlist2015;
+use watchlist2015;
+
+
+
+
+
+
+
+# --------------------------------------------------
+# Buildings
+# --------------------------------------------------
+
+
+# Create a table for the excluded buildings (in the AEP program). Links: 
+# http://www.nyc.gov/html/hpd/html/owners/list-of-200-buildings-2015.pdf
+# http://www.nyc.gov/html/hpd/downloads/pdf/AEP-report.pdf
+
+drop table if exists 2015_buildings_exclude;
+create table 2015_buildings_exclude (
+  HouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) 
+);
+
+# CLI
+cd /var/lib/mysql/working/2015/
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_buildings_exclude.csv"
+
+
+
+
+# Create a table for the excluded buildings (requested by HPD). Source: HPD Press Officer.
+
+drop table if exists 2015_buildings_exclude_hpd;
+create table 2015_buildings_exclude_hpd (
+  BuildingID int(13)
+);
+
+# CLI
+cd /var/lib/mysql/working/2015/
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_buildings_exclude_hpd.csv"
+
+
+
+
+
+drop table if exists 2015_buildings_registration;
+create table 2015_buildings_registration (
+  RegistrationID int(13),
+BuildingID int(13),
+BoroID varchar(256),
+Boro varchar(256),
+HouseNumber varchar(256),
+LowHouseNumber varchar(256),
+HighHouseNumber varchar(256),
+StreetName varchar(256),
+StreetCode varchar(256),
+Zip varchar(256),
+Block varchar(256),
+Lot varchar(256),
+BIN varchar(256),
+CommunityBoard varchar(256),
+LastRegistrationDate varchar(256),
+RegistrationEndDate varchar(256),
+  KEY `BuildingID` (`BuildingID`)
+); 
+
+
+drop table if exists 2015_buildings_registration_contact;
+create table 2015_buildings_registration_contact (
+  RegistrationContactID int(13),
+RegistrationID int(13),
+Type varchar(256),
+ContactDescription varchar(256),
+CorporationName varchar(256),
+Title varchar(256),
+FirstName varchar(256),
+MiddleInitial varchar(256),
+LastName varchar(256),
+BusinessHouseNumber varchar(256),
+BusinessStreetName varchar(256),
+BusinessApartment varchar(256),
+BusinessCity varchar(256),
+BusinessState varchar(256),
+BusinessZip varchar(256),
+  KEY `RegistrationID` (`RegistrationID`)
+); 
+
+
+drop table if exists 2015_buildings_entries;
+create table 2015_buildings_entries (
+  BuildingID int(13),
+  BoroID varchar(256),
+  Boro varchar(256),
+  HouseNumber varchar(256),
+  LowHouseNumber varchar(256),
+  HighHouseNumber varchar(256),
+  StreetName varchar(256),
+  Zip varchar(256),
+  Block varchar(256),
+  Lot varchar(256),
+  BIN varchar(256),
+  CommunityBoard varchar(256),
+  CensusTract varchar(256),
+  ManagementProgram varchar(256),
+  DoBBuildingClassID varchar(256),
+  DoBBuildingClass varchar(256),
+  LegalStories varchar(256),
+  LegalClassA varchar(256),
+  LegalClassB varchar(256),
+  RegistrationID int(13),
+  LifeCycle varchar(256),
+  RecordStatusID varchar(256),
+  RecordStatus  varchar(256),
+  KEY `BuildingID` (`BuildingID`)
+); 
+
+
+
+# Files from 
+# - Buildings: http://www1.nyc.gov/site/hpd/about/Building-open-data.page
+# - Registrations, registrations_contact : http://www1.nyc.gov/site/hpd/about/registration-open-data.page
+
+# rm -r /var/lib/mysql/landlordwatchlist/2013_buildings_raw.csv
+# cp 2013_buildings_raw.csv /var/lib/mysql/landlordwatchlist/2013_buildings_raw.csv
+# chown mysql:mysql /var/lib/mysql/landlordwatchlist/*
+
+# CLI: 
+# mysqlimport --fields-optionally-enclosed-by="\"" --fields-terminated-by="|" -uroot -p watchlist2015 "/var/lib/mysql/landlordwatchlist/2015_buildings_registration.csv"
+# mysqlimport --fields-optionally-enclosed-by="\"" --fields-terminated-by="|" -uroot -p watchlist2015 "/var/lib/mysql/landlordwatchlist/2015_buildings_registration_contact.csv"
+# mysqlimport --fields-optionally-enclosed-by="\"" --fields-terminated-by="|" -uroot -p watchlist2015 "/var/lib/mysql/landlordwatchlist/2015_buildings_entries.csv"
+
+
+
+
+drop table if exists 2015_buildings_registration_contact_grouped;
+create table 2015_buildings_registration_contact_grouped (
+  RegistrationContactID int(13),
+RegistrationID int(13),
+Type varchar(256),
+ContactDescription varchar(256),
+CorporationName varchar(256),
+Title varchar(256),
+FirstName varchar(256),
+MiddleInitial varchar(256),
+LastName varchar(256),
+BusinessHouseNumber varchar(256),
+BusinessStreetName varchar(256),
+BusinessApartment varchar(256),
+BusinessCity varchar(256),
+BusinessState varchar(256),
+BusinessZip varchar(256),
+BuildingID int(13),
+BoroID varchar(256),
+Boro varchar(256),
+HouseNumber varchar(256),
+LowHouseNumber varchar(256),
+HighHouseNumber varchar(256),
+StreetName varchar(256),
+StreetCode varchar(256),
+  KEY `RegistrationID` (`RegistrationID`)
+); 
+
+insert into 2015_buildings_registration_contact_grouped 
+SELECT 
+c.RegistrationContactID,
+c.RegistrationID,
+c.Type,
+c.ContactDescription,
+c.CorporationName,
+c.Title,
+c.FirstName,
+c.MiddleInitial,
+c.LastName,
+c.BusinessHouseNumber,
+c.BusinessStreetName,
+c.BusinessApartment,
+c.BusinessCity,
+c.BusinessState,
+c.BusinessZip,
+r.BuildingID,
+r.BoroID,
+r.Boro,
+r.HouseNumber,
+r.LowHouseNumber,
+r.HighHouseNumber,
+r.StreetName,
+r.StreetCode
+FROM  `2015_buildings_registration_contact` c
+join 2015_buildings_registration r on r.registrationID = c.registrationID 
+WHERE c.Type =  "HeadOfficer"
+GROUP BY registrationID;
+
+update 2015_buildings_registration_contact_grouped g set CorporationName = (select c.CorporationName from 2015_buildings_registration_contact c where c.RegistrationID = g.RegistrationID and c.Type="CorporateOwner" order by RegistrationContactID limit 1);
+
+
+
+drop table if exists 2015_buildings_raw;
+create table 2015_buildings_raw (
+  BuildingID int(13),
+  Boro varchar(256),
+  HouseNumber varchar(256),
+  LowHouseNumber varchar(256),
+  HighHouseNumber varchar(256),
+  StreetName varchar(256),
+  Zip varchar(256),
+  LegalClassA varchar(256),
+  LegalClassB varchar(256),
+  RegistrationID varchar(256),
+  LifeCycle varchar(256),
+  RecordStatusID varchar(256),
+  RecordStatus  varchar(256),
+  CorporationName varchar(256),
+Title varchar(256),
+FirstName varchar(256),
+MiddleInitial varchar(256),
+LastName varchar(256),
+BusinessHouseNumber varchar(256),
+BusinessStreetName varchar(256),
+BusinessApartment varchar(256),
+BusinessCity varchar(256),
+BusinessState varchar(256),
+BusinessZip varchar(256),
+  KEY `BuildingID` (`BuildingID`)
+); 
+insert into 2015_buildings_raw 
+select
+e.BuildingID,
+e.Boro,
+e.HouseNumber,
+e.LowHouseNumber,
+e.HighHouseNumber,
+e.StreetName,
+e.Zip,
+e.LegalClassA,
+e.LegalClassB,
+e.RegistrationID,
+e.LifeCycle,
+e.RecordStatusID,
+e.RecordStatus ,
+g.CorporationName,
+g.Title,
+g.FirstName,
+g.MiddleInitial,
+g.LastName,
+g.BusinessHouseNumber,
+g.BusinessStreetName,
+g.BusinessApartment,
+g.BusinessCity,
+g.BusinessState,
+g.BusinessZip
+from 2015_buildings_entries e
+join 2015_buildings_registration_contact_grouped g on g.RegistrationID = e.RegistrationID;
+
+
+
+
+
+
+# --------------------------------------------------
+# Address lat/lngs (later on)
+# --------------------------------------------------
+
+#scp NYCHA\ Watchlist\ v2\ -\ Copy\ of\ Sheet5.csv root@ec2-54-71-13-7.us-west-2.compute.amazonaws.com:/var/lib/mysql/working/2015/2015_buildings_addresses.csv
+
+
+# Pull in lat lng data from Google spreadsheets
+drop table if exists 2015_buildings_addresses;
+create table 2015_buildings_addresses (
+  BuildingID INT(10) ,
+  full_address VARCHAR(156) , 
+  lng FLOAT(8),
+  lat FLOAT(8),
+  PRIMARY KEY `BuildingID` (`BuildingID`)
+);
+
+# CLI
+cd /var/lib/mysql/working/2015/
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_buildings_addresses.csv"
+
+
+
+
+
+
+
+# --------------------------------------------------
+# Watchlist
+# --------------------------------------------------
+
+
+drop table if exists 2015_FOILVIOL;
+create table 2015_FOILVIOL (
+  ViolationID INT(10) , 
+  BuildingID INT(10) , 
+  RegistrationID INT(10) , 
+  BoroID VARCHAR(32) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  Block INT(10) ,
+  Lot INT(3) ,  
+  Class VARCHAR(16) , 
+  InspectionDate VARCHAR(12) , 
+  ApprovedDate VARCHAR(12) , 
+  OriginalCertifyByDate VARCHAR(12) , 
+  OriginalCorrectByDate VARCHAR(12) , 
+  NewCertifyByDate VARCHAR(12) , 
+  NewCorrectByDate VARCHAR(12) , 
+  CertifiedDate VARCHAR(12) , 
+  OrderNumber INT(10) , 
+  NOVID INT(16) , 
+  NOVDescription VARCHAR(500),
+  NOVIssueDate VARCHAR(12),
+  CurrentStatus VARCHAR(500),
+  CurrentStatusDate VARCHAR(12),
+  KEY BuildingID (BuildingID), 
+  KEY ViolationID (ViolationID)
+);
+
+# CLI
+# Make sure the headings are all the same (`head *.txt -n1 > head.csv`).
+cd /var/lib/mysql/working/2015/
+
+
+
+#cat Violation20130930.txt Violation20131031.txt Violation20130930.txt Violation20131031.txt Violation20131130.txt Violation20131231.txt Violation20150131.txt >2015_FOILVIOL.txt
+
+#mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_FOILVIOL.txt"
+
+#mv 2015_FOILVIOL.txt 2015_FOILVIOL2.txt 
+
+
+cat Violation20150228.txt Violation20150331.txt Violation20150430.txt Violation20150430.txt Violation20150531.txt Violation20150630.txt > 2015_FOILVIOL.txt
+
+mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,ApprovedDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_FOILVIOL.txt"
+
+#mv 2015_FOILVIOL.txt 2015_FOILVIOL3.txt 
+
+
+cat Violation20150731.txt Violation20150831.txt > 2015_FOILVIOL.txt
+
+mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,BoroID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,ApprovedDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_FOILVIOL.txt"
+
+#mv 2015_FOILVIOL.txt 2015_FOILVIOL4.txt 
+
+
+# 2013 Data
+# --------------------------------------------------
+
+drop table if exists 2013_FOILVIOL;
+create table 2013_FOILVIOL (
+  ViolationID INT(10) , 
+  BuildingID INT(10) , 
+  RegistrationID INT(10) , 
+  BoroID VARCHAR(32) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  Block INT(10) ,
+  Lot INT(3) ,  
+  Class VARCHAR(16) , 
+  InspectionDate VARCHAR(12) , 
+  ApprovedDate VARCHAR(12) , 
+  OriginalCertifyByDate VARCHAR(12) , 
+  OriginalCorrectByDate VARCHAR(12) , 
+  NewCertifyByDate VARCHAR(12) , 
+  NewCorrectByDate VARCHAR(12) , 
+  CertifiedDate VARCHAR(12) , 
+  OrderNumber INT(10) , 
+  NOVID INT(16) , 
+  NOVDescription VARCHAR(500),
+  NOVIssueDate VARCHAR(12),
+  CurrentStatus VARCHAR(500),
+  CurrentStatusDate VARCHAR(12),
+  KEY BuildingID (BuildingID), 
+  KEY ViolationID (ViolationID)
+);
+
+# CLI
+mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2013/2013_FOILVIOL.txt"
+
+
+
+
+# Aggregate violations by violation id
+# --------------------------------------------------
+
+drop table if exists 2015_violations;
+create table 2015_violations (
+  ViolationID INT(10) , 
+  BuildingID INT(10) , 
+  RegistrationID INT(10) ,
+  BoroID VARCHAR(32) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  Block INT(10) ,
+  Lot INT(3) ,  
+  Class VARCHAR(16) , 
+  InspectionDate VARCHAR(12) , 
+  ApprovedDate VARCHAR(12) , 
+  OriginalCertifyByDate VARCHAR(12) , 
+  OriginalCorrectByDate VARCHAR(12) , 
+  NewCertifyByDate VARCHAR(12) , 
+  NewCorrectByDate VARCHAR(12) , 
+  CertifiedDate VARCHAR(12) , 
+  OrderNumber INT(10) , 
+  NOVID INT(16) , 
+  NOVDescription VARCHAR(500),
+  NOVIssueDate VARCHAR(12),
+  CurrentStatus VARCHAR(500),
+  CurrentStatusDate VARCHAR(12),
+  KEY BuildingID (BuildingID)
+);
+insert into 2015_violations
+SELECT *
+FROM  `2015_FOILVIOL` 
+group by ViolationID;
+#order by STR_TO_DATE(CurrentStatusDate, '%c/%e/%Y') desc;
+
+
+DELETE v.* FROM 2015_violations v 
+inner join 2015_FOILVIOL a on a.ViolationID=v.ViolationID
+where a.CurrentStatus="VIOLATION CLOSED" or a.CurrentStatus="VIOLATION DISMISSED";
+DELETE v.* FROM 2015_violations v where v.CurrentStatus="CurrentStatus";
+
+
+drop table if exists 2013_violations;
+create table 2013_violations (
+  ViolationID INT(10) , 
+  BuildingID INT(10) , 
+  RegistrationID INT(10) ,
+  BoroID VARCHAR(32) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  Block INT(10) ,
+  Lot INT(3) ,  
+  Class VARCHAR(16) , 
+  InspectionDate VARCHAR(12) , 
+  ApprovedDate VARCHAR(12) , 
+  OriginalCertifyByDate VARCHAR(12) , 
+  OriginalCorrectByDate VARCHAR(12) , 
+  NewCertifyByDate VARCHAR(12) , 
+  NewCorrectByDate VARCHAR(12) , 
+  CertifiedDate VARCHAR(12) , 
+  OrderNumber INT(10) , 
+  NOVID INT(16) , 
+  NOVDescription VARCHAR(500),
+  NOVIssueDate VARCHAR(12),
+  CurrentStatus VARCHAR(500),
+  CurrentStatusDate VARCHAR(12),
+  KEY BuildingID (BuildingID)
+);
+insert into 2013_violations
+SELECT *
+FROM  `2013_FOILVIOL` 
+group by ViolationID;
+
+
+DELETE v.* FROM 2013_violations v 
+inner join 2013_FOILVIOL a on a.ViolationID=v.ViolationID
+where a.CurrentStatus="VIOLATION CLOSED" or a.CurrentStatus="VIOLATION DISMISSED";
+DELETE v.* FROM 2013_violations v where v.CurrentStatus="CurrentStatus";
+
+
+
+
+# Aggregate violations by building
+# --------------------------------------------------
+
+drop table if exists 2015_buildings;
+create table 2015_buildings (
+  BuildingID INT(10) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  num INT(10),
+  a INT(10),
+  b INT(10),
+  c INT(10),
+  i INT(10),
+  num2012 INT(10),
+  num2013 INT(10),
+  num2015 INT(10),
+  PRIMARY KEY `BuildingID` (`BuildingID`)
+);
+
+insert into 2015_buildings (
+  BuildingID, 
+  Boro,
+  HouseNumber,
+  LowHouseNumber,
+  HighHouseNumber,
+  StreetName,
+  StreetCode,
+  Zip,
+  Apartment,
+  Story,
+  num
+)
+select
+  BuildingID, 
+  Boro,
+  HouseNumber,
+  LowHouseNumber,
+  HighHouseNumber,
+  StreetName,
+  StreetCode,
+  Zip,
+  Apartment,
+  Story,
+  count(*)
+FROM 2015_violations f1 
+group by BuildingID;
+
+
+update 2015_buildings b set a = (select count(*) from 2015_violations v where  v.BuildingID=b.BuildingID and v.Class="A");
+update 2015_buildings b set b = (select count(*) from 2015_violations v where  v.BuildingID=b.BuildingID and v.Class="B");
+update 2015_buildings b set c = (select count(*) from 2015_violations v where  v.BuildingID=b.BuildingID and v.Class="C");
+update 2015_buildings b set i = (select count(*) from 2015_violations v where  v.BuildingID=b.BuildingID and v.Class="I");
+
+#update 2015_buildings b set num = (select count(*) from 2015_violations v where  v.BuildingID=b.BuildingID);
+
+
+
+
+drop table if exists 2015_buildings_all;
+create table 2015_buildings_all (
+  BuildingID INT(10) , 
+  LandlordID INT(10) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  num INT(10),
+  a INT(10),
+  b INT(10),
+  c INT(10),
+  i INT(10),
+  num2012 INT(10),
+  num2013 INT(10),
+  num2015 INT(10),
+  score FLOAT(8) DEFAULT 0,
+  A_UNITS int(8),
+  B_UNITS int(8),
+  OWNER1 varchar(128),
+  ORGANIZATION varchar(128),
+  OWNER1_LN varchar(128),
+  OWNER1_FN varchar(128),
+  OWNER1_STNM varchar(128),
+  OWNER1_APT varchar(128),
+  OWNER1_CITY varchar(128),
+  OWNER1_STATE varchar(32),
+  OWNER1_ZIP varchar(16),
+  ORGANIZATION_2 varchar(128),
+  ORGANIZATION_3 varchar(128),
+  officer varchar(256), 
+  org varchar(128),
+  exclude INT(2),
+  lat FLOAT(8),
+  lng FLOAT(8)
+);
+
+insert into 2015_buildings_all (
+  BuildingID,
+  Boro,
+  HouseNumber,
+  LowHouseNumber,
+  HighHouseNumber,
+  StreetName,
+  StreetCode,
+  Zip,
+  Apartment,
+  Story,
+  num,
+  a,
+  b,
+  c,
+  i,
+  exclude,
+  OWNER1,
+  ORGANIZATION,
+  OWNER1_LN,
+  OWNER1_FN,
+  org,
+  officer
+)
+select
+  b.BuildingID, 
+  b1.Boro,
+  b1.HouseNumber,
+  b1.LowHouseNumber,
+  b1.HighHouseNumber,
+  b1.StreetName,
+  b1.StreetCode,
+  b1.Zip,
+  b1.Apartment,
+  b1.Story,
+  num,
+  a,
+  b,
+  c,
+  i,
+  0,
+  b.CorporationName,
+b.CorporationName,
+b.LastName,
+concat(b.FirstName, " ", b.MiddleInitial),
+b.CorporationName,
+concat(b.FirstName, " ", b.MiddleInitial, " ", b.LastName)
+FROM 2015_buildings b1
+join 2015_buildings_raw b on 
+  b1.HouseNumber = b.HouseNumber 
+  and b1.StreetName = b.StreetName
+  and b1.Boro = b.Boro;
+
+
+update 2015_buildings_all a
+join 2015_buildings_entries e on a.BuildingID = e.BuildingID  
+set
+  a.A_UNITS=e.LegalClassA,
+  a.B_UNITS=e.LegalClassB;
+
+
+update 2015_buildings_all b
+join 2015_buildings_addresses a on a.BuildingID = b.BuildingID
+set
+  b.lat = (select a.lat from 2015_buildings_addresses a where  a.BuildingID=b.BuildingID),
+  b.lng = (select a.lng from 2015_buildings_addresses a where  a.BuildingID=b.BuildingID);
+
+
+update 2015_buildings_all set
+  score=(b+c)/(A_UNITS+B_UNITS);
+
+
+
+
+drop table if exists 2015_buildings_watchlist;
+create table 2015_buildings_watchlist (
+  BuildingID INT(10) ,
+  LandlordID INT(10) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  num INT(10),
+  a INT(10),
+  b INT(10),
+  c INT(10),
+  i INT(10),
+  num2012 INT(10),
+  num2013 INT(10),
+  num2015 INT(10),
+  score FLOAT(8) DEFAULT 0,
+  A_UNITS int(8),
+  B_UNITS int(8),
+  OWNER1 varchar(128),
+  ORGANIZATION varchar(128),
+  OWNER1_LN varchar(128),
+  OWNER1_FN varchar(128),
+  OWNER1_STNM varchar(128),
+  OWNER1_APT varchar(128),
+  OWNER1_CITY varchar(128),
+  OWNER1_STATE varchar(32),
+  OWNER1_ZIP varchar(16),
+  ORGANIZATION_2 varchar(128),
+  ORGANIZATION_3 varchar(128),
+  officer varchar(256), 
+  org varchar(128),
+  aep INT(2),
+  lat FLOAT(8),
+  lng FLOAT(8),
+  PRIMARY KEY `BuildingID` (`BuildingID`)
+);
+insert into 2015_buildings_watchlist
+select *
+FROM 2015_buildings_all
+where ((A_UNITS+B_UNITS >= 35 and score >= 2) or (A_UNITS+B_UNITS < 35 and score >= 3)) AND A_UNITS+B_UNITS >2;
+
+
+# AEP list buildings
+# + HPD requested removals
+update 2015_buildings_watchlist b set b.aep= (
+  (select count(*) from 2015_buildings_exclude e where e.HouseNumber  = b.HouseNumber AND e.StreetName = b.StreetName )
+  +
+  (select count(*) from 2015_buildings_exclude_hpd h where h.BuildingId  = b.BuildingId)
+);
+
+
+
+
+# Do the previous years
+update 2015_buildings_watchlist b set num2012=(select count(*) from 2012_violations v where b.BuildingId  = v.BLDG_ID );
+update 2015_buildings_watchlist b set num2013=(select count(*) from 2013_violations v where b.BuildingId  = v.BuildingId );
+update 2015_buildings_watchlist b set num2015=(select count(*) from 2015_violations v where b.BuildingId  = v.BuildingId );
+
+
+# Add the lat/lngs
+update 2015_buildings_watchlist a
+join 2015_buildings_addresses e on a.BuildingId= e.BuildingId  
+set
+  a.lat=e.lat,
+  a.lng=e.lng;
+
+
+# Alternatively:
+#update 2015_buildings_watchlist a
+#join 2015_buildings_addresses e on CONCAT(a.HouseNumber, " ", a.StreetName, " ", a.Boro, " NY ", a.Zip)  = e.full_address  
+#set
+#  a.lat=e.lat,
+#  a.lng=e.lng;
+
+
+
+# Delete
+delete b.* from 2015_buildings_watchlist b
+inner join 2015_landlords_exclude e on e.name = b.org;
+delete b.* from 2015_buildings_watchlist b
+inner join 2015_landlords_exclude e on e.name = CONCAT(b.OWNER1_FN, " ", b.OWNER1_LN);
+
+
+# Delete
+delete b.* from 2015_buildings_watchlist b
+inner join 2015_buildings_exclude_hpd e on e.BuildingId = b.BuildingId;
+
+
+delete b.* from 2015_buildings_watchlist b
+where aep=1;
+
+
+# Delete buildigns in receiver
+delete FROM  `2015_buildings_watchlist` WHERE OWNER1 LIKE  '%RECEIVER' OR OWNER1 LIKE  '%RECEIVER%';
+
+# Manually update specific building HEAD OFFICER
+update `2015_buildings_watchlist` set
+OWNER1_LN="ISRAEL",
+OWNER1_FN="JOEL",
+officer="JOEL ISRAEL"
+ where BuildingID=327787;
+
+
+drop table if exists 2015_landlords_watchlist;
+create table 2015_landlords_watchlist (
+  LandlordId INT(10) , 
+  buildings INT(10),
+  num INT(10),
+  a INT(10),
+  b INT(10),
+  c INT(10),
+  i INT(10),
+  num2012 INT(10),
+  num2013 INT(10),
+  num2015 INT(10),
+  score FLOAT(8) DEFAULT 0,
+  A_UNITS int(8),
+  B_UNITS int(8),
+  OWNER1 varchar(128),
+  OWNER1_LN varchar(128),
+  OWNER1_FN varchar(128),
+  OWNER1_STNM varchar(128),
+  OWNER1_APT varchar(128),
+  OWNER1_CITY varchar(128),
+  OWNER1_STATE varchar(32),
+  OWNER1_ZIP varchar(16),
+  ORGANIZATION_2 varchar(128),
+  ORGANIZATION_3 varchar(128),
+  Boro varchar(128),
+  officer varchar(256), 
+  org varchar(128)
+);
+insert into 2015_landlords_watchlist
+select 
+  BuildingID,
+  count(*),
+  sum(num),
+  sum(a),
+  sum(b),
+  sum(c),
+  sum(i),
+  sum(num2012),
+  sum(num2013),
+  sum(num2015),
+  NULL,
+  sum(A_UNITS),
+  sum(B_UNITS),
+  OWNER1,
+  OWNER1_LN ,
+  OWNER1_FN ,
+  OWNER1_STNM ,
+  OWNER1_APT ,
+  OWNER1_CITY ,
+  OWNER1_STATE,
+  OWNER1_ZIP,
+  ORGANIZATION_2,
+  ORGANIZATION_3,
+  Boro,
+  officer, 
+  org
+FROM 2015_buildings_watchlist
+group by officer;
+
+update 2015_landlords_watchlist set score=(b+c)/(A_UNITS+B_UNITS);
+
+delete FROM `2015_landlords_watchlist` where (officer="" and org="") or isnull(org);
+
+
+
+
+
+update 2015_buildings_watchlist b set LandlordID=(select LandlordID from 2015_landlords_watchlist l where b.officer = l.officer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
