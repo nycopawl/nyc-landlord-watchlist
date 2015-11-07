@@ -25,15 +25,15 @@ use watchlist2015;
 
 
 
-
 # --------------------------------------------------
-# Buildings
+# Exclusions
 # --------------------------------------------------
 
 
 # Create a table for the excluded buildings (in the AEP program). Links: 
 # http://www.nyc.gov/html/hpd/html/owners/list-of-200-buildings-2015.pdf
 # http://www.nyc.gov/html/hpd/downloads/pdf/AEP-report.pdf
+@todo
 
 drop table if exists 2015_buildings_exclude;
 create table 2015_buildings_exclude (
@@ -49,17 +49,38 @@ mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --l
 
 
 # Create a table for the excluded buildings (requested by HPD). Source: HPD Press Officer.
-
-drop table if exists 2015_buildings_exclude_hpd;
-create table 2015_buildings_exclude_hpd (
-  BuildingID int(13)
+@todo
+drop table if exists 2015_buildings_exclude_aep;
+create table 2015_buildings_exclude_aep (
+  address varchar(256)
 );
 
 # CLI
-cd /var/lib/mysql/working/2015/
-mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_buildings_exclude_hpd.csv"
+cd /var/lib/mysql/working/2015/exclusions
+chown -R mysql:mysql .
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/exclusions/2015_buildings_exclude_aep.csv"
 
 
+
+
+
+# Create a table for the excluded buildings (requested by HPD). Source: HPD Press Officer.
+drop table if exists 2015_landlords_exclude;
+create table 2015_landlords_exclude (
+  name varchar(256)
+);
+
+# CLI
+cd /var/lib/mysql/working/2015/exclusions
+chown -R mysql:mysql .
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/exclusions/2015_landlords_exclude.csv"
+
+
+
+
+# --------------------------------------------------
+# Buildings
+# --------------------------------------------------
 
 
 
@@ -141,7 +162,11 @@ create table 2015_buildings_entries (
 # - Registrations, registrations_contact : http://www1.nyc.gov/site/hpd/about/registration-open-data.page
 
 # rm -r /var/lib/mysql/landlordwatchlist/2013_buildings_raw.csv
-# cp 2013_buildings_raw.csv /var/lib/mysql/landlordwatchlist/2013_buildings_raw.csv
+# cd /var/lib/mysql/working/2015/buildings
+# cp Building20150930.txt /var/lib/mysql/landlordwatchlist/2015_buildings_entries.csv
+# cp Registration20150930.txt /var/lib/mysql/landlordwatchlist/2015_buildings_registration.csv
+# cp RegistrationContact20150930.txt /var/lib/mysql/landlordwatchlist/2015_buildings_registration_contact.csv
+
 # chown mysql:mysql /var/lib/mysql/landlordwatchlist/*
 
 # CLI: 
@@ -273,6 +298,112 @@ join 2015_buildings_registration_contact_grouped g on g.RegistrationID = e.Regis
 
 
 
+# --------------------------------------------------
+# DOB violations: ( department of building ) building violations
+# --------------------------------------------------
+
+drop table if exists 2015_dob_violations;
+create table 2015_dob_violations (
+  ComplaintNumber int(10),
+  Status VARCHAR(156) , 
+  DateEntered varchar(12),
+  HouseNumber VARCHAR(156),
+  HouseStreet VARCHAR(156),
+  BIN VARCHAR(156),
+  CommunityBoard VARCHAR(156),
+  SpecialDistrict VARCHAR(156),
+  ComplaintCategory VARCHAR(156),
+  Unit VARCHAR(156),
+  DispositionDate VARCHAR(156),
+  DispositionCode VARCHAR(156),
+  InspectionDate VARCHAR(156),
+  DOBRunDate VARCHAR(156)
+);
+
+
+# CLI
+cd /var/lib/mysql/working/2015/extra
+chown -R mysql:mysql .
+mv DOB_DATA.csv 2015_dob_violations.csv
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/extra/2015_dob_violations.csv"
+
+update 2015_dob_violations SET HouseStreet = REPLACE(HouseStreet,  '  ',  ' ');
+update 2015_dob_violations SET HouseStreet = REPLACE(HouseStreet,  '  ',  ' ');
+update 2015_dob_violations SET HouseStreet = REPLACE(HouseStreet,  '  ',  ' ');
+
+
+
+drop table if exists 2015_dob_violations_grouped;
+create table 2015_dob_violations_grouped (
+  ComplaintNumber int(10),
+  Status VARCHAR(156) , 
+  DateEntered varchar(12),
+  HouseNumber VARCHAR(156),
+  HouseStreet VARCHAR(156),
+  BIN VARCHAR(156),
+  CommunityBoard VARCHAR(156),
+  SpecialDistrict VARCHAR(156),
+  ComplaintCategory VARCHAR(156),
+  Unit VARCHAR(156),
+  DispositionDate VARCHAR(156),
+  DispositionCode VARCHAR(156),
+  InspectionDate VARCHAR(156),
+  DOBRunDate VARCHAR(156),
+
+  PRIMARY KEY `ComplaintNumber` (`ComplaintNumber`)
+);
+
+insert into 2015_dob_violations_grouped select * from 2015_dob_violations
+group by ComplaintNumber;
+
+
+drop table if exists 2015_dob_violations_grouped_sum;
+create table 2015_dob_violations_grouped_sum (
+  ComplaintNumber int(10),
+  num int(10),
+  HouseNumber VARCHAR(156),
+  HouseStreet VARCHAR(156),
+
+  PRIMARY KEY `ComplaintNumber` (`ComplaintNumber`)
+);
+
+insert into 2015_dob_violations_grouped_sum (
+  ComplaintNumber,
+ num,
+ HouseNumber,
+ HouseStreet
+)
+select 
+ ComplaintNumber,
+ count(*) as num,
+ HouseNumber,
+ HouseStreet
+from 2015_dob_violations_grouped
+group by HouseNumber, HouseStreet;
+
+
+
+
+# --------------------------------------------------
+# housing court petitions
+# --------------------------------------------------
+drop table if exists 2015_housing_court_petitions;
+create table 2015_housing_court_petitions (
+  Court VARCHAR(32) , 
+  FiledDate VARCHAR(10),
+  IndexNumber VARCHAR(32),
+  Classification VARCHAR(32),
+  Petitioners VARCHAR(256),
+  Respondents  VARCHAR(156),
+  PropertyAddress VARCHAR(256),
+  PRIMARY KEY `IndexNumber` (`IndexNumber`)
+);
+
+# CLI
+cd /var/lib/mysql/working/2015/extra
+chown -R mysql:mysql .
+mv HOUSING_COURT_VIOLATIONS.csv 2015_housing_court_petitions.csv
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/extra/2015_housing_court_petitions.csv"
 
 
 
@@ -288,14 +419,18 @@ drop table if exists 2015_buildings_addresses;
 create table 2015_buildings_addresses (
   BuildingID INT(10) ,
   full_address VARCHAR(156) , 
-  lng FLOAT(8),
   lat FLOAT(8),
-  PRIMARY KEY `BuildingID` (`BuildingID`)
+  lng FLOAT(8)
 );
 
+# with no db selected
+#insert into watchlist2015.2015_buildings_addresses
+#select * from watchlist2014.2014_buildings_addresses;
+
 # CLI
-cd /var/lib/mysql/working/2015/
-mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_buildings_addresses.csv"
+cd /var/lib/mysql/working/2015/extra
+chown -R mysql:mysql .
+mysqlimport --fields-optionally-enclosed-by="\""  --fields-terminated-by="," --lines-terminated-by="\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/extra/2015_buildings_addresses.csv"
 
 
 
@@ -337,6 +472,7 @@ create table 2015_FOILVIOL (
   NOVID INT(16) , 
   NOVDescription VARCHAR(500),
   NOVIssueDate VARCHAR(12),
+  CurrentStatusID VARCHAR(12),
   CurrentStatus VARCHAR(500),
   CurrentStatusDate VARCHAR(12),
   KEY BuildingID (BuildingID), 
@@ -349,32 +485,25 @@ cd /var/lib/mysql/working/2015/
 
 
 
-#cat Violation20130930.txt Violation20131031.txt Violation20130930.txt Violation20131031.txt Violation20131130.txt Violation20131231.txt Violation20150131.txt >2015_FOILVIOL.txt
-
-#mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_FOILVIOL.txt"
-
-#mv 2015_FOILVIOL.txt 2015_FOILVIOL2.txt 
+#cat *.txt > 2015_FOILVIOL.txt
 
 
-cat Violation20150228.txt Violation20150331.txt Violation20150430.txt Violation20150430.txt Violation20150531.txt Violation20150630.txt > 2015_FOILVIOL.txt
-
-mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,ApprovedDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_FOILVIOL.txt"
-
-#mv 2015_FOILVIOL.txt 2015_FOILVIOL3.txt 
+#mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,BoroID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,ApprovedDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatusID,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_FOILVIOL.txt"
 
 
-cat Violation20150731.txt Violation20150831.txt > 2015_FOILVIOL.txt
-
-mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,BoroID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,ApprovedDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2015/2015_FOILVIOL.txt"
-
-#mv 2015_FOILVIOL.txt 2015_FOILVIOL4.txt 
 
 
 # 2013 Data
 # --------------------------------------------------
+# For 2013_violations, 2014_violations see WORKING-2014.txt
 
-drop table if exists 2013_FOILVIOL;
-create table 2013_FOILVIOL (
+
+
+# Aggregate violations by violation id
+# --------------------------------------------------
+
+drop table if exists 2015_violations;
+create table 2015_violations (
   ViolationID INT(10) , 
   BuildingID INT(10) , 
   RegistrationID INT(10) , 
@@ -402,59 +531,17 @@ create table 2013_FOILVIOL (
   NOVID INT(16) , 
   NOVDescription VARCHAR(500),
   NOVIssueDate VARCHAR(12),
+  CurrentStatusID VARCHAR(12),
   CurrentStatus VARCHAR(500),
   CurrentStatusDate VARCHAR(12),
   KEY BuildingID (BuildingID), 
   KEY ViolationID (ViolationID)
 );
-
-# CLI
-mysqlimport --fields-optionally-enclosed-by="\"" --columns="ViolationID,BuildingID,RegistrationID,Boro,HouseNumber,LowHouseNumber,HighHouseNumber,StreetName,StreetCode,Zip,Apartment,Story,Block,Lot,Class,InspectionDate,OriginalCertifyByDate,OriginalCorrectByDate,NewCertifyByDate,NewCorrectByDate,CertifiedDate,OrderNumber,NOVID,NOVDescription,NOVIssueDate,CurrentStatus,CurrentStatusDate" --fields-terminated-by="|" --lines-terminated-by="\r\n" -uroot -pmaith watchlist2015 "/var/lib/mysql/working/2013/2013_FOILVIOL.txt"
-
-
-
-
-# Aggregate violations by violation id
-# --------------------------------------------------
-
-drop table if exists 2015_violations;
-create table 2015_violations (
-  ViolationID INT(10) , 
-  BuildingID INT(10) , 
-  RegistrationID INT(10) ,
-  BoroID VARCHAR(32) , 
-  Boro VARCHAR(32) , 
-  HouseNumber VARCHAR(16) , 
-  LowHouseNumber VARCHAR(16) , 
-  HighHouseNumber VARCHAR(16) , 
-  StreetName VARCHAR(156) , 
-  StreetCode VARCHAR(156) , 
-  Zip VARCHAR(16) , 
-  Apartment VARCHAR(16) , 
-  Story INT(3) , 
-  Block INT(10) ,
-  Lot INT(3) ,  
-  Class VARCHAR(16) , 
-  InspectionDate VARCHAR(12) , 
-  ApprovedDate VARCHAR(12) , 
-  OriginalCertifyByDate VARCHAR(12) , 
-  OriginalCorrectByDate VARCHAR(12) , 
-  NewCertifyByDate VARCHAR(12) , 
-  NewCorrectByDate VARCHAR(12) , 
-  CertifiedDate VARCHAR(12) , 
-  OrderNumber INT(10) , 
-  NOVID INT(16) , 
-  NOVDescription VARCHAR(500),
-  NOVIssueDate VARCHAR(12),
-  CurrentStatus VARCHAR(500),
-  CurrentStatusDate VARCHAR(12),
-  KEY BuildingID (BuildingID)
-);
 insert into 2015_violations
 SELECT *
 FROM  `2015_FOILVIOL` 
 group by ViolationID;
-#order by STR_TO_DATE(CurrentStatusDate, '%c/%e/%Y') desc;
+order by STR_TO_DATE(CurrentStatusDate, '%c/%e/%Y') desc;
 
 
 DELETE v.* FROM 2015_violations v 
@@ -463,49 +550,8 @@ where a.CurrentStatus="VIOLATION CLOSED" or a.CurrentStatus="VIOLATION DISMISSED
 DELETE v.* FROM 2015_violations v where v.CurrentStatus="CurrentStatus";
 
 
-drop table if exists 2013_violations;
-create table 2013_violations (
-  ViolationID INT(10) , 
-  BuildingID INT(10) , 
-  RegistrationID INT(10) ,
-  BoroID VARCHAR(32) , 
-  Boro VARCHAR(32) , 
-  HouseNumber VARCHAR(16) , 
-  LowHouseNumber VARCHAR(16) , 
-  HighHouseNumber VARCHAR(16) , 
-  StreetName VARCHAR(156) , 
-  StreetCode VARCHAR(156) , 
-  Zip VARCHAR(16) , 
-  Apartment VARCHAR(16) , 
-  Story INT(3) , 
-  Block INT(10) ,
-  Lot INT(3) ,  
-  Class VARCHAR(16) , 
-  InspectionDate VARCHAR(12) , 
-  ApprovedDate VARCHAR(12) , 
-  OriginalCertifyByDate VARCHAR(12) , 
-  OriginalCorrectByDate VARCHAR(12) , 
-  NewCertifyByDate VARCHAR(12) , 
-  NewCorrectByDate VARCHAR(12) , 
-  CertifiedDate VARCHAR(12) , 
-  OrderNumber INT(10) , 
-  NOVID INT(16) , 
-  NOVDescription VARCHAR(500),
-  NOVIssueDate VARCHAR(12),
-  CurrentStatus VARCHAR(500),
-  CurrentStatusDate VARCHAR(12),
-  KEY BuildingID (BuildingID)
-);
-insert into 2013_violations
-SELECT *
-FROM  `2013_FOILVIOL` 
-group by ViolationID;
 
-
-DELETE v.* FROM 2013_violations v 
-inner join 2013_FOILVIOL a on a.ViolationID=v.ViolationID
-where a.CurrentStatus="VIOLATION CLOSED" or a.CurrentStatus="VIOLATION DISMISSED";
-DELETE v.* FROM 2013_violations v where v.CurrentStatus="CurrentStatus";
+# For 2013_violations, 2014_violations see WORKING-2014.txt
 
 
 
@@ -532,7 +578,7 @@ create table 2015_buildings (
   i INT(10),
   num2012 INT(10),
   num2013 INT(10),
-  num2015 INT(10),
+  num2014 INT(10),
   PRIMARY KEY `BuildingID` (`BuildingID`)
 );
 
@@ -573,8 +619,6 @@ update 2015_buildings b set i = (select count(*) from 2015_violations v where  v
 #update 2015_buildings b set num = (select count(*) from 2015_violations v where  v.BuildingID=b.BuildingID);
 
 
-
-
 drop table if exists 2015_buildings_all;
 create table 2015_buildings_all (
   BuildingID INT(10) , 
@@ -595,7 +639,9 @@ create table 2015_buildings_all (
   i INT(10),
   num2012 INT(10),
   num2013 INT(10),
-  num2015 INT(10),
+  num2014 INT(10),
+  dob INT(10),
+  housingCourt INT(10),
   score FLOAT(8) DEFAULT 0,
   A_UNITS int(8),
   B_UNITS int(8),
@@ -671,29 +717,14 @@ join 2015_buildings_raw b on
   and b1.Boro = b.Boro;
 
 
-update 2015_buildings_all a
-join 2015_buildings_entries e on a.BuildingID = e.BuildingID  
-set
-  a.A_UNITS=e.LegalClassA,
-  a.B_UNITS=e.LegalClassB;
-
-
-update 2015_buildings_all b
-join 2015_buildings_addresses a on a.BuildingID = b.BuildingID
-set
-  b.lat = (select a.lat from 2015_buildings_addresses a where  a.BuildingID=b.BuildingID),
-  b.lng = (select a.lng from 2015_buildings_addresses a where  a.BuildingID=b.BuildingID);
-
-
-update 2015_buildings_all set
-  score=(b+c)/(A_UNITS+B_UNITS);
 
 
 
 
-drop table if exists 2015_buildings_watchlist;
-create table 2015_buildings_watchlist (
-  BuildingID INT(10) ,
+
+drop table if exists 2015_buildings_grouped;
+create table 2015_buildings_grouped (
+  BuildingID INT(10) , 
   LandlordID INT(10) , 
   Boro VARCHAR(32) , 
   HouseNumber VARCHAR(16) , 
@@ -711,7 +742,9 @@ create table 2015_buildings_watchlist (
   i INT(10),
   num2012 INT(10),
   num2013 INT(10),
-  num2015 INT(10),
+  num2014 INT(10),
+  dob INT(10),
+  housingCourt INT(10),
   score FLOAT(8) DEFAULT 0,
   A_UNITS int(8),
   B_UNITS int(8),
@@ -728,32 +761,185 @@ create table 2015_buildings_watchlist (
   ORGANIZATION_3 varchar(128),
   officer varchar(256), 
   org varchar(128),
-  aep INT(2),
+  exclude INT(2),
+  lat FLOAT(8),
+  lng FLOAT(8),
+   PRIMARY KEY `BuildingID` (`BuildingID`)
+);
+
+insert into 2015_buildings_grouped 
+select*from 2015_buildings_all group by BuildingID;
+
+
+# Get num value for this year
+update 2015_buildings_grouped b set num = (select count(*) from 2015_violations v where b.BuildingId  = v.BuildingId );
+
+
+# Do the previous years (not using any database)
+update watchlist2015.2015_buildings_grouped b set num2012=(select count(*) from watchlist2014.2012_violations v where b.BuildingId  = v.BLDG_ID );
+update watchlist2015.2015_buildings_grouped b set num2013=(select count(*) from watchlist2014.2013_violations v where b.BuildingId  = v.BuildingId );
+update watchlist2015.2015_buildings_grouped b set num2014=(select count(*) from watchlist2014.2014_violations v where b.BuildingId  = v.BuildingId );
+
+
+
+# dob
+update 2015_buildings_grouped b 
+left join 2015_dob_violations_grouped_sum v on b.HouseNumber = v.HouseNumber and b.StreetName = v.HouseStreet
+set b.dob=v.num;
+update 2015_buildings_grouped set dob=0 where isnull(dob);
+
+
+update 2015_buildings_grouped a
+join 2015_buildings_entries e on a.BuildingID = e.BuildingID  
+set
+  a.A_UNITS=e.LegalClassA,
+  a.B_UNITS=e.LegalClassB;
+
+
+update 2015_buildings_grouped set
+  score=(b+c+dob)/(A_UNITS+B_UNITS);
+
+
+
+
+
+drop table if exists 2015_buildings_watchlist;
+create table 2015_buildings_watchlist (
+  BuildingID INT(10) , 
+  LandlordID INT(10) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  num INT(10),
+  a INT(10),
+  b INT(10),
+  c INT(10),
+  i INT(10),
+  num2012 INT(10),
+  num2013 INT(10),
+  num2014 INT(10),
+  dob INT(10),
+  housingCourt INT(10),
+  dob_hpd int(10),
+  score FLOAT(8) DEFAULT 0,
+  A_UNITS int(8),
+  B_UNITS int(8),
+  OWNER1 varchar(128),
+  ORGANIZATION varchar(128),
+  OWNER1_LN varchar(128),
+  OWNER1_FN varchar(128),
+  OWNER1_STNM varchar(128),
+  OWNER1_APT varchar(128),
+  OWNER1_CITY varchar(128),
+  OWNER1_STATE varchar(32),
+  OWNER1_ZIP varchar(16),
+  ORGANIZATION_2 varchar(128),
+  ORGANIZATION_3 varchar(128),
+  officer varchar(256), 
+  org varchar(128),
+  exclude INT(2),
   lat FLOAT(8),
   lng FLOAT(8),
   PRIMARY KEY `BuildingID` (`BuildingID`)
 );
-insert into 2015_buildings_watchlist
-select *
-FROM 2015_buildings_all
+insert into 2015_buildings_watchlist (
+ BuildingID, 
+  LandlordID, 
+  Boro, 
+  HouseNumber , 
+  LowHouseNumber , 
+  HighHouseNumber , 
+  StreetName , 
+  StreetCode , 
+  Zip  , 
+  Apartment  , 
+  Story , 
+  num ,
+  a ,
+  b ,
+  c ,
+  i ,
+  num2012 ,
+  num2013 ,
+  num2014 ,
+  dob ,
+  housingCourt ,
+  score ,
+  A_UNITS ,
+  B_UNITS,
+  OWNER1,
+  ORGANIZATION,
+  OWNER1_LN ,
+  OWNER1_FN ,
+  OWNER1_STNM ,
+  OWNER1_APT ,
+  OWNER1_CITY ,
+  OWNER1_STATE,
+  OWNER1_ZIP ,
+  ORGANIZATION_2 ,
+  ORGANIZATION_3 ,
+  officer, 
+  org ,
+  exclude ,
+  lat,
+  lng
+)  select  * FROM 2015_buildings_grouped
 where ((A_UNITS+B_UNITS >= 35 and score >= 2) or (A_UNITS+B_UNITS < 35 and score >= 3)) AND A_UNITS+B_UNITS >2;
 
+update 2015_buildings_watchlist set dob_hpd=num+dob;
 
-# AEP list buildings
-# + HPD requested removals
-update 2015_buildings_watchlist b set b.aep= (
-  (select count(*) from 2015_buildings_exclude e where e.HouseNumber  = b.HouseNumber AND e.StreetName = b.StreetName )
-  +
-  (select count(*) from 2015_buildings_exclude_hpd h where h.BuildingId  = b.BuildingId)
+
+
+
+# housing court violations
+update 2015_buildings_watchlist b set housingCourt=(
+  select count(*) from 2015_housing_court_petitions v where 
+  v.PropertyAddress LIKE concat_ws('%', b.HouseNumber, ' ', b.StreetName, '%')
 );
 
 
+update 2015_buildings_watchlist set exclude =0;
 
 
-# Do the previous years
-update 2015_buildings_watchlist b set num2012=(select count(*) from 2012_violations v where b.BuildingId  = v.BLDG_ID );
-update 2015_buildings_watchlist b set num2013=(select count(*) from 2013_violations v where b.BuildingId  = v.BuildingId );
-update 2015_buildings_watchlist b set num2015=(select count(*) from 2015_violations v where b.BuildingId  = v.BuildingId );
+# aep buildings (101 bldgs)
+update 2015_buildings_watchlist b set b.exclude = (
+  select count(*) from 2015_buildings_exclude_aep e where e.address = CONCAT(b.HouseNumber, " ", b.StreetName) 
+);
+
+# hpd requested removals (147 bldgs)
+update 2015_buildings_watchlist b set b.exclude= (
+  (select count(*) from 2015_buildings_exclude e where e.HouseNumber  = b.HouseNumber AND e.StreetName = b.StreetName )
+);
+update 2015_buildings_watchlist b inner join 2015_landlords_exclude e on e.name = CONCAT(b.OWNER1_FN, " ", b.OWNER1_LN)
+set b.exclude=1;
+
+
+
+# Exclude buildigns in receiver (28 bldgs)
+update 2015_buildings_watchlist set exclude=1 WHERE OWNER1 LIKE  '%RECEIVER' OR OWNER1 LIKE  '%RECEIVER%';
+
+
+
+
+# Exclude buildings from landlords exclusion list (1373 bldgs)
+update 2015_buildings_watchlist b inner join 2015_landlords_exclude e 
+on (
+b.org=e.name
+or b.org LIKE CONCAT(e.name,"%")
+or b.org LIKE CONCAT("%",e.name)
+or b.org LIKE CONCAT("%",e.name,"%")
+)
+set b.exclude=1;
+
+
+# total exclusions: 1439
+
 
 
 # Add the lat/lngs
@@ -773,31 +959,16 @@ set
 
 
 
-# Delete
-delete b.* from 2015_buildings_watchlist b
-inner join 2015_landlords_exclude e on e.name = b.org;
-delete b.* from 2015_buildings_watchlist b
-inner join 2015_landlords_exclude e on e.name = CONCAT(b.OWNER1_FN, " ", b.OWNER1_LN);
-
-
-# Delete
-delete b.* from 2015_buildings_watchlist b
-inner join 2015_buildings_exclude_hpd e on e.BuildingId = b.BuildingId;
-
-
-delete b.* from 2015_buildings_watchlist b
-where aep=1;
-
-
-# Delete buildigns in receiver
-delete FROM  `2015_buildings_watchlist` WHERE OWNER1 LIKE  '%RECEIVER' OR OWNER1 LIKE  '%RECEIVER%';
-
 # Manually update specific building HEAD OFFICER
 update `2015_buildings_watchlist` set
 OWNER1_LN="ISRAEL",
 OWNER1_FN="JOEL",
 officer="JOEL ISRAEL"
  where BuildingID=327787;
+
+
+
+
 
 
 drop table if exists 2015_landlords_watchlist;
@@ -811,10 +982,13 @@ create table 2015_landlords_watchlist (
   i INT(10),
   num2012 INT(10),
   num2013 INT(10),
-  num2015 INT(10),
+  num2014 INT(10),
   score FLOAT(8) DEFAULT 0,
   A_UNITS int(8),
   B_UNITS int(8),
+  dob INT(10),
+  dob_hpd int(10),
+  housingCourt INT(10),
   OWNER1 varchar(128),
   OWNER1_LN varchar(128),
   OWNER1_FN varchar(128),
@@ -840,10 +1014,13 @@ select
   sum(i),
   sum(num2012),
   sum(num2013),
-  sum(num2015),
+  sum(num2014),
   NULL,
   sum(A_UNITS),
   sum(B_UNITS),
+  sum(dob),
+  num,
+  sum(housingCourt),
   OWNER1,
   OWNER1_LN ,
   OWNER1_FN ,
@@ -858,12 +1035,15 @@ select
   officer, 
   org
 FROM 2015_buildings_watchlist
+where exclude = 0
 group by officer;
 
-update 2015_landlords_watchlist set score=(b+c)/(A_UNITS+B_UNITS);
+update 2015_landlords_watchlist set dob_hpd=num+dob;
+update 2015_landlords_watchlist set score=(b+c+dob)/(A_UNITS+B_UNITS);
+
+
 
 delete FROM `2015_landlords_watchlist` where (officer="" and org="") or isnull(org);
-
 
 
 
@@ -871,7 +1051,9 @@ delete FROM `2015_landlords_watchlist` where (officer="" and org="") or isnull(o
 update 2015_buildings_watchlist b set LandlordID=(select LandlordID from 2015_landlords_watchlist l where b.officer = l.officer);
 
 
-
+#update 2015_buildings_watchlist b 
+#left join 2015_landlords_exclude e on b.org = e.name
+#set b.exclude=1;
 
 
 
