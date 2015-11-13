@@ -802,7 +802,6 @@ update 2015_buildings_grouped set
 
 
 
-
 drop table if exists 2015_buildings_watchlist;
 create table 2015_buildings_watchlist (
   BuildingID INT(10) , 
@@ -846,6 +845,7 @@ create table 2015_buildings_watchlist (
   exclude INT(2),
   lat FLOAT(8),
   lng FLOAT(8),
+  worstLandlord INT(2),
   PRIMARY KEY `BuildingID` (`BuildingID`)
 );
 insert into 2015_buildings_watchlist (
@@ -913,7 +913,7 @@ update 2015_buildings_watchlist b set b.exclude = (
 );
 
 # hpd requested removals (147 bldgs)
-update 2015_buildings_watchlist b set b.exclude= (
+update 2015_buildings_watchlist b set b.exclude = b.exclude + (
   (select count(*) from 2015_buildings_exclude e where e.HouseNumber  = b.HouseNumber AND e.StreetName = b.StreetName )
 );
 update 2015_buildings_watchlist b inner join 2015_landlords_exclude e on e.name = CONCAT(b.OWNER1_FN, " ", b.OWNER1_LN)
@@ -1049,6 +1049,10 @@ delete FROM `2015_landlords_watchlist` where (officer="" and org="") or isnull(o
 
 
 update 2015_buildings_watchlist b set LandlordID=(select LandlordID from 2015_landlords_watchlist l where b.officer = l.officer);
+
+
+update 2015_buildings_watchlist set worstLandlord=0;
+# Run update commands from export.php
 
 
 #update 2015_buildings_watchlist b 
