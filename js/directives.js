@@ -93,7 +93,7 @@ angular.module('map.directives', [])
               'width': $(window).width() - 100 + 'px',
               'margin-left': '50px'
             });
-          }, 200, false);
+          }, 500, false);
         });
       }
     };

@@ -209,7 +209,7 @@ angular.module('map.controllers', [])
           ]}
       ]};
       $scope.chartObject.type = 'BarChart';
-    });
+    }, 1000);
   }])
 
 
