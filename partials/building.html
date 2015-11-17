@@ -20,19 +20,35 @@
             <div><em>units</em></div>
           </div>
         </div>-->
-        <div class="columns small-6">
+        <div class="columns small-6 medium-3">
           <div class="panel">
             <div class="num">{{building.num}}</div>
             <div><em>violations</em></div>
           </div>
         </div>
-        <div class="columns small-6">
+        <div class="columns small-6 medium-3">
           <div class="panel">
             <div ng-class="building.delta > 0 ? 'num red' : 'num green'">
               <i class="fa fa-arrow-{{building.delta > 0 ? 'up' : 'down'}}"></i>
               {{building.delta > 0 ? building.delta : -building.delta}}
             </div>
-            <div><em>since 8/2013</em></div>
+            <div><em>since 8/2014</em></div>
+          </div>
+        </div>
+        <div class="columns small-6 medium-3">
+          <div class="panel">
+            <div class="num">
+              {{building.dob}}
+            </div>
+            <div><em>Dept. of Bldgs. complaints</em></div>
+          </div>
+        </div>
+        <div class="columns small-6 medium-3">
+          <div class="panel">
+            <div class="num">
+              {{building.housingCourt}}
+            </div>
+            <div><em>Housing Court violations</em></div>
           </div>
         </div>
       </div>

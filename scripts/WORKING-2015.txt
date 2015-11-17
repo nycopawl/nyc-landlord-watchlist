@@ -1060,33 +1060,102 @@ update 2015_buildings_watchlist set worstLandlord=0;
 #set b.exclude=1;
 
 
+id  boro  astr  azip  lat lng num units officer org delta a b c i num2012 num2013 num2014 a_units b_units arrow boro_low
 
 
 
 
 
+drop table if exists 2015_buildings_watchlist_included;
+create table 2015_buildings_watchlist_included (
+ BuildingID INT(10) , 
+  LandlordID INT(10) , 
+  Boro VARCHAR(32) , 
+  HouseNumber VARCHAR(16) , 
+  LowHouseNumber VARCHAR(16) , 
+  HighHouseNumber VARCHAR(16) , 
+  StreetName VARCHAR(156) , 
+  StreetCode VARCHAR(156) , 
+  Zip VARCHAR(16) , 
+  Apartment VARCHAR(16) , 
+  Story INT(3) , 
+  num INT(10),
+  a INT(10),
+  b INT(10),
+  c INT(10),
+  i INT(10),
+  num2012 INT(10),
+  num2013 INT(10),
+  num2014 INT(10),
+  dob INT(10),
+  housingCourt INT(10),
+  dob_hpd int(10),
+  score FLOAT(8) DEFAULT 0,
+  A_UNITS int(8),
+  B_UNITS int(8),
+  OWNER1 varchar(128),
+  ORGANIZATION varchar(128),
+  OWNER1_LN varchar(128),
+  OWNER1_FN varchar(128),
+  OWNER1_STNM varchar(128),
+  OWNER1_APT varchar(128),
+  OWNER1_CITY varchar(128),
+  OWNER1_STATE varchar(32),
+  OWNER1_ZIP varchar(16),
+  ORGANIZATION_2 varchar(128),
+  ORGANIZATION_3 varchar(128),
+  officer varchar(256), 
+  org varchar(128),
+  exclude INT(2),
+  lat FLOAT(8),
+  lng FLOAT(8),
+  worstLandlord INT(2),
+  PRIMARY KEY `BuildingID` (`BuildingID`)
+);
+insert into 2015_buildings_watchlist_included
+select *
+FROM 2015_buildings_watchlist
+where exclude = 0;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+drop table if exists 2015_landlords_watchlist_100;
+create table 2015_landlords_watchlist_100 (
+  LandlordId INT(10) , 
+  buildings INT(10),
+  num INT(10),
+  a INT(10),
+  b INT(10),
+  c INT(10),
+  i INT(10),
+  num2012 INT(10),
+  num2013 INT(10),
+  num2014 INT(10),
+  score FLOAT(8) DEFAULT 0,
+  A_UNITS int(8),
+  B_UNITS int(8),
+  dob INT(10),
+  dob_hpd int(10),
+  housingCourt INT(10),
+  OWNER1 varchar(128),
+  OWNER1_LN varchar(128),
+  OWNER1_FN varchar(128),
+  OWNER1_STNM varchar(128),
+  OWNER1_APT varchar(128),
+  OWNER1_CITY varchar(128),
+  OWNER1_STATE varchar(32),
+  OWNER1_ZIP varchar(16),
+  ORGANIZATION_2 varchar(128),
+  ORGANIZATION_3 varchar(128),
+  Boro varchar(128),
+  officer varchar(256), 
+  org varchar(128)
+);
+insert into 2015_landlords_watchlist_100
+select *
+FROM 2015_landlords_watchlist
+order by dob_hpd desc
+limit 100;
 
 
 
