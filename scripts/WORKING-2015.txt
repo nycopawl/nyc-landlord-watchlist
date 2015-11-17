@@ -922,7 +922,7 @@ set b.exclude=1;
 
 
 # Exclude buildigns in receiver (28 bldgs)
-update 2015_buildings_watchlist set exclude=1 WHERE OWNER1 LIKE  '%RECEIVER' OR OWNER1 LIKE  '%RECEIVER%';
+update 2015_buildings_watchlist set exclude=1 WHERE OWNER1 LIKE  '%RECEIVER' OR OWNER1 LIKE  '%RECEIVER%' OR OWNER1 LIKE  'RECEIVER%';
 
 
 
