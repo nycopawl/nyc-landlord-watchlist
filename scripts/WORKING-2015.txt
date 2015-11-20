@@ -971,35 +971,35 @@ update 2015_buildings_watchlist set exclude=0 where OWNER1_LN="Rubashkin";
 # Building ID 396127 should be under landlord ID 210828 (Ismael Felciano and Ismael Feliciano are the same person)
 
 update 2015_buildings_watchlist set 
-officer = (select officer from 2015_buildings_all where LandlordID=50 limit 1),
-org = (select org from 2015_buildings_all where LandlordID=50 limit 1)
+officer = (select officer from 2015_buildings_all where BuildingID=50 limit 1),
+org = (select org from 2015_buildings_all where BuildingID=50 limit 1)
 where BuildingID=2346;
 
 update 2015_buildings_watchlist set 
-officer = (select officer from 2015_buildings_all where LandlordID=59140 limit 1),
-org = (select org from 2015_buildings_all where LandlordID=59140 limit 1)
+officer = (select officer from 2015_buildings_all where BuildingID=59140 limit 1),
+org = (select org from 2015_buildings_all where BuildingID=59140 limit 1)
 where BuildingID=119100;
 
 update 2015_buildings_watchlist set 
-officer = (select officer from 2015_buildings_all where LandlordID=59247 limit 1),
-org = (select org from 2015_buildings_all where LandlordID=59247 limit 1)
+officer = (select officer from 2015_buildings_all where BuildingID=59247 limit 1),
+org = (select org from 2015_buildings_all where BuildingID=59247 limit 1)
 where BuildingID=81982;
 
 update 2015_buildings_watchlist set 
-officer = (select officer from 2015_buildings_all where LandlordID=50 limit 1),
-org = (select org from 2015_buildings_all where LandlordID=50 limit 1)
+officer = (select officer from 2015_buildings_all where BuildingID=50 limit 1),
+org = (select org from 2015_buildings_all where BuildingID=50 limit 1)
 where BuildingID=24890;
 
 update 2015_buildings_watchlist set 
-officer = (select officer from 2015_buildings_all where LandlordID=62199 limit 1),
-org = (select org from 2015_buildings_all where LandlordID=62199 limit 1)
+officer = (select officer from 2015_buildings_all where BuildingID=62199 limit 1),
+org = (select org from 2015_buildings_all where BuildingID=62199 limit 1)
 where BuildingID=363095
 or BuildingID=288103
 or BuildingID=149031; 
 
 update 2015_buildings_watchlist set 
-officer = (select officer from 2015_buildings_all where LandlordID=210828 limit 1),
-org = (select org from 2015_buildings_all where LandlordID=210828 limit 1)
+officer = (select officer from 2015_buildings_all where BuildingID=210828 limit 1),
+org = (select org from 2015_buildings_all where BuildingID=210828 limit 1)
 where BuildingID=396127;
 
 

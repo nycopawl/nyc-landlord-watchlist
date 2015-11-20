@@ -86,6 +86,7 @@ angular.module('map.controllers', [])
       $scope.clickBuilding = function(id) {
         $scope.building = $scope.getBuilding(id);
         $timeout(function (){
+          console.log($scope);
           var template = angular.element('#popup-building-full').html();
           var popup = L.popup()
             .setLatLng(new L.LatLng($scope.building.lat, $scope.building.lng))
