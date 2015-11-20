@@ -2,6 +2,8 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2675+
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=3971+GOUVERNEUR+AVENUE+BRONX+NY+10463&sensor=false" -O landlord-80987.jpg
 sleep 5
+wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1307+EDWARD+L+GRANT+HIGHWAY+BRONX+NY+10452&sensor=false" -O landlord-62199.jpg
+sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1025+BOYNTON+AVENUE+BRONX+NY+10472&sensor=false" -O landlord-51000.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1122+1+AVENUE+MANHATTAN+NY+10065&sensor=false" -O landlord-50.jpg
@@ -9,8 +11,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2247+ADAM+C+POWELL+BOULEVARD+MANHATTAN+NY+10027&sensor=false" -O landlord-3495.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=184+NAGLE+AVENUE+MANHATTAN+NY+10034&sensor=false" -O landlord-25928.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1307+EDWARD+L+GRANT+HIGHWAY+BRONX+NY+10452&sensor=false" -O landlord-62199.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=192+NAGLE+AVENUE+MANHATTAN+NY+10034&sensor=false" -O landlord-25929.jpg
 sleep 5
