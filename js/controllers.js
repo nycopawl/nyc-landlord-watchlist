@@ -212,7 +212,8 @@ angular.module('map.controllers', [])
               {v: building.num2015},
           ]}
       ]};
-      $scope.chartObject.type = 'BarChart';
+      $scope.chartObject.type = 'AreaChart';
+      $scope.cssStyle = 'height: 500px;';
     }, 1000);
   }])
 
