@@ -65,7 +65,7 @@ angular.module('map.controllers', [])
         $timeout(function (){
           if ($scope.hoverBuilding!= undefined && $scope.building == undefined) {
             var template = angular.element('#popup-building-teaser').html();
-            var popup = L.popup()
+            var popup = L.popup({autoPanPadding: [200, 200], autoPan: true})
               .setLatLng(new L.LatLng($scope.hoverBuilding.lat, $scope.hoverBuilding.lng))
               .setContent(template)
               .openOn(window.map);
@@ -86,6 +86,7 @@ angular.module('map.controllers', [])
       $scope.clickBuilding = function(id) {
         $scope.building = $scope.getBuilding(id);
         $timeout(function (){
+          console.log($scope);
           var template = angular.element('#popup-building-full').html();
           var popup = L.popup()
             .setLatLng(new L.LatLng($scope.building.lat, $scope.building.lng))
@@ -126,12 +127,12 @@ angular.module('map.controllers', [])
       $scope.activeTab = tab;
     }
 
-    $scope.mouseoverBuilding = function(id) {
+     $scope.mouseoverBuilding = function(id) {
       $scope.hoverBuilding = $scope.getBuilding(id);
       $timeout(function (){
         if ($scope.hoverBuilding!= undefined && $scope.building == undefined) {
           var template = angular.element('#popup-building-teaser').html();
-          var popup = L.popup()
+          var popup = L.popup({autoPanPadding: [200, 200], autoPan: true})
             .setLatLng(new L.LatLng($scope.hoverBuilding.lat, $scope.hoverBuilding.lng))
             .setContent(template)
             .openOn(window.map);
@@ -206,9 +207,14 @@ angular.module('map.controllers', [])
           {c: [
               {v: "2014"},
               {v: building.num2014},
+          ]},
+          {c: [
+              {v: "2015"},
+              {v: building.num2015},
           ]}
       ]};
-      $scope.chartObject.type = 'BarChart';
+      $scope.chartObject.type = 'AreaChart';
+      $scope.cssStyle = 'height: 500px;';
     }, 1000);
   }])
 
@@ -236,9 +242,16 @@ angular.module('map.controllers', [])
         {c: [
             {v: "Class I"},
             {v: parseInt(building.i)}
+        ]},
+        {c: [
+            {v: "Dept. of Buildings violations"},
+            {v: parseInt(building.dob)}
+        ]},
+        {c: [
+            {v: "Housing Court complaints"},
+            {v: parseInt(building.housingCourt)}
         ]}
       ]};
       $scope.chartObject.type = 'PieChart';
-      console.log($scope.chartObject);
     });
   }])
