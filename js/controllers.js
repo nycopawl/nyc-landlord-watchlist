@@ -24,6 +24,10 @@ angular.module('map.controllers', [])
       //document.location.hash = '/buildings';
     }
 
+    $scope.units = function(a, b) {
+      return parseInt(a) + parseInt(b);
+    }
+
     //$rootScope.class = 'page-landlords';
   }])
 
