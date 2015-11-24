@@ -14,7 +14,9 @@ angular.module('map.directives', [])
         $('#map').css('height',($(window).height() - config.navbarHeight) +'px');
     
         L.mapbox.accessToken = 'pk.eyJ1IjoiYWxiYXRyb3NzZGlnaXRhbCIsImEiOiI1cVUxbUxVIn0.SqKOVeohLfY0vfShalVDUw';
-        var map = L.mapbox.map('map', 'albatrossdigital.map-yaq188c8')
+        var map = L.mapbox.map('map', 'albatrossdigital.map-yaq188c8', {
+            maxZoom: 16
+        })
           .setView(config.boroughs.all, 10);
         //L.control.fullscreen().addTo(map);
         window.locate = L.control.locate().addTo(map);

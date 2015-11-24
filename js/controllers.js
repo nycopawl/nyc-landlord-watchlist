@@ -237,27 +237,27 @@ angular.module('map.controllers', [])
           {id: "s", label: "Violationz", type: "number"}
       ], "rows": [
         {c: [
-            {v: "Class A"},
+            {v: "HPD Class A Violations"},
             {v: parseInt(building.a)},
         ]},
         {c: [
-            {v: "Class B"},
+            {v: "HPD Class B Violations"},
             {v: parseInt(building.b)}
         ]},
         {c: [
-            {v: "Class C"},
+            {v: "HPD Class C Violations"},
             {v: parseInt(building.c)},
         ]},
         {c: [
-            {v: "Class I"},
+            {v: "HPD Class I Violations"},
             {v: parseInt(building.i)}
         ]},
         {c: [
-            {v: "Dept. of Buildings violations"},
+            {v: "Department of Buildings Complaints"},
             {v: parseInt(building.dob)}
         ]},
         {c: [
-            {v: "Housing Court complaints"},
+            {v: "Housing Court Petitions"},
             {v: parseInt(building.housingCourt)}
         ]}
       ]};
