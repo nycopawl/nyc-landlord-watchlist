@@ -64,6 +64,11 @@ angular.module('map.controllers', [])
       }
 
 
+      $scope.units = function(a, b) {
+        return parseInt(a) + parseInt(b);
+      }
+
+
       $scope.mouseoverBuilding = function(id) {
         $scope.hoverBuilding = $scope.getBuilding(id);
         $timeout(function (){
