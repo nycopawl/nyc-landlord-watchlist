@@ -394,14 +394,7 @@ group by HouseNumber, HouseStreet;
 # --------------------------------------------------
 drop table if exists 2015_housing_court_petitions;
 create table 2015_housing_court_petitions (
-  Court VARCHAR(32) , 
-  FiledDate VARCHAR(10),
-  IndexNumber VARCHAR(32),
-  Classification VARCHAR(32),
-  Petitioners VARCHAR(256),
-  Respondents  VARCHAR(156),
-  PropertyAddress VARCHAR(256),
-  PRIMARY KEY `IndexNumber` (`IndexNumber`)
+  PropertyAddress VARCHAR(256)
 );
 
 # CLI
@@ -933,6 +926,9 @@ update 2015_buildings_watchlist b set b.exclude = b.exclude + (
   (select count(*) from 2015_buildings_exclude e where e.HouseNumber  = b.HouseNumber AND e.StreetName = b.StreetName )
 );
 
+select *from 2015_buildings_watchlist e where e.HouseNumber  = 400 AND e.StreetName = 'WEST 57 STREET';
+
+
 
 
 # Exclude buildigns in receiver (28 bldgs)
@@ -1007,6 +1003,7 @@ where BuildingID=396127;
 
 # total exclusions: 1439
 # total exclusions 11/19/15: 2225
+# total exclusions 11/30/15: 2,244
 
 
 # Add the lat/lngs
@@ -1112,9 +1109,6 @@ delete FROM `2015_landlords_watchlist` where (officer="" and org="") or isnull(o
 update 2015_buildings_watchlist b set LandlordID=(select LandlordID from 2015_landlords_watchlist l where b.officer = l.officer);
 
 
-update 2015_buildings_watchlist set worstLandlord=0;
-# Run update commands from export.php
-
 
 #update 2015_buildings_watchlist b 
 #left join 2015_landlords_exclude e on b.org = e.name
@@ -1215,3 +1209,26 @@ order by dob_hpd desc
 limit 100;
 
 
+
+
+update 2015_buildings_watchlist set worstLandlord=0;
+# Run update commands from export.php
+# Re-run buildings_included, landlords_100 commands above; 
+
+CLI
+ rm  json/*.json json/*.sh json/*.csv json/landlords/*.json json/buildings/*.json json.tgz
+ php export.php >export.txt
+ tar cvzf json.tgz json
+# overwrite json dir
+
+cd /home/jeff/Downloads/json
+scp buildings-tilemill.csv root@54.214.3.79:/root/workspace/nycwatchlist/
+ssh -CA root@54.214.3.79 -L 20009:localhost:20009 -L 20008:localhost:20008
+
+# go to localhost:20009/#/project/watchlist3, rebuild
+scp root@54.214.3.79:~/Documents/MapBox/export/watchlist3_e2cdef.mbtiles .
+scp watchlist3_e2cdef.mbtiles root@maps.albatrossdigital.com:~/mapbox/mbtiles
+  # password in passpack: 
+
+# update url in directives.js
+# Update Drupal table: http://advocate.nyc.gov/node/247/edit

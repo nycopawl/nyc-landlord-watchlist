@@ -48,11 +48,11 @@ angular.module('map.directives', [])
         });
 
         // The visible tile layer
-        L.mapbox.tileLayer('http://54.214.3.79:8888/v2/watchlist3_1f3a75.json').addTo(map);
+        L.mapbox.tileLayer('http://maps.albatrossdigital.com:8888/v2/watchlist3_e2cdef.json').addTo(map);
         L.control.attribution({prefix: '<span class="attrs-bldgs bldg-first" style="background-color:#6e0074"></span> Worst landlord buildings <span class="attrs-bldgs" style="background-color:#ff7800"></span> Buildings meeting <a href="http://advocate.nyc.gov/landlord-watchlist/criteria" target="_blank">watchlist criteria</a>'}).addTo(map);
 
         // Load interactivity data into the map with a gridLayer
-        var gridLayer = L.mapbox.gridLayer('http://54.214.3.79:8888/v2/watchlist3_1f3a75.json');
+        var gridLayer = L.mapbox.gridLayer('http://maps.albatrossdigital.com:8888/v2/watchlist3_e2cdef.json');
         gridLayer.addTo(map);
 
         // And use that interactivity to drive a control the user can see.
