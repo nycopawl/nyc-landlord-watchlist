@@ -911,6 +911,11 @@ OWNER1_FN="JOEL",
 officer="JOEL ISRAEL"
  where BuildingID=327787;
 
+
+# --------------------------------------------
+# For addl Exclusions start here
+# --------------------------------------------
+
 update 2015_buildings_watchlist set exclude =0;
 
 
@@ -925,8 +930,6 @@ update 2015_buildings_watchlist set exclude =0;
 update 2015_buildings_watchlist b set b.exclude = b.exclude + (
   (select count(*) from 2015_buildings_exclude e where e.HouseNumber  = b.HouseNumber AND e.StreetName = b.StreetName )
 );
-
-select *from 2015_buildings_watchlist e where e.HouseNumber  = 400 AND e.StreetName = 'WEST 57 STREET';
 
 
 
@@ -999,11 +1002,13 @@ org = (select org from 2015_buildings_all where BuildingID=210828 limit 1)
 where BuildingID=396127;
 
 
+select count(*) from 2015_buildings_watchlist where exclude != 0;
 
 
 # total exclusions: 1439
 # total exclusions 11/19/15: 2225
 # total exclusions 11/30/15: 2,244
+# total exclusions 12/2/15: 2274
 
 
 # Add the lat/lngs
@@ -1213,17 +1218,25 @@ limit 100;
 
 update 2015_buildings_watchlist set worstLandlord=0;
 # Run update commands from export.php
+cd /var/www
+php export.php >export.txt
+
 # Re-run buildings_included, landlords_100 commands above; 
 
 CLI
  rm  json/*.json json/*.sh json/*.csv json/landlords/*.json json/buildings/*.json json.tgz
  php export.php >export.txt
  tar cvzf json.tgz json
-# overwrite json dir
+# locally
+ scp root@ec2-54-214-162-250.us-west-2.compute.amazonaws.com:/var/www/json.tgz .
+# overwrite json dir locally
+
+ssh -CA root@54.214.3.79 -L 20009:localhost:20009 -L 20008:localhost:20008
+rm /root/workspace/nycwatchlist/buildings-tilemill.csv
+/usr/share/tilemill/index.js --server=true
 
 cd /home/jeff/Downloads/json
 scp buildings-tilemill.csv root@54.214.3.79:/root/workspace/nycwatchlist/
-ssh -CA root@54.214.3.79 -L 20009:localhost:20009 -L 20008:localhost:20008
 
 # go to localhost:20009/#/project/watchlist3, rebuild
 scp root@54.214.3.79:~/Documents/MapBox/export/watchlist3_e2cdef.mbtiles .
