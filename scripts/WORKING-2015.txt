@@ -1009,6 +1009,7 @@ select count(*) from 2015_buildings_watchlist where exclude != 0;
 # total exclusions 11/19/15: 2225
 # total exclusions 11/30/15: 2,244
 # total exclusions 12/2/15: 2274
+# total exclusions 12/18/15: 2288
 
 
 # Add the lat/lngs
@@ -1228,8 +1229,8 @@ CLI
  php export.php >export.txt
  tar cvzf json.tgz json
 # locally
- scp root@ec2-54-214-162-250.us-west-2.compute.amazonaws.com:/var/www/json.tgz .
-# overwrite json dir locally
+ scp root@ec2-54-184-107-91.us-west-2.compute.amazonaws.com:/var/www/json.tgz .
+# un tar.gz, overwrite json dir locally
 
 ssh -CA root@54.214.3.79 -L 20009:localhost:20009 -L 20008:localhost:20008
 rm /root/workspace/nycwatchlist/buildings-tilemill.csv
@@ -1239,9 +1240,10 @@ cd /home/jeff/Downloads/json
 scp buildings-tilemill.csv root@54.214.3.79:/root/workspace/nycwatchlist/
 
 # go to localhost:20009/#/project/watchlist3, rebuild
-scp root@54.214.3.79:~/Documents/MapBox/export/watchlist3_e2cdef.mbtiles .
-scp watchlist3_e2cdef.mbtiles root@maps.albatrossdigital.com:~/mapbox/mbtiles
+scp root@54.214.3.79:~/Documents/MapBox/export/watchlist3_34ab47.mbtiles .
+scp watchlist3_34ab47.mbtiles root@maps.albatrossdigital.com:~/mapbox/mbtiles
   # password in passpack: 
 
 # update url in directives.js
+# Push changes
 # Update Drupal table: http://advocate.nyc.gov/node/247/edit

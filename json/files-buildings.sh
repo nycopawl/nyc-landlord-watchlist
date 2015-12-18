@@ -1142,8 +1142,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=239+M
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=284+MULBERRY+STREET+MANHATTAN+NY+10012&sensor=false" -O building-25853.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=184+NAGLE+AVENUE+MANHATTAN+NY+10034&sensor=false" -O building-25928.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=192+NAGLE+AVENUE+MANHATTAN+NY+10034&sensor=false" -O building-25929.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=55+NAGLE+AVENUE+MANHATTAN+NY+10040&sensor=false" -O building-25940.jpg
@@ -1207,8 +1205,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=153+SEAMAN+AVENUE+MANHATTAN+NY+10034&sensor=false" -O building-27530.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=88+SEAMAN+AVENUE+MANHATTAN+NY+10034&sensor=false" -O building-27560.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=25+SHERMAN+AVENUE+MANHATTAN+NY+10040&sensor=false" -O building-27605.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=272+SHERMAN+AVENUE+MANHATTAN+NY+10034&sensor=false" -O building-27609.jpg
 sleep 5
@@ -1972,10 +1968,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=427+W
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=465+WEST+147+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42159.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=522+WEST+147+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42168.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=526+WEST+147+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42170.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=620+WEST+147+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42202.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=539+WEST+148+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42290.jpg
@@ -2083,8 +2075,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=449+WEST+162+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42949.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=520+WEST+162+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42959.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=535+WEST+162+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42969.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=543+WEST+162+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42972.jpg
 sleep 5
@@ -2840,8 +2830,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=179+E
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=195+EAST+206+STREET+BRONX+NY+10458&sensor=false" -O building-67435.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=241+EAST+206+STREET+BRONX+NY+10467&sensor=false" -O building-67437.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=237+EAST+207+STREET+BRONX+NY+10467&sensor=false" -O building-67461.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=106+EAST+208+STREET+BRONX+NY+10467&sensor=false" -O building-67491.jpg
@@ -3137,8 +3125,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1355+GRAND+CONCOURSE+BRONX+NY+10452&sensor=false" -O building-81684.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1401+GRAND+CONCOURSE+BRONX+NY+10452&sensor=false" -O building-81691.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1665+GRAND+CONCOURSE+BRONX+NY+10452&sensor=false" -O building-81714.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1930+GRAND+CONCOURSE+BRONX+NY+10457&sensor=false" -O building-81746.jpg
 sleep 5
@@ -3588,8 +3574,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2707+
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2820+SEDGWICK+AVENUE+BRONX+NY+10468&sensor=false" -O building-108531.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1314+SENECA+AVENUE+BRONX+NY+10474&sensor=false" -O building-108749.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1757+SEWARD+AVENUE+BRONX+NY+10473&sensor=false" -O building-108934.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=3153+SEYMOUR+AVENUE+BRONX+NY+10469&sensor=false" -O building-109228.jpg
@@ -3605,10 +3589,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1162+SHERIDAN+AVENUE+BRONX+NY+10456&sensor=false" -O building-109427.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1214+SHERIDAN+AVENUE+BRONX+NY+10456&sensor=false" -O building-109433.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1225+SHERIDAN+AVENUE+BRONX+NY+10456&sensor=false" -O building-109435.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1231+SHERIDAN+AVENUE+BRONX+NY+10456&sensor=false" -O building-109437.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=943+SHERIDAN+AVENUE+BRONX+NY+10456&sensor=false" -O building-109472.jpg
 sleep 5
@@ -4679,6 +4659,10 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1325+53+STREET+BROOKLYN+NY+11219&sensor=false" -O building-156184.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=250+53+STREET+BROOKLYN+NY+11220&sensor=false" -O building-156504.jpg
+sleep 5
+wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=452+53+STREET+BROOKLYN+NY+11220&sensor=false" -O building-156599.jpg
+sleep 5
+wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=456+53+STREET+BROOKLYN+NY+11220&sensor=false" -O building-156600.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1039+54+STREET+BROOKLYN+NY+11219&sensor=false" -O building-156838.jpg
 sleep 5
@@ -6246,8 +6230,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=919+E
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=927+EAST+76+STREET+BROOKLYN+NY+11236&sensor=false" -O building-276538.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=545+EAST+82+STREET+BROOKLYN+NY+11236&sensor=false" -O building-277854.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1003+EAST+86+STREET+BROOKLYN+NY+11236&sensor=false" -O building-279385.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1005+EAST+86+STREET+BROOKLYN+NY+11236&sensor=false" -O building-279387.jpg
@@ -6343,8 +6325,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=445+EAST+95+STREET+BROOKLYN+NY+11212&sensor=false" -O building-283874.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=469+EAST+95+STREET+BROOKLYN+NY+11212&sensor=false" -O building-283889.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=476+EAST+95+STREET+BROOKLYN+NY+11212&sensor=false" -O building-283892.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=499+EAST+95+STREET+BROOKLYN+NY+11212&sensor=false" -O building-283907.jpg
 sleep 5
@@ -6819,8 +6799,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=904+GLENMORE+AVENUE+BROOKLYN+NY+11208&sensor=false" -O building-301033.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=914+GLENMORE+AVENUE+BROOKLYN+NY+11208&sensor=false" -O building-301039.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=165+FOUNTAIN+AVENUE+BROOKLYN+NY+11208&sensor=false" -O building-301050.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=975+GLENMORE+AVENUE+BROOKLYN+NY+11208&sensor=false" -O building-301077.jpg
 sleep 5
@@ -7881,8 +7859,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=54+LINCOLN+AVENUE+BROOKLYN+NY+11208&sensor=false" -O building-326009.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=568+LINCOLN+AVENUE+BROOKLYN+NY+11208&sensor=false" -O building-326015.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1188+LINCOLN+PLACE+BROOKLYN+NY+11213&sensor=false" -O building-326251.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1267+LINCOLN+PLACE+BROOKLYN+NY+11213&sensor=false" -O building-326291.jpg
 sleep 5
@@ -9636,8 +9612,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=70+ST
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=84+ST+NICHOLAS+AVENUE+BROOKLYN+NY+11237&sensor=false" -O building-375376.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1+ST+PAULS+COURT+BROOKLYN+NY+11226&sensor=false" -O building-375382.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=21+ST+PAULS+COURT+BROOKLYN+NY+11226&sensor=false" -O building-375384.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=126+STANHOPE+STREET+BROOKLYN+NY+11221&sensor=false" -O building-375489.jpg
@@ -11167,8 +11141,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=62-09+MYRTLE+AVENUE+QUEENS+NY+11385&sensor=false" -O building-681974.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=66-11+MYRTLE+AVENUE+QUEENS+NY+11385&sensor=false" -O building-682058.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=11-27+NAMEOKE+STREET+QUEENS+NY+11691&sensor=false" -O building-682393.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=109-26+GUY+R+BREWER+BOULEVARD+QUEENS+NY+11433&sensor=false" -O building-683376.jpg
 sleep 5
