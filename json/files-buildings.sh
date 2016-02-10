@@ -222,8 +222,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=466+6
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1809+ADAM+C+POWELL+BOULEVARD+MANHATTAN+NY+10026&sensor=false" -O building-3365.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1855+ADAM+C+POWELL+BOULEVARD+MANHATTAN+NY+10026&sensor=false" -O building-3381.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1952+ADAM+C+POWELL+BOULEVARD+MANHATTAN+NY+10026&sensor=false" -O building-3401.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2035+ADAM+C+POWELL+BOULEVARD+MANHATTAN+NY+10027&sensor=false" -O building-3438.jpg
@@ -304,8 +302,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=524+9
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=533+9+AVENUE+MANHATTAN+NY+10018&sensor=false" -O building-4740.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=534+9+AVENUE+MANHATTAN+NY+10018&sensor=false" -O building-4741.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=656+9+AVENUE+MANHATTAN+NY+10036&sensor=false" -O building-4809.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=661+9+AVENUE+MANHATTAN+NY+10036&sensor=false" -O building-4812.jpg
@@ -378,12 +374,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1792+
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1846+AMSTERDAM+AVENUE+MANHATTAN+NY+10031&sensor=false" -O building-5689.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1981+AMSTERDAM+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-5730.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1993+AMSTERDAM+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-5739.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2089+AMSTERDAM+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-5765.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2101+AMSTERDAM+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-5774.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2104+AMSTERDAM+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-5776.jpg
@@ -395,8 +385,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2145+AMSTERDAM+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-5797.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2153+AMSTERDAM+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-5801.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2296+AMSTERDAM+AVENUE+MANHATTAN+NY+10033&sensor=false" -O building-5834.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2300+AMSTERDAM+AVENUE+MANHATTAN+NY+10033&sensor=false" -O building-5835.jpg
 sleep 5
@@ -579,8 +567,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=189+EAST+2+STREET+MANHATTAN+NY+10009&sensor=false" -O building-10456.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=298+EAST+3+STREET+MANHATTAN+NY+10009&sensor=false" -O building-10600.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=311+EAST+3+STREET+MANHATTAN+NY+10009&sensor=false" -O building-10611.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=314+EAST+3+STREET+MANHATTAN+NY+10009&sensor=false" -O building-10613.jpg
 sleep 5
@@ -874,8 +860,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=454+E
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=348+EAST+120+STREET+MANHATTAN+NY+10035&sensor=false" -O building-20291.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=237+EAST+121+STREET+MANHATTAN+NY+10035&sensor=false" -O building-20351.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=212+EAST+122+STREET+MANHATTAN+NY+10035&sensor=false" -O building-20394.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1+EAST+124+STREET+MANHATTAN+NY+10035&sensor=false" -O building-20471.jpg
@@ -961,8 +945,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=317+GREENWICH+STREET+MANHATTAN+NY+10013&sensor=false" -O building-22289.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=94+GREENWICH+STREET+MANHATTAN+NY+10006&sensor=false" -O building-22445.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=90+HAMILTON+PLACE+MANHATTAN+NY+10031&sensor=false" -O building-22535.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=29+HAMILTON+TERRACE+MANHATTAN+NY+10031&sensor=false" -O building-22557.jpg
 sleep 5
@@ -1112,8 +1094,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=167+M
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=175+MORNINGSIDE+AVENUE+MANHATTAN+NY+10027&sensor=false" -O building-25536.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=8+MORNINGSIDE+AVENUE+MANHATTAN+NY+10026&sensor=false" -O building-25560.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=98+MORNINGSIDE+AVENUE+MANHATTAN+NY+10027&sensor=false" -O building-25564.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=42+MORTON+STREET+MANHATTAN+NY+10014&sensor=false" -O building-25587.jpg
@@ -1226,8 +1206,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=98+ST
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1091+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-27927.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=11+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10026&sensor=false" -O building-27928.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1218+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-27938.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1253+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10032&sensor=false" -O building-27948.jpg
@@ -1254,8 +1232,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=17+ST
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=271+WEST+119+STREET+MANHATTAN+NY+10026&sensor=false" -O building-28061.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=241+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10027&sensor=false" -O building-28078.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=281+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10027&sensor=false" -O building-28082.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=348+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10027&sensor=false" -O building-28098.jpg
@@ -1264,13 +1240,9 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=40+ST
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=422+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10027&sensor=false" -O building-28113.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=448+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10027&sensor=false" -O building-28124.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=560+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10030&sensor=false" -O building-28140.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=606+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10030&sensor=false" -O building-28147.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=67+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10026&sensor=false" -O building-28166.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=678+ST+NICHOLAS+AVENUE+MANHATTAN+NY+10030&sensor=false" -O building-28169.jpg
 sleep 5
@@ -1465,8 +1437,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=51+WEST+46+STREET+MANHATTAN+NY+10036&sensor=false" -O building-33383.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=7+WEST+46+STREET+MANHATTAN+NY+10036&sensor=false" -O building-33411.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=322+WEST+47+STREET+MANHATTAN+NY+10036&sensor=false" -O building-33454.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=330+WEST+47+STREET+MANHATTAN+NY+10036&sensor=false" -O building-33460.jpg
 sleep 5
@@ -1704,8 +1674,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=45+WE
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=48+WEST+119+STREET+MANHATTAN+NY+10026&sensor=false" -O building-38739.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=56+WEST+119+STREET+MANHATTAN+NY+10026&sensor=false" -O building-38748.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=70+WEST+119+STREET+MANHATTAN+NY+10026&sensor=false" -O building-38761.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=87+WEST+119+STREET+MANHATTAN+NY+10026&sensor=false" -O building-38778.jpg
@@ -1838,11 +1806,7 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=255+W
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=269+WEST+134+STREET+MANHATTAN+NY+10030&sensor=false" -O building-40670.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=520+WEST+134+STREET+MANHATTAN+NY+10031&sensor=false" -O building-40690.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=524+WEST+134+STREET+MANHATTAN+NY+10031&sensor=false" -O building-40694.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=181+WEST+135+STREET+MANHATTAN+NY+10030&sensor=false" -O building-40712.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=187+WEST+135+STREET+MANHATTAN+NY+10030&sensor=false" -O building-40715.jpg
 sleep 5
@@ -1900,8 +1864,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=518+W
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=640+WEST+139+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41399.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=509+WEST+140+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41469.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=557+WEST+140+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41481.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=452+WEST+141+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41530.jpg
@@ -1924,17 +1886,9 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=621+W
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=623+WEST+142+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41687.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=505+WEST+143+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41739.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=515+WEST+143+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41746.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=516+WEST+143+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41747.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=536+WEST+143+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41759.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=219+WEST+144+STREET+MANHATTAN+NY+10030&sensor=false" -O building-41794.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=229+WEST+144+STREET+MANHATTAN+NY+10030&sensor=false" -O building-41798.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=417+WEST+144+STREET+MANHATTAN+NY+10031&sensor=false" -O building-41817.jpg
 sleep 5
@@ -1961,8 +1915,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=543+WEST+146+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42077.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=205+WEST+147+STREET+MANHATTAN+NY+10039&sensor=false" -O building-42094.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=207+WEST+147+STREET+MANHATTAN+NY+10039&sensor=false" -O building-42095.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=427+WEST+147+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42142.jpg
 sleep 5
@@ -1992,13 +1944,7 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=541+W
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=521+WEST+151+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42508.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=522+WEST+151+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42509.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=450+WEST+152+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42529.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=453+WEST+152+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42530.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=454+WEST+152+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42531.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=517+WEST+152+STREET+MANHATTAN+NY+10031&sensor=false" -O building-42553.jpg
 sleep 5
@@ -2019,8 +1965,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=423+WEST+154+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42676.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=427+WEST+154+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42680.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=512+WEST+156+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42706.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=504+WEST+157+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42739.jpg
 sleep 5
@@ -2052,8 +1996,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=538+W
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=428+WEST+160+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42854.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=539+WEST+160+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42864.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=550+WEST+160+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42871.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=551+WEST+160+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42872.jpg
@@ -2081,8 +2023,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=548+WEST+162+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42975.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=560+WEST+162+STREET+MANHATTAN+NY+10032&sensor=false" -O building-42981.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=549+WEST+163+STREET+MANHATTAN+NY+10032&sensor=false" -O building-43014.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=610+WEST+163+STREET+MANHATTAN+NY+10032&sensor=false" -O building-43016.jpg
 sleep 5
@@ -3021,8 +2961,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1046+FAILE+STREET+BRONX+NY+10459&sensor=false" -O building-77333.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=822+FAILE+STREET+BRONX+NY+10474&sensor=false" -O building-77398.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=709+FAIRMOUNT+PLACE+BRONX+NY+10457&sensor=false" -O building-77561.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=3357+FENTON+AVENUE+BRONX+NY+10469&sensor=false" -O building-77979.jpg
 sleep 5
@@ -4578,10 +4516,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=247+4
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=423+46+STREET+BROOKLYN+NY+11220&sensor=false" -O building-151920.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=545+46+STREET+BROOKLYN+NY+11220&sensor=false" -O building-151981.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=553+46+STREET+BROOKLYN+NY+11220&sensor=false" -O building-151985.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=557+46+STREET+BROOKLYN+NY+11220&sensor=false" -O building-151987.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=850+46+STREET+BROOKLYN+NY+11220&sensor=false" -O building-152122.jpg
@@ -4659,10 +4593,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1325+53+STREET+BROOKLYN+NY+11219&sensor=false" -O building-156184.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=250+53+STREET+BROOKLYN+NY+11220&sensor=false" -O building-156504.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=452+53+STREET+BROOKLYN+NY+11220&sensor=false" -O building-156599.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=456+53+STREET+BROOKLYN+NY+11220&sensor=false" -O building-156600.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1039+54+STREET+BROOKLYN+NY+11219&sensor=false" -O building-156838.jpg
 sleep 5
@@ -11407,8 +11337,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=99+WRIGHT+STREET+STATEN+ISLAND+NY+10304&sensor=false" -O building-797473.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=238+YORK+AVENUE+STATEN+ISLAND+NY+10301&sensor=false" -O building-797817.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1889+7+AVENUE+MANHATTAN+NY+10026&sensor=false" -O building-803864.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2234+7+AVENUE+MANHATTAN+NY+10027&sensor=false" -O building-803878.jpg
 sleep 5
