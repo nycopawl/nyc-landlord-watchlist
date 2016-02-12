@@ -926,7 +926,7 @@ update 2015_buildings_watchlist set exclude =0;
 #  select count(*) from 2015_buildings_exclude_aep e where e.address = CONCAT(b.HouseNumber, " ", b.StreetName) 
 #);
 
-# hpd requested removals (155 bldgs)
+# hpd requested removals (156 bldgs)
 update 2015_buildings_watchlist b set b.exclude = b.exclude + (
   (select count(*) from 2015_buildings_exclude e where e.HouseNumber  = b.HouseNumber AND e.StreetName = b.StreetName )
 );
@@ -940,7 +940,7 @@ update 2015_buildings_watchlist set exclude=1 WHERE OWNER1 LIKE  '%RECEIVER' OR 
 
 
 
-# Exclude buildings from landlords exclusion list (1982 bldgs)
+# Exclude buildings from landlords exclusion list (2021 bldgs)
 update 2015_buildings_watchlist b inner join 2015_landlords_exclude e 
 on (
 b.org=e.org
@@ -948,6 +948,7 @@ or b.org LIKE CONCAT("%",e.org,"%")
 )
 set b.exclude=1;
 
+# 319 bldgs
 update 2015_buildings_watchlist b inner join 2015_landlords_exclude e 
 on (
 b.OWNER1_LN=e.lname
@@ -1016,8 +1017,8 @@ OWNER1_LN = "BERMAN"
 where BuildingID=21667;
 
 
-select count(*) from 2015_buildings_watchlist where exclude != 0;
 
+select count(*) from 2015_buildings_watchlist where exclude != 0;
 
 # total exclusions: 1439
 # total exclusions 11/19/15: 2225
@@ -1025,6 +1026,7 @@ select count(*) from 2015_buildings_watchlist where exclude != 0;
 # total exclusions 12/2/15: 2274
 # total exclusions 12/18/15: 2288
 # total exclusions 2/2/16: 2324
+# total exclusions: 2323 2/11/16
 
 # Add the lat/lngs
 # Don't need to do this when just adding addl exclusions
@@ -1247,7 +1249,7 @@ CLI
  php export.php >export.txt
  tar cvzf json.tgz json
 # locally
- scp root@ec2-52-13-62-209.us-west-2.compute.amazonaws.com:/var/www/json.tgz .
+ scp root@ec2-54-190-168-103.us-west-2.compute.amazonaws.com:/var/www/json.tgz .
 # un tar.gz, overwrite json dir locally
 
 ssh -CA root@54.214.3.79 -L 20009:localhost:20009 -L 20008:localhost:20008
@@ -1259,11 +1261,12 @@ scp buildings-tilemill.csv root@54.214.3.79:/root/workspace/nycwatchlist/
 
 # go to localhost:20009/#/project/watchlist3, rebuild
 # Locally:
-scp root@54.214.3.79:~/Documents/MapBox/export/watchlist3_a3eed1.mbtiles .
-scp watchlist3_a3eed1.mbtiles root@maps.albatrossdigital.com:~/mapbox/mbtiles
+scp root@54.214.3.79:~/Documents/MapBox/export/watchlist3_5bafb5.mbtiles .
+scp watchlist3_5bafb5.mbtiles root@maps.albatrossdigital.com:~/mapbox/mbtiles
   # password in passpack: 
 
 # test on watchlist.local
-# update url in directives.js
+# update url in directives.js 2x
 # Push changes
 # Update Drupal table: http://advocate.nyc.gov/node/247/edit
+# run last few lines in files-landlords.sh to generate new thumbs, copy into /imgs/landlords
