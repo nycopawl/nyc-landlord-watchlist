@@ -2248,8 +2248,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1378+
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1426+BOSTON+ROAD+BRONX+NY+10456&sensor=false" -O building-50433.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1025+BOYNTON+AVENUE+BRONX+NY+10472&sensor=false" -O building-51000.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1134+BOYNTON+AVENUE+BRONX+NY+10472&sensor=false" -O building-51034.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1158+BOYNTON+AVENUE+BRONX+NY+10472&sensor=false" -O building-51040.jpg
@@ -2490,8 +2488,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2076+
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2950+DANIEL+STREET+BRONX+NY+10461&sensor=false" -O building-60386.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1775+DAVIDSON+AVENUE+BRONX+NY+10453&sensor=false" -O building-60439.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2201+DAVIDSON+AVENUE+BRONX+NY+10453&sensor=false" -O building-60491.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2290+DAVIDSON+AVENUE+BRONX+NY+10468&sensor=false" -O building-60496.jpg
@@ -2663,8 +2659,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1723+EAST+172+STREET+BRONX+NY+10472&sensor=false" -O building-65531.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1725+EAST+172+STREET+BRONX+NY+10472&sensor=false" -O building-65532.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1742+EAST+172+STREET+BRONX+NY+10472&sensor=false" -O building-65537.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=937+EAST+172+STREET+BRONX+NY+10460&sensor=false" -O building-65570.jpg
 sleep 5
@@ -3080,8 +3074,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2701+
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2760+GRAND+CONCOURSE+BRONX+NY+10458&sensor=false" -O building-81871.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2874+GRAND+CONCOURSE+BRONX+NY+10458&sensor=false" -O building-81891.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=750+GRAND+CONCOURSE+BRONX+NY+10451&sensor=false" -O building-81982.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=888+GRAND+CONCOURSE+BRONX+NY+10451&sensor=false" -O building-81989.jpg
@@ -3419,8 +3411,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=3207+OXFORD+AVENUE+BRONX+NY+10463&sensor=false" -O building-100943.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=4462+PARK+AVENUE+BRONX+NY+10457&sensor=false" -O building-101317.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=4575+PARK+AVENUE+BRONX+NY+10458&sensor=false" -O building-101342.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=4633+PARK+AVENUE+BRONX+NY+10458&sensor=false" -O building-101356.jpg
 sleep 5
@@ -4842,8 +4832,6 @@ wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=552+A
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2005+ALBEMARLE+ROAD+BROOKLYN+NY+11226&sensor=false" -O building-183911.jpg
 sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2020+ALBEMARLE+ROAD+BROOKLYN+NY+11226&sensor=false" -O building-183916.jpg
-sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2506+ALBEMARLE+ROAD+BROOKLYN+NY+11226&sensor=false" -O building-183944.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=363+AMBOY+STREET+BROOKLYN+NY+11212&sensor=false" -O building-184230.jpg
@@ -6003,8 +5991,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1488+EAST+17+STREET+BROOKLYN+NY+11230&sensor=false" -O building-246731.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=1955+EAST+17+STREET+BROOKLYN+NY+11229&sensor=false" -O building-246883.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=40+EAST+17+STREET+BROOKLYN+NY+11226&sensor=false" -O building-247119.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=410+EAST+17+STREET+BROOKLYN+NY+11226&sensor=false" -O building-247121.jpg
 sleep 5
@@ -8397,8 +8383,6 @@ sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=770+NEW+YORK+AVENUE+BROOKLYN+NY+11203&sensor=false" -O building-344023.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=979+NEW+YORK+AVENUE+BROOKLYN+NY+11203&sensor=false" -O building-344101.jpg
-sleep 5
-wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2010+NEWKIRK+AVENUE+BROOKLYN+NY+11226&sensor=false" -O building-344295.jpg
 sleep 5
 wget "http://maps.googleapis.com/maps/api/streetview?size=300x200&location=2304+NEWKIRK+AVENUE+BROOKLYN+NY+11226&sensor=false" -O building-344310.jpg
 sleep 5

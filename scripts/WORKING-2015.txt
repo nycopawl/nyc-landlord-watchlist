@@ -948,7 +948,7 @@ or b.org LIKE CONCAT("%",e.org,"%")
 )
 set b.exclude=1;
 
-# 319 bldgs
+# 327 bldgs
 update 2015_buildings_watchlist b inner join 2015_landlords_exclude e 
 on (
 b.OWNER1_LN=e.lname
@@ -1027,6 +1027,7 @@ select count(*) from 2015_buildings_watchlist where exclude != 0;
 # total exclusions 12/18/15: 2288
 # total exclusions 2/2/16: 2324
 # total exclusions: 2323 2/11/16
+# total exclusions: 2331 2/16/16
 
 # Add the lat/lngs
 # Don't need to do this when just adding addl exclusions
@@ -1239,7 +1240,7 @@ update 2015_buildings_watchlist set worstLandlord=0;
 cd /var/www
 php export.php >export.txt
 
-# should return > 100
+# should return > 100 (was 568)
 select count(*) from 2015_buildings_watchlist where worstLandlord=1;
 
 # Re-run buildings_included, landlords_100 commands above; 
@@ -1249,7 +1250,7 @@ CLI
  php export.php >export.txt
  tar cvzf json.tgz json
 # locally
- scp root@ec2-54-190-168-103.us-west-2.compute.amazonaws.com:/var/www/json.tgz .
+ scp root@ec2-54-202-197-171.us-west-2.compute.amazonaws.com:/var/www/json.tgz .
 # un tar.gz, overwrite json dir locally
 
 ssh -CA root@54.214.3.79 -L 20009:localhost:20009 -L 20008:localhost:20008
@@ -1261,8 +1262,8 @@ scp buildings-tilemill.csv root@54.214.3.79:/root/workspace/nycwatchlist/
 
 # go to localhost:20009/#/project/watchlist3, rebuild
 # Locally:
-scp root@54.214.3.79:~/Documents/MapBox/export/watchlist3_5bafb5.mbtiles .
-scp watchlist3_5bafb5.mbtiles root@maps.albatrossdigital.com:~/mapbox/mbtiles
+scp root@54.214.3.79:~/Documents/MapBox/export/watchlist3_4a27b3.mbtiles .
+scp watchlist3_4a27b3.mbtiles root@maps.albatrossdigital.com:~/mapbox/mbtiles
   # password in passpack: 
 
 # test on watchlist.local
