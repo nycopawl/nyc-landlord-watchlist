@@ -18391,7 +18391,7 @@ var markers = [
    "DOF": "0"
  },
  {
-   "LandlordRank": "61",
+   "Rank": "61",
    "BuildingID": "46472",
    "LandlordID": "46472",
    "Boro": "BRONX",
@@ -18429,7 +18429,7 @@ var markers = [
    "DOF": "0"
  },
  {
-   "LandlordRank": "61",
+   "Rank": "61",
    "BuildingID": "101317",
    "LandlordID": "46472",
    "Boro": "BRONX",
