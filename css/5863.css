@@ -11620,9 +11620,8 @@ ul.social_icons, li.social {
 		display: none;
 	}
 	.fright select {
-		padding-top:2%;
-		display:inline-block;
-		float:right;
+	
+		display:none;
 		
 	}
 		
