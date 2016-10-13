@@ -11579,6 +11579,10 @@ ul.social_icons, li.social {
 		
 	}
 @media (max-width: 800px) {
+
+  .col-md-2 img {
+    width:auto;
+  }
 	.container
 			{
 				width: 100%;
