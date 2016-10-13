@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/5863.css" />
+
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	  #test{
+	  height:auto;
+	  }
+	  
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="wrapper">
+          <div class="headerwrap">
+        <div class="header">
+            	
+		
+	
+				<a href="http://advocate.nyc.gov/">
+				<img src="tishlogo.png" alt="logo" />
+                </a>
+          
+			
+			
+            <div class="fright">
+			<ul>
+			
+               <li><a href="http://advocate.nyc.gov/landlord-watchlist/tenant-rights" title="">Tenants' Rights</a></li>
+               <li><a href="http://advocate.nyc.gov/landlord-watchlist/landlord-resources" title="">Landlord Resources</a></li>
+             <li>  <a href="http://advocate.nyc.gov/landlord-watchlist/criteria" title="">About the Watchlist</a></li>
+			
+				</ul>
+                       </div>
+					   
+					  
+        </div>
+		
+        
+		
+						
+						 <div class="nav">
+						<ul>					
+							<li><a href="statenis.html">Staten Island</a></li>
+								<li><a href="brooklyn.html">Brooklyn</a></li>
+								<li><a href="queens.html">Queens</a></li>
+							<li><a href="manhattam.html">Manhattan</a></li>
+							<li><a href="bronx.html">Bronx</a></li>
+							<li><a href="buildings.html">Buildings</a></li>
+							<li><a href="map.html">Map</a></li>
+							<li><a href="index.html">Landlords</a></li>
+						</ul>
+						</div>
+       <div id="navigationwrap">
+            <div class="navigation">
+                <p>The 100 Worst Landlords in New York City</p>
+               
+            </div>
+			</div>
+			</div>
+			
+			
+			<div class="contentwrap">
+			<div class="scrolldiv" style="height:100%; width:100%;">
+			<div class="col-md-12">
+			  <div class="col-md-12-head">
+						  
+                  <h3>1. VED  PARKASH</h3>
+				</div>
+				
+    <div class="col-md-2">
+	<div id="map"></div>
+	</div>
+		<div class="col-md-2">
+					<div class="buildingRates">
+					
+						<p>Number of Buildings 10</p>
+						<br>	
+                        <p>Number of Units 621</p>
+						<br>
+					                            <p>HPD Violations 1749</p>
+                         
+<br>							
+							<p>DOB Violations 100</p>
+                            
+<br>    
+	<p>Housing Court Actions 0</p>
+					
+					</div>
+					
+           
+                 </div>
+	</div>
+	</div>
+	</div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+     <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEdL7GSizXOkrhG1vJWSRro4wlyqo5kdU&callback=initMap">
+    </script>
+	</div>
+  </body>
+</html>

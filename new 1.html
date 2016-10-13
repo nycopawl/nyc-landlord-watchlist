@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+<title>NYC Public Advocate Landlord Watchlist</title>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../css/5863.css" />
+
+</head>
+<body>
+    <div id="wrapper">
+        <div class="headerwrap">
+        <div class="header">
+            	
+		
+	
+				<a href="http://advocate.nyc.gov/">
+				<img src="tishlogo.png" alt="logo" />
+                </a>
+          
+			
+			
+            <div class="fright">
+			<ul>
+			
+               <li><a href="http://advocate.nyc.gov/landlord-watchlist/tenant-rights" title="">Tenants' Rights</a></li>
+               <li><a href="http://advocate.nyc.gov/landlord-watchlist/landlord-resources" title="">Landlord Resources</a></li>
+             <li>  <a href="http://advocate.nyc.gov/landlord-watchlist/criteria" title="">About the Watchlist</a></li>
+			
+				</ul>
+                       </div>
+					   
+					  
+        </div>
+		
+        
+		
+						
+						 <div class="nav">
+						<ul>		
+<li><a href="index.html">Landlords</a></li>	
+							<li><a href="buildings.html">Buildings</a></li>
+														<li><a href="map.html">Map</a></li>
+
+					
+														
+							<li><a>Boro</a>
+							<ul>
+							<li><a href="statenis.html">Staten Island</a></li>
+								<li><a href="brooklyn.html">Brooklyn</a></li>
+								<li><a href="queens.html">Queens</a></li>
+							<li><a href="manhattan.html">Manhattan</a></li>
+							<li><a href="bronx.html">Bronx</a></li>
+							</ul>
+							</li>
+							<li><a href="search.html">Search</a></li>
+
+						</ul>
+						</div>
+       <div id="navigationwrap">
+            <div class="navigation">
+                <p>The 100 Worst Landlords in New York City</p>
+               
+            </div>
+			</div>
+			</div>
+  
+        <div id="contentwrap">
+           
+
+        </div>
+	
+    
+	    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>    
+  
+	    <script src="search.js"></script>
+<script>
+
+	'use strict';
+
+	;( function ( document, window, index )
+	{
+		var hasElementClass		= function( element, className ){ return element.classList ? element.classList.contains( className ) : new RegExp( '(^| )' + className + '( |$)', 'gi' ).test( element.className ); },
+			addElementClass		= function( element, className ){ element.classList ? element.classList.add( className ) : element.className += ' ' + className; },
+			removeElementClass	= function( element, className ){ element.classList ? element.classList.remove( className ) : element.className = element.className.replace( new RegExp( '(^|\\b)' + className.split( ' ' ).join( '|' ) + '(\\b|$)', 'gi' ), ' ' ); };
+
+
+		// search & highlight
+
+		;( function ( document, window, index )
+		{
+			var container = document.querySelector( '.faq' );
+			if( !container ) return true;
+
+			var input			= container.querySelector( 'input' ),
+				notfound		= container.querySelector( '.faq__notfound' ),
+				items			= document.querySelectorAll( '.faq > ul > li' ),
+				item			= {},
+				itemsIndexed	= [];
+
+			[].forEach.call( items, function( entry )
+			{
+				itemsIndexed.push( entry.textContent.replace( /\s{2,}/g, ' ' ).toLowerCase() );
+			});
+
+			input.addEventListener( 'keyup', function( e )
+			{
+				if( e.keyCode == 13 ) // enter
+				{
+					input.blur();
+					return true;
+				}
+
+				[].forEach.call( items, function( entry )
+				{
+					entry.innerHTML = entry.innerHTML.replace( /<span class="highlight">([^<]+)<\/span>/gi, '$1' );
+				});
+
+				var searchVal = input.value.trim().toLowerCase();
+				if( searchVal.length )
+				{
+					itemsIndexed.forEach( function( entry, i )
+					{
+						if( itemsIndexed[ i ].indexOf( searchVal ) != -1 )
+						{
+							removeElementClass( items[ i ], 'is-hidden' );
+							items[ i ].innerHTML = items[ i ].innerHTML.replace( new RegExp( searchVal+'(?!([^<]+)?>)', 'gi' ), '<span class="highlight">$&</span>' );
+						}
+						else
+							addElementClass( items[ i ], 'is-hidden' );
+					});
+				}
+				else [].forEach.call( items, function( entry ){ removeElementClass( entry, 'is-hidden' ); });
+
+				if( items.length == [].filter.call( items, function( entry ){ return hasElementClass( entry, 'is-hidden' ) } ).length )
+					addElementClass( notfound, 'is-visible' );
+				else
+					removeElementClass( notfound, 'is-visible' );
+					
+			});
+		}( document, window, 0 ));
+
+
+		// toggling items on title press
+
+		;( function ( document, window, index )
+		{
+			[].forEach.call( document.querySelectorAll( '.faq h2 a' ), function( entry )
+			{
+				addElementClass( entry, 'js--is-toggleable-item' );
+			});
+
+			document.addEventListener( 'click', function( e )
+			{
+				if( hasElementClass( e.target, 'js--is-toggleable-item' ) )
+				{
+					e.preventDefault();
+					var current = e.target;
+					while( current.parentNode )
+					{
+						current = current.parentNode;
+						if( current.tagName.toLowerCase() == 'li' )
+						{
+							hasElementClass( current, 'is-active' ) ? removeElementClass( current, 'is-active' ) : addElementClass( current, 'is-active' );
+							break;
+						}
+					}
+				}
+			});
+		}( document, window, 0 ));
+
+
+		// auto-show item content when show results reduces to single
+
+		;( function ( document, window, index )
+		{
+			var container = document.querySelector( '.faq' );
+			if( !container ) return true;
+
+			var input	= container.querySelector( 'input' ),
+				items	= document.querySelectorAll( '.faq > ul > li' ),
+				item	= {};
+
+			input.addEventListener( 'keyup', function( e )
+			{
+				item = [].filter.call( items, function( entry ){ return !hasElementClass( entry, 'is-hidden' ); } )
+
+				if( item.length == 1 )
+				{
+					addElementClass( item[ 0 ], 'js--autoshown' );
+					addElementClass( item[ 0 ], 'is-active' );
+				}
+				else
+					[].forEach.call( items, function( entry )
+					{
+						if( hasElementClass( entry, 'js--autoshown' ) )
+						{
+							removeElementClass( entry, 'js--autoshown' );
+							removeElementClass( entry, 'is-active' );
+						}
+					});
+			});
+		}( document, window, 0 ));
+
+	}( document, window, 0 ));
+
+</script>
+        <div id="footerwrap">
+        <div id="footer">
+            <p>This is the Footer</p>
+        </div>
+        </div>
+    </div>
+	
+</body>
+</html>
