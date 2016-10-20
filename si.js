@@ -434,7 +434,7 @@ var markers = [
    "ORGANIZATION": null,
    "OWNER1_LN": "DOLAN",
    "OWNER1_FN": "JOHN ",
-   "officer": "JOHN  DOLAN",
+   "officer": "NULL",
    "org": null,
    "lat": "40.637172",
    "lng": "-74.088195",
