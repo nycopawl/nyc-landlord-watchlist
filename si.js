@@ -583,7 +583,7 @@ var markers = [
    "OWNER1_LN": "STROMFELD",
    "OWNER1_FN": "ALAN ",
    "officer": "ALAN  STROMFELD",
-   "org": "DOMINICK GRASSO",
+   "org": "NULL",
    "lat": "40.64150238",
    "lng": "-74.08421326",
    "exclude": "0",
