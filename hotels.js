@@ -87,28 +87,7 @@ var hotels = [
    "officer": "VED  PARKASH",
    "org": "PARKASH 2487 LLC"
  },
- {
-   "Rank": "5",
-   "LandlordId": "7474",
-   "buildings": "10",
-   "num": "998",
-   "a": "219",
-   "b": "626",
-   "c": "152",
-   "i": "1",
-   "score": "3.625",
-   "A_UNITS": "216",
-   "B_UNITS": "0",
-   "UNITS": "216",
-   "dob": "5",
-   "dob_hpd": "1003",
-   "OWNER1": "RH 22 BRADHURST AVE LLC",
-   "OWNER1_LN": "SILBER",
-   "OWNER1_FN": "MARK ",
-   "Boro": "MANHATTAN",
-   "officer": "MARK  SILBER",
-   "org": "RH 22 BRADHURST AVE LLC"
- },
+ 
  {
    "Rank": "6",
    "LandlordId": "289624",
