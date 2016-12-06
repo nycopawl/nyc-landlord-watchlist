@@ -66,28 +66,6 @@ var hotels = [
    "org": "1619-1625 AMSTERDAM AVENUE"
  },
  {
-   "Rank": "4",
-   "LandlordId": "60535",
-   "buildings": "4",
-   "num": "992",
-   "a": "270",
-   "b": "652",
-   "c": "70",
-   "i": "0",
-   "score": "2.91829",
-   "A_UNITS": "257",
-   "B_UNITS": "0",
-   "UNITS": "257",
-   "dob": "28",
-   "dob_hpd": "1020",
-   "OWNER1": "PARKASH 2487 LLC",
-   "OWNER1_LN": "PARKASH",
-   "OWNER1_FN": "VED ",
-   "Boro": "BRONX",
-   "officer": "VED  PARKASH",
-   "org": "PARKASH 2487 LLC"
- },
- {
    "Rank": "5",
    "LandlordId": "7474",
    "buildings": "10",
