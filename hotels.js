@@ -44,26 +44,6 @@ var hotels = [
    "org": "1122 FIRST AVENUE LLC"
  },
  {
-   "Rank": "",
-   "LandlordId": "",
-   "buildings": "",
-   "num": "",
-   "a": "",
-   "b": "",
-   "c": "",
-   "i": "",
-   "score": "",
-   "A_UNITS": "",
-   "B_UNITS": "",
-   "UNITS": "",
-   "dob": "",
-   "dob_hpd": "",
-   "OWNER1": "",
-   "OWNER1_LN": "",
-   "OWNER1_FN": " ",
-   "Boro": "",
-   "officer": "",
-   "org": ""
  },
  {
    "Rank": "4",
