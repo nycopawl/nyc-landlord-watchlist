@@ -44,8 +44,6 @@ var hotels = [
    "org": "1122 FIRST AVENUE LLC"
  },
  {
- },
- {
    "Rank": "4",
    "LandlordId": "60535",
    "buildings": "4",
