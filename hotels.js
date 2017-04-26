@@ -24857,7 +24857,7 @@ for (i=0; i < hotels.length; i++)
 	
 	
 	var url = 'https://maps.googleapis.com/maps/api/staticmap?size=650x300&maptype=roadmap%20' + lat + '&key=AIzaSyCEdL7GSizXOkrhG1vJWSRro4wlyqo5kdU';
-  cajahotelHTML = '<div class="col-md-13"><div class="col-md-12-head"><headll><a href="buildings.html#landlord' + (i+1) + '">' + Rank + name + '</a></headll></div><div class="col-md-2"> <a href="map.html"><img alt="landlordmap" src="' + url + '" center no-repeat></a></div><div class="col-md-3"><div class="buildingRates">' + buildings + '<br>' + units + '<br>' + hpd + '<br>' + dob + '</div></div></div>';
+  cajahotelHTML = '<div class="col-md-13"><div class="col-md-12-head"><headll><a href="buildings.html#landlord' + (i+1) + '">' + Rank + name + '</a></headll></div><div class="col-md-2"> <a href="map.html"><img alt="landlordmap" src="landlord/landlord' + (i+2) + '.png" center no-repeat></a></div><div class="col-md-3"><div class="buildingRates">' + buildings + '<br>' + units + '<br>' + hpd + '<br>' + dob + '</div></div></div>';
 
   hotelContainerHTML += cajahotelHTML;
 }
