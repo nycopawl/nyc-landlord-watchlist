@@ -1695,28 +1695,6 @@ var hotels = [
    "org": "RAINBRIDGE CLUSTER ASSOCIATES, L P"
  },
  {
-   "Rank": "80",
-   "LandlordId": "217258",
-   "buildings": "7",
-   "num": "363",
-   "a": "73",
-   "b": "210",
-   "c": "78",
-   "i": "2",
-   "score": "7.69231",
-   "A_UNITS": "39",
-   "B_UNITS": "0",
-   "UNITS": "39",
-   "dob": "12",
-   "dob_hpd": "375",
-   "OWNER1": "CARLTON LOFTS LLC",
-   "OWNER1_LN": "GREEN",
-   "OWNER1_FN": "ABE ",
-   "Boro": "BROOKLYN",
-   "officer": "ABE  GREEN",
-   "org": "CARLTON LOFTS LLC"
- },
- {
    "Rank": "81",
    "LandlordId": "27202",
    "buildings": "2",
